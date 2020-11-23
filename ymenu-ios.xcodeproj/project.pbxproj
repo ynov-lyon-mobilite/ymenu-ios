@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		470D972C256BBA080083912C /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470D972B256BBA080083912C /* Request.swift */; };
+		470D9731256BBB2D0083912C /* GenericServerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470D9730256BBB2D0083912C /* GenericServerResponse.swift */; };
+		470D9736256BBB4D0083912C /* AnyEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470D9735256BBB4D0083912C /* AnyEncodable.swift */; };
 		E36D852725333B0E00722077 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36D852625333B0E00722077 /* AppDelegate.swift */; };
 		E36D852925333B0E00722077 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36D852825333B0E00722077 /* ContentView.swift */; };
 		E36D852B25333B0F00722077 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = E36D852A25333B0F00722077 /* Experience.rcproject */; };
@@ -15,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		470D972B256BBA080083912C /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		470D9730256BBB2D0083912C /* GenericServerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericServerResponse.swift; sourceTree = "<group>"; };
+		470D9735256BBB4D0083912C /* AnyEncodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyEncodable.swift; sourceTree = "<group>"; };
 		E36D852325333B0E00722077 /* ymenu-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ymenu-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E36D852625333B0E00722077 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E36D852825333B0E00722077 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -35,6 +41,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		470D972A256BB9E80083912C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				470D972B256BBA080083912C /* Request.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		470D972F256BBB0D0083912C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				470D9734256BBB390083912C /* DTO */,
+				470D9730256BBB2D0083912C /* GenericServerResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		470D9734256BBB390083912C /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				470D9735256BBB4D0083912C /* AnyEncodable.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
 		E36D851A25333B0E00722077 = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +85,8 @@
 		E36D852525333B0E00722077 /* ymenu-ios */ = {
 			isa = PBXGroup;
 			children = (
+				470D972F256BBB0D0083912C /* Model */,
+				470D972A256BB9E80083912C /* Service */,
 				E36D852625333B0E00722077 /* AppDelegate.swift */,
 				E36D852825333B0E00722077 /* ContentView.swift */,
 				E36D852A25333B0F00722077 /* Experience.rcproject */,
@@ -142,7 +175,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E36D852925333B0E00722077 /* ContentView.swift in Sources */,
+				470D9731256BBB2D0083912C /* GenericServerResponse.swift in Sources */,
+				470D972C256BBA080083912C /* Request.swift in Sources */,
 				E36D852725333B0E00722077 /* AppDelegate.swift in Sources */,
+				470D9736256BBB4D0083912C /* AnyEncodable.swift in Sources */,
 				E36D852B25333B0F00722077 /* Experience.rcproject in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
