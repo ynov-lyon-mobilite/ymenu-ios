@@ -1,0 +1,2 @@
+Device ID	Device Name	Device Platform
+00008101-000A2D8E02E0001E	ZakiPhone12ProMax	ios

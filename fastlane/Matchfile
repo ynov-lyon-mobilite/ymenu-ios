@@ -1,0 +1,9 @@
+git_url("git@github.com:ynov-lyon-mobilite-20-21/fastlane-certificates.git")
+git_branch("master")
+
+storage_mode("git")
+
+type("development") # The default type, can be: appstore, adhoc, enterprise or development
+
+app_identifier(["com.ynovlyon.ymenu"])
+username("zakary69@gmail.com")
