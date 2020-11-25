@@ -10,6 +10,20 @@ import RealityKit
 
 struct ContentView : View {
     var body: some View {
+        NavigationView {
+            VStack{
+            NavigationLink(
+                destination: ScannerView(),
+                label: {
+                    Text("Scanner un plat")
+                })
+        }
+        }
+    }
+}
+/*
+struct ContentView : View {
+    var body: some View {
         return ARViewContainer().edgesIgnoringSafeArea(.all)
     }
 }
@@ -33,6 +47,7 @@ struct ARViewContainer: UIViewRepresentable {
     func updateUIView(_ uiView: ARView, context: Context) {}
     
 }
+*/
 
 #if DEBUG
 struct ContentView_Previews : PreviewProvider {
