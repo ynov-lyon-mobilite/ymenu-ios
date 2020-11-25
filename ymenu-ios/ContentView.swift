@@ -17,7 +17,7 @@ struct ContentView : View {
                 label: {
                     Text("Scanner un plat")
                 })
-        }
+            }
         }
     }
 }
