@@ -8,7 +8,7 @@
 import Foundation
 
 class Request {
-    private let domain = ""
+    private let domain = "https://ymenu.herokuapp.com/api"
     private var path: String = "/"
     private var body: Encodable?
     private var method: HTTPMethod = .GET
@@ -85,26 +85,7 @@ class Request {
             do {
                 print("Status code : \(urlResponse.statusCode)")
                 if urlResponse.statusCode == 401 {
-//                    if (!self.canRefreshToken) {
-//                        AuthenticationManager.removeTokens()
-//                        return
-//                    }
-//
-//                    let service: AuthAPIService = AuthAPIService()
-//
-//                    self.canRefreshToken = false
-//                    service.refreshToken() {
-//                        switch $0 {
-//                        case .success(let token):
-//                            AuthenticationManager.setToken(token: token)
-//                            self.token = token.token
-//                            self.callRequest(completion: completion)
-//                        case .failure(let error):
-//                            print(error)
-//                            AuthenticationManager.removeTokens()
-//                            completion(.failure(error))
-//                        }
-//                    }
+                    // TODO IF WE ADDED AUTHENTICATION
                     
                     return
                 } else if urlResponse.statusCode != 200 && urlResponse.statusCode != 201 && urlResponse.statusCode != 204 {
@@ -153,11 +134,9 @@ class Request {
     
 }
 
-
 enum HTTPMethod: String {
     case POST = "POST"
     case GET = "GET"
     case PUT = "PUT"
     case DELETE = "DELETE"
 }
-
