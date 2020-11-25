@@ -24,6 +24,13 @@ xcuserdata/
 *.dSYM
 xcuserdata
 .DS_Store
+
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcworkspace/contents.xcworkspacedata
+**/xcshareddata/WorkspaceSettings.xcsettings
+
 ## Playgrounds
 timeline.xctimeline
 playground.xcworkspace
