@@ -20,6 +20,7 @@
 		4715A4E5256E672E00C24659 /* DishApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4715A4E4256E672E00C24659 /* DishApiService.swift */; };
 		4715A4E8256E67BF00C24659 /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4715A4E7256E67BF00C24659 /* Dish.swift */; };
 		4715A4EB256E6B4A00C24659 /* RestaurantDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4715A4EA256E6B4A00C24659 /* RestaurantDTO.swift */; };
+		E36599CF256EA10800D58F6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E36599CE256EA10800D58F6F /* Assets.xcassets */; };
 		E36D852725333B0E00722077 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36D852625333B0E00722077 /* AppDelegate.swift */; };
 		E36D852925333B0E00722077 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36D852825333B0E00722077 /* ContentView.swift */; };
 		E36D852B25333B0F00722077 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = E36D852A25333B0F00722077 /* Experience.rcproject */; };
@@ -40,6 +41,7 @@
 		4715A4E4256E672E00C24659 /* DishApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishApiService.swift; sourceTree = "<group>"; };
 		4715A4E7256E67BF00C24659 /* Dish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
 		4715A4EA256E6B4A00C24659 /* RestaurantDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDTO.swift; sourceTree = "<group>"; };
+		E36599CE256EA10800D58F6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E36D852325333B0E00722077 /* ymenu-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ymenu-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E36D852625333B0E00722077 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E36D852825333B0E00722077 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 		E36D852525333B0E00722077 /* ymenu-ios */ = {
 			isa = PBXGroup;
 			children = (
+				E36599CE256EA10800D58F6F /* Assets.xcassets */,
 				470D972F256BBB0D0083912C /* Model */,
 				470D972A256BB9E80083912C /* Service */,
 				E36D852625333B0E00722077 /* AppDelegate.swift */,
@@ -189,7 +192,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0AFD141B256E7FDA000EFEBA /* Assets.xcassets in Resources */,
+				E36599CF256EA10800D58F6F /* Assets.xcassets in Resources */,
 				E36D853025333B0F00722077 /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,8 +369,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_ASSET_PATHS = "\"ymenu-ios/Preview Content\"";
 				DEVELOPMENT_TEAM = A2F82R6YR7;
 				ENABLE_PREVIEWS = YES;
@@ -378,7 +381,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ynovlyon.ymenu-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.ynovlyon.ymenu";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
