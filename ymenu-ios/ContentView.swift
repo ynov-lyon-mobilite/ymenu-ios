@@ -57,7 +57,7 @@ struct Home: View {
                     Text("Home Page")
                         .opacity(selectesTab == "greetingcard.fill" ? 1 : 0)
                     
-                    Text("Scan")
+                    ScannerView()
                         .opacity(selectesTab == "qrcode.viewfinder" ? 1 : 0)
                     
                     Text("Paramètres")
@@ -130,7 +130,6 @@ struct TabButton : View{
         }
     }
 }
-*/
 
 struct CustomShape: Shape {
     func path(in rect: CGRect) -> Path {
