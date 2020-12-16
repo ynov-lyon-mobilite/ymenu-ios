@@ -20,7 +20,6 @@
 		4715A4E8256E67BF00C24659 /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4715A4E7256E67BF00C24659 /* Dish.swift */; };
 		4715A4EB256E6B4A00C24659 /* RestaurantDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4715A4EA256E6B4A00C24659 /* RestaurantDTO.swift */; };
 		E36599CF256EA10800D58F6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E36599CE256EA10800D58F6F /* Assets.xcassets */; };
-		4715A53D256EA3BC00C24659 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4715A53C256EA3BC00C24659 /* CameraPreview.swift */; };
 		E36D852725333B0E00722077 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36D852625333B0E00722077 /* AppDelegate.swift */; };
 		E36D852925333B0E00722077 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36D852825333B0E00722077 /* ContentView.swift */; };
 		E36D852B25333B0F00722077 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = E36D852A25333B0F00722077 /* Experience.rcproject */; };
