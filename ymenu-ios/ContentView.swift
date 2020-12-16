@@ -130,7 +130,7 @@ struct TabButton : View{
         }
     }
 }
-*/
+
 
 struct CustomShape: Shape {
     func path(in rect: CGRect) -> Path {
