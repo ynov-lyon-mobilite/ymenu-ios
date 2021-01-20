@@ -31,10 +31,13 @@ struct MenuView: View {
                     ForEach(viewModel.dishCategories, id: \._id) { category in
                         Section(header: Text(category.name)){
                             ForEach(viewModel.dishes, id: \._id) { dish in
-                                NavigationLink(destination: DetailsView()){
-                                    Text(dish.name)
+                                if dish.category_id == category._id {
+                                    NavigationLink(destination: DetailsView()){
+                                        Text(dish.name)
+                                    }
                                 }
                             }
+                            .padding(0)
                         }
                     }
                     .navigationBarTitle("Restaurant name")
