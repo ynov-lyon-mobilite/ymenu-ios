@@ -43,6 +43,7 @@ struct MenuView: View {
                     .navigationBarTitle("Restaurant name")
                     .padding(.top, 30)
                 }
+                .padding(.horizontal, -20)
             }
         }
     }
