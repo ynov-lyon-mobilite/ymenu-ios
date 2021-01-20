@@ -20,11 +20,12 @@ struct PageView<Page:View>: View {
     }
     
     var body: some View {
-        ZStack{
+        ZStack(alignment: .leading) {
             Color(UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 0.1))
                     .edgesIgnoringSafeArea(.all)
-        VStack{
             PageViewController(controllers: viewControllers, currentPage: $currentPage)
+            Spacer()
+        VStack{
             Spacer()
             Button(action: {
                 if self.currentPage < self.viewControllers.count - 1 {
@@ -43,13 +44,12 @@ struct PageView<Page:View>: View {
                         Text(self.currentPage < self.viewControllers.count - 1 ? "Suivant" : "C'est parti !" )
                         .foregroundColor(.white)
                             .font(.custom("Helvetica-Bold", size: 28))
-                        
                     )
             }
             PageControl(numberOfPages: viewControllers.count, currentPage: $currentPage)
         }
         }
-        
+           
     }
 }
 

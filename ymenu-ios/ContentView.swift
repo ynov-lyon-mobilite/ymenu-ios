@@ -57,6 +57,7 @@ struct ContentView : View {
 struct ContentView_Previews : PreviewProvider {
     static var previews: some View {
         ContentView()
+            .padding()
     }
 }
 
@@ -160,7 +161,7 @@ struct CustomShape: Shape {
     }
 }
 
-var tabs = ["doc.plaintext","qrcode.viewfinder","person.fill"]
+var tabs = ["greetingcard.fill","qrcode.viewfinder","person.fill"]
 
 
 class ModelView : ObservableObject{
