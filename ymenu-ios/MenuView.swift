@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+
 struct Menu: View {
     
     @ObservedObject var viewModel = MenuViewModel()
@@ -33,34 +34,44 @@ struct Menu: View {
                     }
                     
                 }
+                
                 List {
                     Section(header: Text("Les carnivores")){
                         ForEach(viewModel.dishes, id: \._id) { dish in
+                            NavigationLink(destination: DetailsView()){
                             Text(dish.name)
                             
+                        }
                         }
                         .padding(10)
                         .navigationBarTitle("Plat restaurant")
                     }
                     Section(header: Text("Les végétariens")){
                         ForEach(viewModel.dishes, id: \._id) { dish in
+                            NavigationLink(destination: DetailsView()){
                             Text(dish.name)
-                                .padding(10)
+                            
+                        }
+                            .padding(10)
                             
                         }
                     }
                     
                     Section(header: Text("Les réductions")){
                         ForEach(viewModel.dishes, id: \._id) { dish in
+                            NavigationLink(destination: DetailsView()){
                             Text(dish.name)
                             
                         }
                         .padding(10)
                     }
+                    }
                     Section(header: Text("Les fous")){
                         ForEach(viewModel.dishes, id: \._id) { dish in
+                            NavigationLink(destination: DetailsView()){
                             Text(dish.name)
                             
+                        }
                         }
                         .padding(10)
                     }
@@ -69,4 +80,31 @@ struct Menu: View {
         }
     }
 }
+struct DetailsView: View {
 
+  
+    @ObservedObject var viewModel = MenuViewModel()
+
+  var body: some View {
+    VStack(alignment: .leading) {
+      HStack {
+        Text("hello")
+          .padding(.trailing, 5)
+        
+        ForEach(viewModel.dishes, id: \._id) { dish in
+            Text(dish.name)
+          .font(.largeTitle)
+          .bold()
+        }
+        Spacer()
+      }
+      
+      Text("description")
+        .padding(.top)
+      
+      Spacer()
+    }
+    .padding()
+    .navigationBarTitle(Text("Détails du produit"), displayMode: .inline)
+  }
+}
