@@ -12,6 +12,7 @@ struct OnboardingCardView: View {
     var card:OnboardingCard
     
     var body: some View {
+
         ZStack{
             Color(UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 0.1))
                     .edgesIgnoringSafeArea(.all)
@@ -32,7 +33,7 @@ struct OnboardingCardView: View {
                     .multilineTextAlignment(.center)
                     .padding()
             }.padding()
-        }
+        }.edgesIgnoringSafeArea(.all)
     }
 }
 
