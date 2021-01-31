@@ -24,6 +24,7 @@
 		B3408E0F25B8275E006BD523 /* DishCategoryApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3408E0E25B8275E006BD523 /* DishCategoryApiService.swift */; };
 		B3408E1225B827C8006BD523 /* DishCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3408E1125B827C8006BD523 /* DishCategory.swift */; };
 		B3408E1925B82C5C006BD523 /* CategoriesTopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3408E1825B82C5C006BD523 /* CategoriesTopBarView.swift */; };
+		B38E711E25B877F900A67830 /* IndexedForEach.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38E711D25B877F900A67830 /* IndexedForEach.swift */; };
 		E36599CF256EA10800D58F6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E36599CE256EA10800D58F6F /* Assets.xcassets */; };
 		E36D852725333B0E00722077 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36D852625333B0E00722077 /* AppDelegate.swift */; };
 		E36D852925333B0E00722077 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36D852825333B0E00722077 /* ContentView.swift */; };
@@ -50,6 +51,7 @@
 		B3408E0E25B8275E006BD523 /* DishCategoryApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCategoryApiService.swift; sourceTree = "<group>"; };
 		B3408E1125B827C8006BD523 /* DishCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCategory.swift; sourceTree = "<group>"; };
 		B3408E1825B82C5C006BD523 /* CategoriesTopBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTopBarView.swift; sourceTree = "<group>"; };
+		B38E711D25B877F900A67830 /* IndexedForEach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexedForEach.swift; sourceTree = "<group>"; };
 		E36599CE256EA10800D58F6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4715A53C256EA3BC00C24659 /* CameraPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
 		E36D852325333B0E00722077 /* ymenu-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ymenu-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +145,7 @@
 				47CE67AD258A3FDE004940D7 /* MenuViewModel.swift */,
 				47CE67A9258A0431004940D7 /* MenuView.swift */,
 				B3408E1825B82C5C006BD523 /* CategoriesTopBarView.swift */,
+				B38E711D25B877F900A67830 /* IndexedForEach.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				B3408E1225B827C8006BD523 /* DishCategory.swift in Sources */,
 				B3408E1925B82C5C006BD523 /* CategoriesTopBarView.swift in Sources */,
 				470D972C256BBA080083912C /* Request.swift in Sources */,
+				B38E711E25B877F900A67830 /* IndexedForEach.swift in Sources */,
 				E36D852725333B0E00722077 /* AppDelegate.swift in Sources */,
 				0A9DFA312589FFEE001C3ECC /* CameraPreview.swift in Sources */,
 				0AFD1417256E7DD1000EFEBA /* QrCodeScannerView.swift in Sources */,

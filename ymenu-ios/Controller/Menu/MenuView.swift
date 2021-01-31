@@ -7,43 +7,57 @@
 
 import Foundation
 import SwiftUI
-
+import Combine
 
 struct MenuView: View {
     
     @ObservedObject var viewModel = MenuViewModel()
-    
+    @State var scrollPosition: CGFloat = 0.0
+    var bag = Set<AnyCancellable>()
+
     var body: some View {
         
         NavigationView {
-            VStack{
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack (alignment: VerticalAlignment.center, spacing: 0){
-                        ForEach(viewModel.dishCategories, id: \._id) { category in
-                            CategoriesTopBarView(label: category.name)
-                            Spacer()
+            ScrollViewReader { proxy in
+                VStack{
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack (alignment: VerticalAlignment.center, spacing: 0){
+                            IndexedForEach(viewModel.dishCategories) { index, category in
+                                Button(action: {
+                                    proxy.scrollTo(category._id, anchor: .top)
+                                    viewModel.selectedCategoryId = category._id
+                                }) {
+                                    Text(category.name)
+                                        .underline(viewModel.selectedCategory?._id == category._id, color: Color.red)
+                                        .foregroundColor(Color.black)
+                                }
+                                Spacer()
+                            }
                         }
+                        .padding(.leading, 20)
                     }
-                    .padding(.leading, 20)
-                }
-                
-                List {
-                    ForEach(viewModel.dishCategories, id: \._id) { category in
-                        Section(header: Text(category.name)){
-                            ForEach(viewModel.dishes, id: \._id) { dish in
-                                if dish.category_id == category._id {
-                                    NavigationLink(destination: DetailsView()){
-                                        Text(dish.name)
+                    
+                    List {
+                        IndexedForEach(viewModel.dishCategories) { index, category in
+                            Section(header: Text(category.name)){
+                                ForEach(viewModel.dishes, id: \._id) { dish in
+                                    if dish.category_id == category._id {
+                                        NavigationLink(destination: DetailsView()){
+                                            Text(dish.name)
+                                        }
                                     }
                                 }
-                            }
-                            .padding(0)
+                            }.id(category._id)
                         }
+                        .navigationBarTitle("Restaurant name")
+                        .padding(.top, 30)
+                    }.listStyle(InsetGroupedListStyle())
+                    .padding(.horizontal, -20)
+                }.gesture(
+                    DragGesture().onChanged { value in
+                        print(value.location.y)
                     }
-                    .navigationBarTitle("Restaurant name")
-                    .padding(.top, 30)
-                }
-                .padding(.horizontal, -20)
+                 )
             }
         }
     }
