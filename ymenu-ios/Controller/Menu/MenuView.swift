@@ -108,3 +108,9 @@ struct DetailsView: View {
     .navigationBarTitle(Text("Détails du produit"), displayMode: .inline)
   }
 }
+
+struct MenuView_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
+    }
+}

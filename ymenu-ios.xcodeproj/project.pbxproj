@@ -127,6 +127,21 @@
 				0AFD140A256E7CD3000EFEBA /* ScannerViewModel.swift */,
 			);
 			path = ViewModel;
+		B3408E1425B82B28006BD523 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B3408E1525B82B39006BD523 /* Menu */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B3408E1525B82B39006BD523 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				47CE67AD258A3FDE004940D7 /* MenuViewModel.swift */,
+				47CE67A9258A0431004940D7 /* MenuView.swift */,
+			);
+			path = Menu;
 			sourceTree = "<group>";
 		};
 		E36D851A25333B0E00722077 = {
@@ -148,6 +163,7 @@
 		E36D852525333B0E00722077 /* ymenu-ios */ = {
 			isa = PBXGroup;
 			children = (
+				B3408E1425B82B28006BD523 /* Controller */,
 				E36599CE256EA10800D58F6F /* Assets.xcassets */,
 				4715A540256EA70100C24659 /* Screen */,
 				470D972F256BBB0D0083912C /* Model */,
@@ -162,8 +178,6 @@
 				E36D852A25333B0F00722077 /* Experience.rcproject */,
 				E36D853125333B0F00722077 /* Info.plist */,
 				E36D852E25333B0F00722077 /* Preview Content */,
-				47CE67A9258A0431004940D7 /* MenuView.swift */,
-				47CE67AD258A3FDE004940D7 /* MenuViewModel.swift */,
 			);
 			path = "ymenu-ios";
 			sourceTree = "<group>";
