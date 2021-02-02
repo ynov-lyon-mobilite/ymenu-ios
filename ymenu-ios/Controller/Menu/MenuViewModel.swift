@@ -11,6 +11,7 @@ final class MenuViewModel : ObservableObject {
     @Published var dishes: [Dish] = []
     @Published var dishCategories: [DishCategory] = []
     @Published var selectedCategoryId: String = ""
+    @Published var restaurant: RestaurantDTO
     
     var selectedCategory: DishCategory? {
         get {
@@ -22,8 +23,8 @@ final class MenuViewModel : ObservableObject {
     let dishApiService = DishApiService()
     let dishCategoryApiService = DishCategoryApiService()
     
-    init() {
-        let restaurant = RestaurantDTO(_id: "6007fabd63c8d10017d2b3ba")
+    init(restaurant: RestaurantDTO) {
+        self.restaurant = restaurant
         
         dishApiService.getDishesByRestaurantId(restaurant) { [weak self] in
             guard let strongSelf = self else { return }
@@ -34,7 +35,7 @@ final class MenuViewModel : ObservableObject {
                     strongSelf.dishes.append(contentsOf: dishes)
                 }
             case .failure(_):
-                print("failed getting dishes for restaurant " + restaurant._id)
+                print("failed getting dishes for restaurant " + self!.restaurant._id)
             }
         }
         
@@ -47,7 +48,7 @@ final class MenuViewModel : ObservableObject {
                     strongSelf.dishCategories.append(contentsOf: dishCategories)
                 }
             case .failure(_):
-                print("failed getting dish categories for restaurant " + restaurant._id)
+                print("failed getting dish categories for restaurant " + self!.restaurant._id)
             }
         }
     }

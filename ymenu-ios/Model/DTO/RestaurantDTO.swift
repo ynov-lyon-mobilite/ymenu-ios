@@ -9,4 +9,5 @@ import Foundation
 
 struct RestaurantDTO: Decodable {
     let _id: String
+    let name: String
 }

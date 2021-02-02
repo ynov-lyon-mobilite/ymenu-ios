@@ -43,7 +43,8 @@ struct ContentView_Previews : PreviewProvider {
 }
 
 struct Home: View {
-    @State var selectesTab = "Home"
+    @State var selectedTab = "qrcode.viewfinder"
+    @State var restaurant: RestaurantDTO = RestaurantDTO(_id: "", name: "")
     @Namespace var animation : Namespace.ID
     @StateObject var modelData = ModelView()
     
@@ -54,18 +55,18 @@ struct Home: View {
                 
                 ZStack{
                     // tabs
-                    MenuView()
-                        .opacity(selectesTab == "greetingcard.fill" ? 1 : 0)
+                    MenuView(viewModel: MenuViewModel(restaurant: restaurant))
+                        .opacity(selectedTab == "greetingcard.fill" ? 1 : 0)
                     
-                    ScannerView()
-                        .opacity(selectesTab == "qrcode.viewfinder" ? 1 : 0)
+                    ScannerView(selectedTab: $selectedTab, restaurant: $restaurant)
+                        .opacity(selectedTab == "qrcode.viewfinder" ? 1 : 0)
                     
                     Text("Paramètres")
-                        .opacity(selectesTab == "person.fill" ? 1 : 0)
+                        .opacity(selectedTab == "person.fill" ? 1 : 0)
                 }
             }
-            .onChange(of: selectesTab) { (_) in
-                switch(selectesTab){
+            .onChange(of: selectedTab) { (_) in
+                switch(selectedTab){
                 
                 case "greetingcard.fill": if !modelData.isHomeLoad{modelData.loadHome()}
                 case "qrcode.viewfinder": if !modelData.isQRLoad{modelData.loadQR()}
@@ -80,7 +81,7 @@ struct Home: View {
             HStack(spacing: 0){
                  ForEach(tabs,id: \.self){tab in
                     
-                    TabButton(title: tab, selectedTab: $selectesTab, animation: animation)
+                    TabButton(title: tab, selectedTab: $selectedTab, animation: animation)
                     
                     if tab != tabs.last{
                         Spacer(minLength: 0)

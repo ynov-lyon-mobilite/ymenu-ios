@@ -11,7 +11,7 @@ import Combine
 
 struct MenuView: View {
     
-    @ObservedObject var viewModel = MenuViewModel()
+    @ObservedObject var viewModel: MenuViewModel
     @State var scrollPosition: CGFloat = 0.0
     var bag = Set<AnyCancellable>()
 
@@ -49,7 +49,7 @@ struct MenuView: View {
                                 }
                             }.id(category._id)
                         }
-                        .navigationBarTitle("Restaurant name")
+                        .navigationBarTitle(self.viewModel.restaurant.name)
                         .padding(.top, 30)
                     }.listStyle(InsetGroupedListStyle())
                     .padding(.horizontal, -20)
@@ -65,7 +65,7 @@ struct MenuView: View {
 
 struct DetailsView: View {
 
-    @ObservedObject var viewModel = MenuViewModel()
+    @ObservedObject var viewModel = MenuViewModel(restaurant: RestaurantDTO(_id: "", name: ""))
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -81,6 +81,6 @@ struct DetailsView: View {
 
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuView()
+        MenuView(viewModel: MenuViewModel(restaurant: RestaurantDTO(_id: "", name: "")))
     }
 }
