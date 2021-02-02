@@ -8,23 +8,28 @@
 import SwiftUI
 
 struct ScannerView: View {
-    @ObservedObject var viewModel = ScannerViewModel()
+    @Binding var selectedTab: String
+    @Binding var restaurant: RestaurantDTO
     
+    @ObservedObject var viewModel = ScannerViewModel()
+
     var body: some View {
         ZStack {
-            QrCodeScannerView ()
-                .found (r: self .viewModel.onFoundQrCode)
-                .torchLight (isOn: self .viewModel.torchIsOn)
-                .interval (delay: self .viewModel.scanInterval)
-    
+            QrCodeScannerView()
+            .found(r: self.viewModel.onFoundQrCode)
+            .torchLight(isOn: self.viewModel.torchIsOn)
+            .interval(delay: self.viewModel.scanInterval)
+            
             VStack {
                 VStack {
+                    Text("Veuillez scanner un code QR")
+                        .font(.subheadline)
                     Text(self.viewModel.lastQrCode)
                         .bold()
-                        .lineLimit(20)
+                        .lineLimit(5)
                         .padding()
                 }
-                .padding(.vertical, 15)
+                .padding(.vertical, 20)
                 
                 Spacer()
                 HStack {
@@ -41,6 +46,14 @@ struct ScannerView: View {
                 .cornerRadius(10)
                 
             }.padding()
+        }
+        .onChange(of: self.viewModel.lastQrCode) { (_) in
+            print("qrCode change: ", self.viewModel.lastQrCode)
+            
+            let result = self.viewModel.lastQrCode.components(separatedBy: ", ")
+            
+            restaurant = RestaurantDTO(_id: result[0], name: result[1])
+            selectedTab = "greetingcard.fill"
         }
     }
 }
