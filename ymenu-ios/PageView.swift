@@ -46,7 +46,7 @@ struct PageView<Page:View>: View {
                         .foregroundColor(.white)
                             .font(.custom("SF Pro Text Bold", size: 25))
                     )
-            }
+            }.padding(.bottom, 60)
         }.edgesIgnoringSafeArea(.all)
         .offset(y: 0)
         }.edgesIgnoringSafeArea(.all)
