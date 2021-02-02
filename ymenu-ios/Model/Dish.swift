@@ -8,12 +8,13 @@
 import Foundation
 
 struct Dish: Decodable {
+    let _id: String?
     let name: String
     let price: Int
     let ingredients: [String]?
     let infos: String?
-    let urlLogo: String?
-    let urlModel: String?
-    let restaurantId: Int
-    let dishCategoryId: Int
+    let url_logo: String?
+    let url_model: String?
+    let restaurant_id: String
+    let category_id: String
 }

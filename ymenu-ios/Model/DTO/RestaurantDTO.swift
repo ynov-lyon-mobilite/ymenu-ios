@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct RestaurantDTO: Encodable {
-    let _id: Int
+struct RestaurantDTO: Decodable {
+    let _id: String
 }

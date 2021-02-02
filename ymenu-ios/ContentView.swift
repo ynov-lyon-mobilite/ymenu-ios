@@ -54,7 +54,7 @@ struct Home: View {
                 
                 ZStack{
                     // tabs
-                    Text("Home Page")
+                    MenuView()
                         .opacity(selectesTab == "greetingcard.fill" ? 1 : 0)
                     
                     ScannerView()

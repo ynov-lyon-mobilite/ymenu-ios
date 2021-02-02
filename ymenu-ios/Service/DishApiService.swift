@@ -10,9 +10,8 @@ import Foundation
 final class DishApiService {
     func getDishesByRestaurantId(_ RestaurantDTO: RestaurantDTO,completion: @escaping (Result<[Dish], Error>) -> Void) -> Void {
         Request()
-            .setPath("/dishes")
+            .setPath("/dishes/restaurant/" + RestaurantDTO._id)
             .setMethod(.GET)
-            .setBody(RestaurantDTO)
             .sendWithDecode([Dish].self, completion: completion)
     }
 }
