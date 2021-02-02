@@ -14,7 +14,7 @@ final class MenuViewModel : ObservableObject {
     let dishCategoryApiService = DishCategoryApiService()
     
     init() {
-        let restaurant = RestaurantDTO(_id: "5fbe1e3b6f87600017ff108d")
+        let restaurant = RestaurantDTO(_id: "6007fabd63c8d10017d2b3ba")
         
         dishApiService.getDishesByRestaurantId(restaurant) { [weak self] in
             guard let strongSelf = self else { return }
