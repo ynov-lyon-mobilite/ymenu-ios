@@ -45,7 +45,6 @@
 		4715A4E4256E672E00C24659 /* DishApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishApiService.swift; sourceTree = "<group>"; };
 		4715A4E7256E67BF00C24659 /* Dish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
 		4715A4EA256E6B4A00C24659 /* RestaurantDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDTO.swift; sourceTree = "<group>"; };
-		4715A53C256EA3BC00C24659 /* CameraPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
 		47CE67A9258A0431004940D7 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		47CE67AD258A3FDE004940D7 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		B3408E0E25B8275E006BD523 /* DishCategoryApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCategoryApiService.swift; sourceTree = "<group>"; };
@@ -103,33 +102,22 @@
 			path = DTO;
 			sourceTree = "<group>";
 		};
-		4715A540256EA70100C24659 /* Screen */ = {
+		479FEB2325C9BDD500A75197 /* QRCode */ = {
 			isa = PBXGroup;
 			children = (
-				4715A541256EA71500C24659 /* QRCode */,
-			);
-			path = Screen;
-			sourceTree = "<group>";
-		};
-		4715A541256EA71500C24659 /* QRCode */ = {
-			isa = PBXGroup;
-			children = (
-				4715A53C256EA3BC00C24659 /* CameraPreview.swift */,
-				4715A542256EA73400C24659 /* ViewModel */,
+				0AFD1416256E7DD1000EFEBA /* QrCodeScannerView.swift */,
+				0AFD140D256E7CF9000EFEBA /* ScannerView.swift */,
+				0AFD140A256E7CD3000EFEBA /* ScannerViewModel.swift */,
+				0A9DFA302589FFEE001C3ECC /* CameraPreview.swift */,
+				0AFD1410256E7D31000EFEBA /* QrCodeCameraDelegate.swift */,
 			);
 			path = QRCode;
-			sourceTree = "<group>";
-		};
-		4715A542256EA73400C24659 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		B3408E1425B82B28006BD523 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				479FEB2325C9BDD500A75197 /* QRCode */,
 				B3408E1525B82B39006BD523 /* Menu */,
 			);
 			path = Controller;
@@ -167,15 +155,9 @@
 			children = (
 				B3408E1425B82B28006BD523 /* Controller */,
 				E36599CE256EA10800D58F6F /* Assets.xcassets */,
-				4715A540256EA70100C24659 /* Screen */,
 				470D972F256BBB0D0083912C /* Model */,
 				470D972A256BB9E80083912C /* Service */,
 				E36D852625333B0E00722077 /* AppDelegate.swift */,
-				0AFD1416256E7DD1000EFEBA /* QrCodeScannerView.swift */,
-				0AFD140D256E7CF9000EFEBA /* ScannerView.swift */,
-				0AFD140A256E7CD3000EFEBA /* ScannerViewModel.swift */,
-				0A9DFA302589FFEE001C3ECC /* CameraPreview.swift */,
-				0AFD1410256E7D31000EFEBA /* QrCodeCameraDelegate.swift */,
 				E36D852825333B0E00722077 /* ContentView.swift */,
 				E36D852A25333B0F00722077 /* Experience.rcproject */,
 				E36D853125333B0F00722077 /* Info.plist */,
