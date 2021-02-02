@@ -108,8 +108,8 @@ class Request {
                 
                 switch result {
                 case .success(let data):
-                    let decodedData = try decoder.decode(GenericServerResponse<T>.self, from: data)
-                    completion(.success(decodedData.data))
+                    let decodedData = try decoder.decode(T.self, from: data)
+                    completion(.success(decodedData))
                     break
                 case .failure(let error):
                     completion(.failure(error))
