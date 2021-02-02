@@ -10,7 +10,7 @@ import SwiftUI
 struct DishDetailView: View {
 
     @State var dish: Dish
-    @ObservedObject var viewModel = MenuViewModel()
+    @ObservedObject var viewModel = MenuViewModel(restaurant: RestaurantDTO(_id: "", name: ""))
    
 
     var body: some View {
