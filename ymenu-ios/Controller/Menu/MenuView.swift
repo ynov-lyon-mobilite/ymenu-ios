@@ -42,9 +42,14 @@ struct MenuView: View {
                             Section(header: Text(category.name)){
                                 ForEach(viewModel.dishes, id: \._id) { dish in
                                     if dish.category_id == category._id {
-                                        NavigationLink(destination: DetailsView()){
-                                            Text(dish.name)
+                                        ZStack {
+                                            Button("") {}
+                                            NavigationLink(destination: DishDetailView(dish: dish)){
+                                                
+                                                Text(dish.name)
+                                            }
                                         }
+                                        
                                     }
                                 }
                             }.id(category._id)
