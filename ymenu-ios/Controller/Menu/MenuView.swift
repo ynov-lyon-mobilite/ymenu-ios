@@ -33,9 +33,12 @@ struct MenuView: View {
                                         .foregroundColor(Color.black)
                                         .padding(.top, 10)
                                 }
-                                Spacer()
+                                Spacer().frame(width: 15)
+                                Divider()
+                                Spacer().frame(width: 15)
                             }
                         }
+                        .fixedSize(horizontal: false, vertical: true)
                         .padding(.leading, 20)
                     }
                     
