@@ -8,10 +8,28 @@
 import SwiftUI
 import RealityKit
 
+
+var cards:[OnboardingCard] = [
+OnboardingCard(image: "logoymenu", title: "Bienvenue dans Y'Menu", description: "A travers cette application vous pourrez découvrir les différents menus proposés en réalité augmentée. Voyez votre plat sur votre table."),
+OnboardingCard(image: "logoymenu", title: "Comment ça marche ?", description: "Ouvrez votre caméra grâce a la fonctionnalité QR Code disponible sur l'écran d'accueil, scannez le QR Code et c'est prêt !"),
+OnboardingCard(image: "logoymenu", title: "Bon appétit !", description: "Si vous avez bien compris le fonctionnement, il ne vous reste plus qu'a essayer !")
+]
+
+
+
 struct ContentView : View {
+
+    
+    @State var isOnboardingDone = false
+    
     var body: some View {
-//        return ARViewContainer().edgesIgnoringSafeArea(.all)
-        Home()
+        Group {
+            if isOnboardingDone {
+                Home()
+            } else {
+                PageView(cards.map { OnboardingCardView(card: $0) }, isOnboardingDone: $isOnboardingDone)
+            }
+        }
     }
 }
 
@@ -41,6 +59,9 @@ struct ContentView_Previews : PreviewProvider {
         ContentView()
     }
 }
+
+
+
 
 struct Home: View {
     @State var selectedTab = "qrcode.viewfinder"
@@ -77,6 +98,7 @@ struct Home: View {
             // tab view
             Divider()
                 .padding(.bottom,13)
+                .background(Color.white)
 
             HStack(spacing: 0){
                  ForEach(tabs,id: \.self){tab in
@@ -107,21 +129,18 @@ struct TabButton : View{
             withAnimation{selectedTab = title}
         }){
             VStack(spacing: 6){
-                
                 Image(systemName: title)
-                    .renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
+                    .renderingMode(.template)
                     .resizable()
                     .foregroundColor(selectedTab == title ? Color(.black) : Color.black.opacity(0.4))
-                    .frame(width: 30, height: 30)
-                
+                    .frame(width: 29, height: 30)
                 VStack{
                     CustomShape()
                         .fill(Color.clear)
                         .frame(width: 45, height: 6)
-                    
                     if selectedTab == title{
                         CustomShape()
-                            .fill(Color.red).cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
+                            .fill(Color.red).cornerRadius(3.0)
                             .frame(width: 35, height: 5)
                             .matchedGeometryEffect(id: "Tab_change", in: animation)
                     }
@@ -168,3 +187,5 @@ class ModelView : ObservableObject{
         isSettingLoad = true
     }
 }
+
+
