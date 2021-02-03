@@ -56,8 +56,11 @@ struct MenuView: View {
                         }
                         .navigationBarTitle(self.viewModel.restaurant.name)
                         .padding(.top, 30)
-                    }.listStyle(InsetGroupedListStyle())
+                        .padding(.bottom, 30)
+                    }
+                    .listStyle(InsetGroupedListStyle())
                     .padding(.horizontal, -20)
+
                 }.gesture(
                     DragGesture().onChanged { value in
                         print(value.location.y)
