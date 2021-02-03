@@ -22,21 +22,23 @@ struct MenuView: View {
             ScrollViewReader { proxy in
                 VStack{
                     ScrollView(.horizontal, showsIndicators: false) {
-                        HStack (alignment: VerticalAlignment.center, spacing: 0){
+                        HStack (alignment: VerticalAlignment.center, spacing: 5){
                             IndexedForEach(viewModel.dishCategories) { index, category in
                                 Button(action: {
+                                    withAnimation {
                                     proxy.scrollTo(category._id, anchor: .top)
+                                    }
                                     viewModel.selectedCategoryId = category._id
                                 }) {
                                     Text(category.name)
-                                        .overlay(viewModel.selectedCategory?._id == category._id ? RoundedRectangle(cornerRadius: .infinity).foregroundColor(Color.red).frame(height: 3).offset(y: 4) : nil, alignment: .bottom)
+                                        .overlay(viewModel.selectedCategory?._id == category._id ? RoundedRectangle(cornerRadius: .infinity).shadow(color: Color.red, radius: 2.5, x: 0, y: 1).foregroundColor(Color.red).frame(height: 3).offset(y: 5) : nil, alignment: .bottom)
                                         .foregroundColor(Color.black)
-                                        .padding(.top, 10)
-                                        .padding(.bottom, 10)
+                                        .padding(.top, 12)
+                                        .padding(.bottom, 12)
                                 }
-                                Spacer().frame(width: 15)
+                                Spacer()
                                 Divider()
-                                Spacer().frame(width: 15)
+                                Spacer()
                             }
                         }
                         .fixedSize(horizontal: false, vertical: true)
@@ -81,7 +83,7 @@ struct MenuView: View {
                     .padding(.horizontal, -20)
                 }
             }
-        }.navigationBarTitle(self.viewModel.restaurant.name, displayMode: .large)
+        }.accentColor( .red)
     }
 }
 
