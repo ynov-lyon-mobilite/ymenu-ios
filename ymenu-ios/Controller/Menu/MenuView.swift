@@ -39,10 +39,7 @@ struct MenuView: View {
                     
                     List {
                         IndexedForEach(viewModel.dishCategories) { index, category in
-                            Section(header: Text(category.name)){
-                                ForEach(viewModel.dishes, id: \._id) { dish in
-                                    if dish.category_id == category._id {
-                                        ZStack {
+                                ForEach(viewModel.dishes.filter { $0.category_id == category._id }, id: \._id) { dish in
                                             Button("") {}
                                             NavigationLink(destination: DishDetailView(dish: dish)){
                                                 
