@@ -19,6 +19,7 @@
 		4715A4E5256E672E00C24659 /* DishApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4715A4E4256E672E00C24659 /* DishApiService.swift */; };
 		4715A4E8256E67BF00C24659 /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4715A4E7256E67BF00C24659 /* Dish.swift */; };
 		4715A4EB256E6B4A00C24659 /* RestaurantDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4715A4EA256E6B4A00C24659 /* RestaurantDTO.swift */; };
+		4765860A25CB498C00871FDC /* QrCodeScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4765860925CB498C00871FDC /* QrCodeScannerViewModel.swift */; };
 		47CE67AA258A0431004940D7 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE67A9258A0431004940D7 /* MenuView.swift */; };
 		47CE67AE258A3FDE004940D7 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE67AD258A3FDE004940D7 /* MenuViewModel.swift */; };
 		B3408E0F25B8275E006BD523 /* DishCategoryApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3408E0E25B8275E006BD523 /* DishCategoryApiService.swift */; };
@@ -45,6 +46,7 @@
 		4715A4E4256E672E00C24659 /* DishApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishApiService.swift; sourceTree = "<group>"; };
 		4715A4E7256E67BF00C24659 /* Dish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
 		4715A4EA256E6B4A00C24659 /* RestaurantDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDTO.swift; sourceTree = "<group>"; };
+		4765860925CB498C00871FDC /* QrCodeScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeScannerViewModel.swift; sourceTree = "<group>"; };
 		47CE67A9258A0431004940D7 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		47CE67AD258A3FDE004940D7 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		B3408E0E25B8275E006BD523 /* DishCategoryApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCategoryApiService.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				0AFD140A256E7CD3000EFEBA /* ScannerViewModel.swift */,
 				0A9DFA302589FFEE001C3ECC /* CameraPreview.swift */,
 				0AFD1410256E7D31000EFEBA /* QrCodeCameraDelegate.swift */,
+				4765860925CB498C00871FDC /* QrCodeScannerViewModel.swift */,
 			);
 			path = QRCode;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				47CE67AE258A3FDE004940D7 /* MenuViewModel.swift in Sources */,
 				4715A4E5256E672E00C24659 /* DishApiService.swift in Sources */,
 				0AFD1411256E7D31000EFEBA /* QrCodeCameraDelegate.swift in Sources */,
+				4765860A25CB498C00871FDC /* QrCodeScannerViewModel.swift in Sources */,
 				B3408E1225B827C8006BD523 /* DishCategory.swift in Sources */,
 				B3408E1925B82C5C006BD523 /* CategoriesTopBarView.swift in Sources */,
 				470D972C256BBA080083912C /* Request.swift in Sources */,

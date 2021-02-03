@@ -24,10 +24,6 @@ struct ScannerView: View {
                 VStack {
                     Text("Veuillez scanner un code QR")
                         .font(.subheadline)
-                    Text(self.viewModel.lastQrCode)
-                        .bold()
-                        .lineLimit(5)
-                        .padding()
                 }
                 .padding(.vertical, 20)
                 
