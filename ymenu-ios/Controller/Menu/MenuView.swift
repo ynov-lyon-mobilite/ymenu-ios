@@ -29,9 +29,10 @@ struct MenuView: View {
                                     viewModel.selectedCategoryId = category._id
                                 }) {
                                     Text(category.name)
-                                        .underline(viewModel.selectedCategory?._id == category._id, color: Color.red)
+                                        .overlay(viewModel.selectedCategory?._id == category._id ? RoundedRectangle(cornerRadius: .infinity).foregroundColor(Color.red).frame(height: 3).offset(y: 4) : nil, alignment: .bottom)
                                         .foregroundColor(Color.black)
                                         .padding(.top, 10)
+                                        .padding(.bottom, 10)
                                 }
                                 Spacer().frame(width: 15)
                                 Divider()
