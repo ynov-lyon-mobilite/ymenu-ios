@@ -86,6 +86,7 @@ struct DetailsView: View {
 
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuView(viewModel: MenuViewModel(restaurant: RestaurantDTO(_id: "", name: "")))
+        MenuView(viewModel: MenuViewModel(restaurant: RestaurantDTO(_id: "6007fabd63c8d10017d2b3ba", name: "")))
+
     }
 }
