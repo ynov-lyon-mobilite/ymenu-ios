@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import Combine
+import SDWebImageSwiftUI
 
 struct MenuView: View {
     
@@ -30,6 +31,7 @@ struct MenuView: View {
                                     Text(category.name)
                                         .underline(viewModel.selectedCategory?._id == category._id, color: Color.red)
                                         .foregroundColor(Color.black)
+                                        .padding(.top, 10)
                                 }
                                 Spacer()
                             }
@@ -39,32 +41,43 @@ struct MenuView: View {
                     
                     List {
                         IndexedForEach(viewModel.dishCategories) { index, category in
+                            Section(header: Text(category.name).padding(.leading, 20).padding(.bottom, 1)){
                                 ForEach(viewModel.dishes.filter { $0.category_id == category._id }, id: \._id) { dish in
+                                        ZStack{
                                             Button("") {}
                                             NavigationLink(destination: DishDetailView(dish: dish)){
-                                                
-                                                Text(dish.name)
+                                                WebImage(url: URL(string: dish.url_logo))
+                                                  .onSuccess { image, data, cacheType in
+                                                  }
+                                                  .resizable()
+                                                  .placeholder {
+                                                    Rectangle().foregroundColor(.gray)
+                                                  }
+                                                  .indicator(.activity)
+                                                  .transition(.fade(duration: 0.5))
+                                                  .scaledToFit()
+                                                    .aspectRatio(contentMode: .fill)
+                                                    .frame(width: 126, height: 83, alignment: .center)
+                                                    .cornerRadius(13)
+                                                    .frame(maxWidth: .infinity, alignment: .center)
+                                                    .shadow(radius: 6, x: 3, y: 3)
+                                                Spacer()
+                                                Text(dish.name).multilineTextAlignment(.center)
+                                                Spacer()
                                             }
-                                        }
-                                        
                                     }
                                 }
                             }.id(category._id)
                         }
-                        .navigationBarTitle(self.viewModel.restaurant.name)
-                        .padding(.top, 30)
-                        .padding(.bottom, 30)
+                        .navigationBarTitle(self.viewModel.restaurant.name, displayMode: .large)
+                        .padding(.top, 20)
+                        .padding(.bottom, 20)
                     }
                     .listStyle(InsetGroupedListStyle())
                     .padding(.horizontal, -20)
-
-                }.gesture(
-                    DragGesture().onChanged { value in
-                        print(value.location.y)
-                    }
-                 )
+                }
             }
-        }
+        }.navigationBarTitle(self.viewModel.restaurant.name, displayMode: .large)
     }
 }
 
