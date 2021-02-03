@@ -14,6 +14,9 @@
 		0AFD1417256E7DD1000EFEBA /* QrCodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFD1416256E7DD1000EFEBA /* QrCodeScannerView.swift */; };
 		0A6095F225B7549100952BDD /* Ubuntu-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A6095EA25B7549100952BDD /* Ubuntu-Regular.ttf */; };
 		0A6095F325B7549100952BDD /* Ubuntu-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A6095EB25B7549100952BDD /* Ubuntu-Bold.ttf */; };
+		0A02F0C025C97ED7008F53F2 /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0A02F0BF25C97ED7008F53F2 /* SF-Pro-Text-Regular.otf */; };
+		0A02F0C325C97EF1008F53F2 /* SF-Pro-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0A02F0C225C97EF1008F53F2 /* SF-Pro-Rounded-Bold.otf */; };
+		0A02F0C625C97F06008F53F2 /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0A02F0C525C97F06008F53F2 /* SF-Pro-Text-Bold.otf */; };
 		0ABE4C5525A9D63F00463B1A /* OnboardingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABE4C5425A9D63F00463B1A /* OnboardingCard.swift */; };
 		0ABE4C5825A9D6AF00463B1A /* OnboardingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABE4C5725A9D6AF00463B1A /* OnboardingCardView.swift */; };
 		0ABE4C5B25A9E89600463B1A /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABE4C5A25A9E89600463B1A /* PageViewController.swift */; };
@@ -48,6 +51,9 @@
 		0AFD1416256E7DD1000EFEBA /* QrCodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeScannerView.swift; sourceTree = "<group>"; };
 		0A6095EA25B7549100952BDD /* Ubuntu-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Regular.ttf"; sourceTree = "<group>"; };
 		0A6095EB25B7549100952BDD /* Ubuntu-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Bold.ttf"; sourceTree = "<group>"; };
+		0A02F0BF25C97ED7008F53F2 /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
+		0A02F0C225C97EF1008F53F2 /* SF-Pro-Rounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Bold.otf"; sourceTree = "<group>"; };
+		0A02F0C525C97F06008F53F2 /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
 		0ABE4C5425A9D63F00463B1A /* OnboardingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCard.swift; sourceTree = "<group>"; };
 		0ABE4C5725A9D6AF00463B1A /* OnboardingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCardView.swift; sourceTree = "<group>"; };
 		0ABE4C5A25A9E89600463B1A /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
@@ -90,8 +96,9 @@
 		0A6095E525B7548300952BDD /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				0A6095EA25B7549100952BDD /* Ubuntu-Regular.ttf */,
-				0A6095EB25B7549100952BDD /* Ubuntu-Bold.ttf */,
+				0A02F0C525C97F06008F53F2 /* SF-Pro-Text-Bold.otf */,
+				0A02F0C225C97EF1008F53F2 /* SF-Pro-Rounded-Bold.otf */,
+				0A02F0BF25C97ED7008F53F2 /* SF-Pro-Text-Regular.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -264,8 +271,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E36599CF256EA10800D58F6F /* Assets.xcassets in Resources */,
-				0A6095F325B7549100952BDD /* Ubuntu-Bold.ttf in Resources */,
-				0A6095F225B7549100952BDD /* Ubuntu-Regular.ttf in Resources */,
+				0A02F0C625C97F06008F53F2 /* SF-Pro-Text-Bold.otf in Resources */,
+				0A02F0C025C97ED7008F53F2 /* SF-Pro-Text-Regular.otf in Resources */,
+				0A02F0C325C97EF1008F53F2 /* SF-Pro-Rounded-Bold.otf in Resources */,
 				E36D853025333B0F00722077 /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

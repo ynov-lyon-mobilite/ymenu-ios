@@ -44,11 +44,11 @@ struct PageView<Page:View>: View {
                     .overlay(
                         Text(self.currentPage < self.viewControllers.count - 1 ? "Suivant" : "C'est parti !" )
                         .foregroundColor(.white)
-                            .font(.custom("Helvetica-Bold", size: 25))
+                            .font(.custom("SF Pro Text Bold", size: 25))
                     )
             }
         }.edgesIgnoringSafeArea(.all)
-        .offset(y: -40)
+        .offset(y: 0)
         }.edgesIgnoringSafeArea(.all)
            
     }
