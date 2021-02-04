@@ -45,18 +45,18 @@ struct DishDetailView: View {
                             Text(dish.name)
                             .padding(.top, 10)
                             .padding(.bottom, 10)
-                            .font(.system(size: 26, weight: .bold, design: .default))
-                            .foregroundColor(Color.red)
+                            .font(.custom("SF Pro Text Bold", fixedSize: 22))
                             Spacer()
                             Text("\(String(describing: dish.price))0 €")
                             .padding(.top, 10)
                             .padding(.bottom, 10)
-                            .font(.system(size: 26, weight: .bold, design: .default))
+                            .font(.custom("SF Pro Text Regular", fixedSize: 20))
                         }
                         Text("Ingrédients:")
-                            .font(.system(size: 17, weight: .bold, design: .default))
+                            .font(.custom("SF Pro Text Bold", fixedSize: 17))
                         ForEach(ingredients!, id: \.self) { ingredient in
-                                       Text(ingredient)
+                            Text(ingredient)
+                                .font(.custom("SF Pro Text Regular", fixedSize: 17))
                         }
                         .padding(.trailing, 5)
                    }.padding(.horizontal, -20)
