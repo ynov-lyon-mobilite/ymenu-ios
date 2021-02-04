@@ -75,11 +75,11 @@ struct MenuView: View {
                                                     .cornerRadius(13)
                                                     .frame(maxWidth: .infinity, alignment: .center)
                                                     .shadow(radius: 6, x: 3, y: 3)
-                                                Spacer()
-                                                Text(dish.name).multilineTextAlignment(.center)
+                                                Text(dish.name).multilineTextAlignment(.leading)
+                                                    .padding(.leading, 10)
                                                 Spacer()
                                                 Text("\(String(describing: dish.price))0 €").bold().multilineTextAlignment(.center)
-                                                Spacer().frame(width: 10)
+                                                Spacer().frame(width: 5)
                                             }
                                     }
                                 }
