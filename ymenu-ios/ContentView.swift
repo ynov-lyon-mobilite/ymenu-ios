@@ -48,14 +48,13 @@ struct Home: View {
             GeometryReader{_ in
                 
                 ZStack{
-                    // tabs
                     MenuView(restaurant: restaurant)
                         .opacity(selectedTab == "greetingcard.fill" ? 1 : 0)
                     
                     ScannerView(selectedTab: $selectedTab, restaurant: $restaurant).edgesIgnoringSafeArea(.top)
                         .opacity(selectedTab == "qrcode.viewfinder" ? 1 : 0)
                     
-                    Text("Cette page sera implémentée prochainement!").bold()
+                    Text("Cette page sera implémentée prochainement").bold()
                         .opacity(selectedTab == "person.fill" ? 1 : 0)
                 }
             }
