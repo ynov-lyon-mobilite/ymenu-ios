@@ -11,7 +11,7 @@ import SwiftUI
 struct Dish: Hashable, Decodable {
     let _id: String?
     let name: String
-    let price: Int
+    let price: Float
     let ingredients: [String]?
     let infos: String?
     let url_logo: String
