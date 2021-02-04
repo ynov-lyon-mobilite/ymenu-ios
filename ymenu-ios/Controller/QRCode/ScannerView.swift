@@ -23,7 +23,7 @@ struct ScannerView: View {
             VStack {
                 VStack {
                     Text("Veuillez scanner un code QR").foregroundColor(.white)
-                        .font(.subheadline).bold()
+                        .font(.subheadline).bold().padding(.top, 40)
                 }
                 .padding(.vertical, 20)
                 

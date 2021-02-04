@@ -52,7 +52,7 @@ struct Home: View {
                     MenuView(restaurant: restaurant)
                         .opacity(selectedTab == "greetingcard.fill" ? 1 : 0)
                     
-                    ScannerView(selectedTab: $selectedTab, restaurant: $restaurant)
+                    ScannerView(selectedTab: $selectedTab, restaurant: $restaurant).edgesIgnoringSafeArea(.top)
                         .opacity(selectedTab == "qrcode.viewfinder" ? 1 : 0)
                     
                     Text("Cette page sera implémentée prochainement!").bold()
