@@ -38,7 +38,7 @@ struct DishDetailView: View {
                           .transition(.fade(duration: 0.5))
                           .scaledToFit()
                             .aspectRatio(contentMode: .fill)
-                            .frame(width: 400, height: 280, alignment: .center)
+                            .frame(width: UIScreen.main.bounds.size.width - 30, height: 280, alignment: .center)
                             .cornerRadius(30)
                             .shadow(radius: 6, x: 3, y: 3)
                         HStack {
