@@ -35,9 +35,8 @@
 		B3408E1925B82C5C006BD523 /* CategoriesTopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3408E1825B82C5C006BD523 /* CategoriesTopBarView.swift */; };
 		B38E711725B861FD00A67830 /* DishDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38E711625B861FD00A67830 /* DishDetailView.swift */; };
 		B38E711E25B877F900A67830 /* IndexedForEach.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38E711D25B877F900A67830 /* IndexedForEach.swift */; };
-		E322F68225CB1F65004AF310 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = E322F68125CB1F65004AF310 /* SDWebImageSwiftUI */; };
 		E321F56D25C993BA00137DDB /* minuteasia_bobun.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = E321F56C25C993BA00137DDB /* minuteasia_bobun.rcproject */; };
-		E333305125C40DD6008278B2 /* ARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E333305025C40DD6008278B2 /* ARView.swift */; };
+		E322F68225CB1F65004AF310 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = E322F68125CB1F65004AF310 /* SDWebImageSwiftUI */; };
 		E333305425C40F02008278B2 /* ARQuickLook.swift in Sources */ = {isa = PBXBuildFile; fileRef = E333305325C40F02008278B2 /* ARQuickLook.swift */; };
 		E36599CF256EA10800D58F6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E36599CE256EA10800D58F6F /* Assets.xcassets */; };
 		E36D852725333B0E00722077 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36D852625333B0E00722077 /* AppDelegate.swift */; };
@@ -76,7 +75,6 @@
 		B38E711625B861FD00A67830 /* DishDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDetailView.swift; sourceTree = "<group>"; };
 		B38E711D25B877F900A67830 /* IndexedForEach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexedForEach.swift; sourceTree = "<group>"; };
 		E321F56C25C993BA00137DDB /* minuteasia_bobun.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = minuteasia_bobun.rcproject; sourceTree = "<group>"; };
-		E333305025C40DD6008278B2 /* ARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARView.swift; sourceTree = "<group>"; };
 		E333305325C40F02008278B2 /* ARQuickLook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARQuickLook.swift; sourceTree = "<group>"; };
 		E36599CE256EA10800D58F6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E36D852325333B0E00722077 /* ymenu-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ymenu-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,7 +170,6 @@
 				479FEB2325C9BDD500A75197 /* QRCode */,
 				B38E711525B861ED00A67830 /* Dish */,
 				B3408E1525B82B39006BD523 /* Menu */,
-				4715A542256EA73400C24659 /* ViewModel */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -233,7 +230,6 @@
 				E36D852825333B0E00722077 /* ContentView.swift */,
 				E36D853125333B0F00722077 /* Info.plist */,
 				E36D852E25333B0F00722077 /* Preview Content */,
-				E333305025C40DD6008278B2 /* ARView.swift */,
 				E321F56C25C993BA00137DDB /* minuteasia_bobun.rcproject */,
 				E333305325C40F02008278B2 /* ARQuickLook.swift */,
 			);
@@ -342,7 +338,6 @@
 				47CE67AE258A3FDE004940D7 /* MenuViewModel.swift in Sources */,
 				E321F56D25C993BA00137DDB /* minuteasia_bobun.rcproject in Sources */,
 				4715A4E5256E672E00C24659 /* DishApiService.swift in Sources */,
-				E333305125C40DD6008278B2 /* ARView.swift in Sources */,
 				E3EB411125C9EA010016862A /* Blur.swift in Sources */,
 				0AFD1411256E7D31000EFEBA /* QrCodeCameraDelegate.swift in Sources */,
 				4765860A25CB498C00871FDC /* QrCodeScannerViewModel.swift in Sources */,
@@ -364,7 +359,6 @@
 				B3408E0F25B8275E006BD523 /* DishCategoryApiService.swift in Sources */,
 				0ABE4C5525A9D63F00463B1A /* OnboardingCard.swift in Sources */,
 				0ABE4C5B25A9E89600463B1A /* PageViewController.swift in Sources */,
-				E36D852B25333B0F00722077 /* Experience.rcproject in Sources */,
 				4715A4E2256E66F000C24659 /* RestaurantApiService.swift in Sources */,
 				0ABE4C5E25A9EA6000463B1A /* PageView.swift in Sources */,
 			);

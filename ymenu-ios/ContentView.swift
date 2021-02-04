@@ -8,14 +8,11 @@
 import SwiftUI
 import RealityKit
 
-
 var cards:[OnboardingCard] = [
 OnboardingCard(image: "logoymenu", title: "Bienvenue dans Y'Menu", description: "A travers cette application vous pourrez découvrir les différents menus proposés en réalité augmentée. Voyez votre plat sur votre table."),
 OnboardingCard(image: "logoymenu", title: "Comment ça marche ?", description: "Ouvrez votre caméra grâce a la fonctionnalité QR Code disponible sur l'écran d'accueil, scannez le QR Code et c'est prêt !"),
 OnboardingCard(image: "logoymenu", title: "Bon appétit !", description: "Si vous avez bien compris le fonctionnement, il ne vous reste plus qu'a essayer !")
 ]
-
-
 
 struct ContentView : View {
 
@@ -33,35 +30,11 @@ struct ContentView : View {
     }
 }
 
-//struct ARViewContainer: UIViewRepresentable {
-//
-//    func makeUIView(context: Context) -> ARView {
-//
-//        let arView = ARView(frame: .zero)
-//
-//        // Load the "Box" scene from the "Experience" Reality File
-//        let boxAnchor = try! Experience.loadBox()
-//
-//        // Add the box anchor to the scene
-//        arView.scene.anchors.append(boxAnchor)
-//
-//        return arView
-//
-//    }
-//
-//    func updateUIView(_ uiView: ARView, context: Context) {}
-//
-//}
-
-
 struct ContentView_Previews : PreviewProvider {
     static var previews: some View {
         ContentView()
     }
 }
-
-
-
 
 struct Home: View {
     @State var selectedTab = "qrcode.viewfinder"
@@ -162,7 +135,6 @@ struct CustomShape: Shape {
 
 var tabs = ["greetingcard.fill","qrcode.viewfinder","person.fill"]
 
-
 class ModelView : ObservableObject{
     @Published var isHomeLoad = false
     @Published var isQRLoad = false
@@ -187,5 +159,3 @@ class ModelView : ObservableObject{
         isSettingLoad = true
     }
 }
-
-
