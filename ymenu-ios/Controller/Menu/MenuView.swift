@@ -78,6 +78,8 @@ struct MenuView: View {
                                                 Spacer()
                                                 Text(dish.name).multilineTextAlignment(.center)
                                                 Spacer()
+                                                Text("\(String(describing: dish.price))0 €").bold().multilineTextAlignment(.center)
+                                                Spacer().frame(width: 10)
                                             }
                                     }
                                 }
