@@ -106,6 +106,7 @@ struct TabButton : View{
                     .renderingMode(.template)
                     .resizable()
                     .foregroundColor(selectedTab == title ? Color(.black) : Color.black.opacity(0.4))
+                    .aspectRatio(contentMode: .fit)
                     .frame(width: 29, height: 30)
                 VStack{
                     CustomShape()
@@ -132,6 +133,7 @@ struct CustomShape: Shape {
         return Path(path.cgPath)
     }
 }
+
 
 var tabs = ["greetingcard.fill","qrcode.viewfinder","person.fill"]
 
