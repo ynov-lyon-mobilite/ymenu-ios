@@ -55,7 +55,7 @@ struct Home: View {
                     ScannerView(selectedTab: $selectedTab, restaurant: $restaurant)
                         .opacity(selectedTab == "qrcode.viewfinder" ? 1 : 0)
                     
-                    Text("Paramètres")
+                    Text("Cette page sera implémentée prochainement!").bold()
                         .opacity(selectedTab == "person.fill" ? 1 : 0)
                 }
             }
