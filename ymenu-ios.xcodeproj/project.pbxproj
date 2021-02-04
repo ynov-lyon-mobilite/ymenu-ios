@@ -7,21 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A9DFA312589FFEE001C3ECC /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DFA302589FFEE001C3ECC /* CameraPreview.swift */; };
-		0AFD140B256E7CD3000EFEBA /* ScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFD140A256E7CD3000EFEBA /* ScannerViewModel.swift */; };
-		0AFD140E256E7CF9000EFEBA /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFD140D256E7CF9000EFEBA /* ScannerView.swift */; };
-		0AFD1411256E7D31000EFEBA /* QrCodeCameraDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFD1410256E7D31000EFEBA /* QrCodeCameraDelegate.swift */; };
-		0AFD1417256E7DD1000EFEBA /* QrCodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFD1416256E7DD1000EFEBA /* QrCodeScannerView.swift */; };
-		0A6095F225B7549100952BDD /* Ubuntu-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A6095EA25B7549100952BDD /* Ubuntu-Regular.ttf */; };
-		0A6095F325B7549100952BDD /* Ubuntu-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A6095EB25B7549100952BDD /* Ubuntu-Bold.ttf */; };
 		0A02F0C025C97ED7008F53F2 /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0A02F0BF25C97ED7008F53F2 /* SF-Pro-Text-Regular.otf */; };
 		0A02F0C325C97EF1008F53F2 /* SF-Pro-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0A02F0C225C97EF1008F53F2 /* SF-Pro-Rounded-Bold.otf */; };
 		0A02F0C625C97F06008F53F2 /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0A02F0C525C97F06008F53F2 /* SF-Pro-Text-Bold.otf */; };
+		0A9DFA312589FFEE001C3ECC /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DFA302589FFEE001C3ECC /* CameraPreview.swift */; };
 		0ABE4C5525A9D63F00463B1A /* OnboardingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABE4C5425A9D63F00463B1A /* OnboardingCard.swift */; };
 		0ABE4C5825A9D6AF00463B1A /* OnboardingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABE4C5725A9D6AF00463B1A /* OnboardingCardView.swift */; };
 		0ABE4C5B25A9E89600463B1A /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABE4C5A25A9E89600463B1A /* PageViewController.swift */; };
 		0ABE4C5E25A9EA6000463B1A /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABE4C5D25A9EA6000463B1A /* PageView.swift */; };
 		0ABE4C6125A9F3A000463B1A /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABE4C6025A9F3A000463B1A /* PageControl.swift */; };
+		0AFD140B256E7CD3000EFEBA /* ScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFD140A256E7CD3000EFEBA /* ScannerViewModel.swift */; };
+		0AFD140E256E7CF9000EFEBA /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFD140D256E7CF9000EFEBA /* ScannerView.swift */; };
+		0AFD1411256E7D31000EFEBA /* QrCodeCameraDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFD1410256E7D31000EFEBA /* QrCodeCameraDelegate.swift */; };
+		0AFD1417256E7DD1000EFEBA /* QrCodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFD1416256E7DD1000EFEBA /* QrCodeScannerView.swift */; };
 		470D972C256BBA080083912C /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470D972B256BBA080083912C /* Request.swift */; };
 		470D9731256BBB2D0083912C /* GenericServerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470D9730256BBB2D0083912C /* GenericServerResponse.swift */; };
 		470D9736256BBB4D0083912C /* AnyEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470D9735256BBB4D0083912C /* AnyEncodable.swift */; };
@@ -46,21 +44,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0A9DFA302589FFEE001C3ECC /* CameraPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
-		0AFD140A256E7CD3000EFEBA /* ScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewModel.swift; sourceTree = "<group>"; };
-		0AFD140D256E7CF9000EFEBA /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
-		0AFD1410256E7D31000EFEBA /* QrCodeCameraDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeCameraDelegate.swift; sourceTree = "<group>"; };
-		0AFD1416256E7DD1000EFEBA /* QrCodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeScannerView.swift; sourceTree = "<group>"; };
-		0A6095EA25B7549100952BDD /* Ubuntu-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Regular.ttf"; sourceTree = "<group>"; };
-		0A6095EB25B7549100952BDD /* Ubuntu-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Bold.ttf"; sourceTree = "<group>"; };
 		0A02F0BF25C97ED7008F53F2 /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
 		0A02F0C225C97EF1008F53F2 /* SF-Pro-Rounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Bold.otf"; sourceTree = "<group>"; };
 		0A02F0C525C97F06008F53F2 /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
+		0A9DFA302589FFEE001C3ECC /* CameraPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
 		0ABE4C5425A9D63F00463B1A /* OnboardingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCard.swift; sourceTree = "<group>"; };
 		0ABE4C5725A9D6AF00463B1A /* OnboardingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCardView.swift; sourceTree = "<group>"; };
 		0ABE4C5A25A9E89600463B1A /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		0ABE4C5D25A9EA6000463B1A /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		0ABE4C6025A9F3A000463B1A /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
+		0AFD140A256E7CD3000EFEBA /* ScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewModel.swift; sourceTree = "<group>"; };
+		0AFD140D256E7CF9000EFEBA /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
+		0AFD1410256E7D31000EFEBA /* QrCodeCameraDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeCameraDelegate.swift; sourceTree = "<group>"; };
+		0AFD1416256E7DD1000EFEBA /* QrCodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeScannerView.swift; sourceTree = "<group>"; };
 		470D972B256BBA080083912C /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		470D9730256BBB2D0083912C /* GenericServerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericServerResponse.swift; sourceTree = "<group>"; };
 		470D9735256BBB4D0083912C /* AnyEncodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyEncodable.swift; sourceTree = "<group>"; };
@@ -105,6 +101,18 @@
 				0A02F0BF25C97ED7008F53F2 /* SF-Pro-Text-Regular.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		4701D01725CBE4CE0090D786 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				0ABE4C5425A9D63F00463B1A /* OnboardingCard.swift */,
+				0ABE4C5725A9D6AF00463B1A /* OnboardingCardView.swift */,
+				0ABE4C5A25A9E89600463B1A /* PageViewController.swift */,
+				0ABE4C5D25A9EA6000463B1A /* PageView.swift */,
+				0ABE4C6025A9F3A000463B1A /* PageControl.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		470D972A256BB9E80083912C /* Service */ = {
@@ -154,6 +162,7 @@
 		B3408E1425B82B28006BD523 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4701D01725CBE4CE0090D786 /* Onboarding */,
 				479FEB2325C9BDD500A75197 /* QRCode */,
 				B38E711525B861ED00A67830 /* Dish */,
 				B3408E1525B82B39006BD523 /* Menu */,
@@ -217,11 +226,6 @@
 				E36D852A25333B0F00722077 /* Experience.rcproject */,
 				E36D853125333B0F00722077 /* Info.plist */,
 				E36D852E25333B0F00722077 /* Preview Content */,
-				0ABE4C5425A9D63F00463B1A /* OnboardingCard.swift */,
-				0ABE4C5725A9D6AF00463B1A /* OnboardingCardView.swift */,
-				0ABE4C5A25A9E89600463B1A /* PageViewController.swift */,
-				0ABE4C5D25A9EA6000463B1A /* PageView.swift */,
-				0ABE4C6025A9F3A000463B1A /* PageControl.swift */,
 			);
 			path = "ymenu-ios";
 			sourceTree = "<group>";
