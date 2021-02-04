@@ -1,0 +1,220 @@
+{
+  "__content" : [
+    {
+      "scenes" : [
+        {
+          "__content" : [
+            {
+              "arAnchorSpecification" : {
+                "alignment" : "horizontal",
+                "name" : "surface"
+              },
+              "behaviors" : [
+
+              ],
+              "gravity" : [
+                0,
+                -9.8000001907348633,
+                0
+              ],
+              "identifier" : "F75A52D7-AF3D-4E8D-A465-56F18C0FBFDC",
+              "material" : "concrete",
+              "overrides" : {
+                "children" : {
+                  "4E349720-8577-4D1D-9A0E-6B9B1089017E" : {
+                    "overrides" : {
+                      "children" : {
+                        "USDScene" : {
+                          "overrides" : {
+                            "arguments" : [
+                              [
+                                "includeSceneScaling",
+                                {
+                                  "typeName" : "Bool",
+                                  "value" : false
+                                }
+                              ],
+                              [
+                                "subpath",
+                                {
+                                  "typeName" : "String",
+                                  "value" : ""
+                                }
+                              ],
+                              [
+                                "url",
+                                {
+                                  "typeName" : "String",
+                                  "value" : "model:b62549a635d7064d1bbdb9eaa27ee008\/minuteasia_bobun.usdz"
+                                }
+                              ],
+                              [
+                                "withDescendants",
+                                {
+                                  "typeName" : "Bool",
+                                  "value" : true
+                                }
+                              ]
+                            ],
+                            "factory" : {
+                              "identifier" : "com.apple.af.FileImportAssetFactory",
+                              "version" : "0.0"
+                            },
+                            "runtimeAttributes" : [
+                              [
+                                "RuntimeIdentifier",
+                                {
+                                  "typeName" : "UUID",
+                                  "value" : "8AB3CF04-B732-4177-B004-137FC210D806"
+                                }
+                              ]
+                            ]
+                          },
+                          "transform" : {
+                            "matrix" : [
+                              1,
+                              0,
+                              0,
+                              0,
+                              0,
+                              1,
+                              0,
+                              0,
+                              0,
+                              0,
+                              1,
+                              0,
+                              0,
+                              0,
+                              0,
+                              1
+                            ]
+                          }
+                        }
+                      },
+                      "factory" : {
+                        "identifier" : "com.apple.af.Group",
+                        "version" : "0.0"
+                      },
+                      "runtimeAttributes" : [
+                        [
+                          "RuntimeIdentifier",
+                          {
+                            "typeName" : "UUID",
+                            "value" : "8379A6CB-DA27-40E1-9E74-BB8DD4B15B50"
+                          }
+                        ],
+                        [
+                          "rigidBody-enabled",
+                          {
+                            "typeName" : "Bool",
+                            "value" : false
+                          }
+                        ],
+                        [
+                          "rigidBody-motionType",
+                          {
+                            "typeName" : "REMotionType",
+                            "value" : "static"
+                          }
+                        ]
+                      ]
+                    },
+                    "transform" : {
+                      "matrix" : [
+                        0.0025764063466340303,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0.0025764063466340303,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0.0025764063466340303,
+                        0,
+                        0,
+                        0,
+                        0,
+                        1
+                      ]
+                    }
+                  },
+                  "14C520B8-79C8-40EF-9644-D64FFB7225DF" : null,
+                  "986BEED2-345C-46E6-9091-E3FB28D6A551" : null,
+                  "A02D51D8-9F6B-4495-9285-0295004214DE" : null,
+                  "AB96CEBA-119D-4E0B-A031-1ADB2B04EB77" : null,
+                  "Cube" : null,
+                  "E6C2B44D-519A-442B-BB22-E0F3D18FC8B6" : null
+                },
+                "factory" : null,
+                "runtimeAttributes" : [
+                  [
+                    "isAccessibilityEnabled",
+                    {
+                      "typeName" : "Bool",
+                      "value" : false
+                    }
+                  ]
+                ]
+              },
+              "physicsMode" : "none",
+              "title" : "Scène",
+              "viewTransform" : {
+                "cameraTransform" : [
+                  0.59375184774398804,
+                  5.9604644775390625e-08,
+                  -0.80464816093444824,
+                  0,
+                  -0.80149316787719727,
+                  0.08846735954284668,
+                  -0.59142380952835083,
+                  0,
+                  0.071185372769832611,
+                  0.99607902765274048,
+                  0.052527878433465958,
+                  0,
+                  0.52258217334747314,
+                  3.5112128257751465,
+                  -0.42451369762420654,
+                  1
+                ],
+                "sceneTransform" : [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0.99999994039535522,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0.99999994039535522,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            }
+          ],
+          "__version" : 5
+        }
+      ],
+      "tags" : {
+        "__content" : [
+          {
+            "tagsStore" : {
+
+            }
+          }
+        ],
+        "__version" : 1
+      }
+    }
+  ],
+  "__version" : 1
+}
