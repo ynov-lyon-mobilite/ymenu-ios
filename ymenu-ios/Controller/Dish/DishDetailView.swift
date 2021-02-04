@@ -93,7 +93,7 @@ struct DishDetailView: View {
                              }
                          }
                     }
-                }.shadow(radius: 5, x: 2, y: 2
+                }.shadow(radius: 5, x: 2, y: 2)
                 .frame(maxHeight: .infinity, alignment: .bottom)
                 Spacer()
             }
