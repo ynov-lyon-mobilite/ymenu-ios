@@ -9,9 +9,15 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct DishDetailView: View {
-
-    @State var dish: Dish
-    @ObservedObject var viewModel = MenuViewModel(restaurant: RestaurantDTO(_id: "", name: ""))
+    var dish: Dish
+    
+    init(dish: Dish) {
+        UINavigationBar.appearance().largeTitleTextAttributes = [
+            .font : UIFont(name:"SF Pro Rounded Bold", size: 10)!
+        ]
+        
+        self.dish = dish
+    }
 
     var body: some View {
         let ingredients = dish.ingredients
@@ -38,21 +44,21 @@ struct DishDetailView: View {
                     Text(dish.name)
                         .padding(.top, 10)
                         .padding(.bottom, 10)
-                        .font(.system(size: 26, weight: .bold, design: .default))
-                        .foregroundColor(Color.red)
+                        .font(.custom("SF Pro Text Bold", fixedSize: 22))
                         .frame(maxWidth: .infinity, alignment: .center)
                         .multilineTextAlignment(.center)
-                    Text("Ingrédients:")
-                        .font(.system(size: 17, weight: .bold, design: .default))
+                    Text("Ingrédients :")
+                        .font(.custom("SF Pro Text Bold", fixedSize: 17))
                     ForEach(ingredients!, id: \.self) { ingredient in
-                                   Text(ingredient)
-                               }
+                        Text(ingredient)
+                            .font(.custom("SF Pro Text Regular", fixedSize: 17))
+                    }
                     .padding(.trailing, 5)
                 }
                 .padding(.horizontal, -20)
             }
         }
         .padding()
-        .navigationBarTitle(Text("Détails du produit"), displayMode: .inline)
+        .navigationBarTitle(Text("Détails du produit"), displayMode: .automatic)
     }
 }

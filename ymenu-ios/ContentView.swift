@@ -76,7 +76,7 @@ struct Home: View {
                 
                 ZStack{
                     // tabs
-                    MenuView(viewModel: MenuViewModel(restaurant: restaurant))
+                    MenuView(restaurant: restaurant)
                         .opacity(selectedTab == "greetingcard.fill" ? 1 : 0)
                     
                     ScannerView(selectedTab: $selectedTab, restaurant: $restaurant)

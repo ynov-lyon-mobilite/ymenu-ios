@@ -15,6 +15,14 @@ struct MenuView: View {
     @ObservedObject var viewModel: MenuViewModel
     @State var scrollPosition: CGFloat = 0.0
     var bag = Set<AnyCancellable>()
+    
+    init(restaurant: RestaurantDTO) {
+        UINavigationBar.appearance().largeTitleTextAttributes = [
+            .font : UIFont(name:"SF Pro Rounded Bold", size: 40)!
+        ]
+        
+        self.viewModel = MenuViewModel(restaurant: restaurant)
+    }
 
     var body: some View {
         
@@ -47,7 +55,7 @@ struct MenuView: View {
                     
                     List {
                         IndexedForEach(viewModel.dishCategories) { index, category in
-                            Section(header: Text(category.name).padding(.leading, 20).padding(.bottom, 1)){
+                            Section(header: Text(category.name).padding(.leading, 20).padding(.bottom, -10)){
                                 ForEach(viewModel.dishes.filter { $0.category_id == category._id }, id: \._id) { dish in
                                         ZStack{
                                             Button("") {}
@@ -75,7 +83,7 @@ struct MenuView: View {
                                 }
                             }.id(category._id)
                         }
-                        .navigationBarTitle(self.viewModel.restaurant.name, displayMode: .large)
+                        .navigationBarTitle(self.viewModel.restaurant.name, displayMode: .automatic)
                         .padding(.top, 20)
                         .padding(.bottom, 20)
                     }
@@ -87,25 +95,9 @@ struct MenuView: View {
     }
 }
 
-struct DetailsView: View {
-
-    @ObservedObject var viewModel = MenuViewModel(restaurant: RestaurantDTO(_id: "", name: ""))
-
-    var body: some View {
-        VStack(alignment: .leading) {
-            HStack {
-                Text("hello")
-                    .padding(.trailing, 5)
-            }
-        }
-        .padding()
-        .navigationBarTitle(Text("Détails du produit"), displayMode: .inline)
-    }
-}
-
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuView(viewModel: MenuViewModel(restaurant: RestaurantDTO(_id: "6007fabd63c8d10017d2b3ba", name: "")))
+        MenuView(restaurant: RestaurantDTO(_id: "6007fabd63c8d10017d2b3ba", name: "Minute Asia"))
 
     }
 }
