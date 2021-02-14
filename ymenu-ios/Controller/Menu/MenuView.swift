@@ -15,6 +15,7 @@ struct MenuView: View {
     @ObservedObject var viewModel: MenuViewModel
     @State var scrollPosition: CGFloat = 0.0
     var bag = Set<AnyCancellable>()
+    @State var menuLoaded = false
     
     init(restaurant: RestaurantDTO) {
         UINavigationBar.appearance().largeTitleTextAttributes = [
@@ -23,18 +24,23 @@ struct MenuView: View {
         
         self.viewModel = MenuViewModel(restaurant: restaurant)
     }
-
+    
     var body: some View {
-        
+        // TODO: Hide loading indicator when no restaurant scanned (Disable it when no restaurant scanned OR show popup message and redirect to scanner page)
+        if !self.menuLoaded {
+             ProgressView("Chargement du menu")
+                 .zIndex(1)
+        }
         NavigationView {
             ScrollViewReader { proxy in
                 VStack{
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack (alignment: VerticalAlignment.center, spacing: 5){
                             IndexedForEach(viewModel.dishCategories) { index, category in
+
                                 Button(action: {
                                     withAnimation {
-                                    proxy.scrollTo(category._id, anchor: .top)
+                                        proxy.scrollTo(category._id, anchor: .top)
                                     }
                                     viewModel.selectedCategoryId = category._id
                                 }) {
@@ -47,6 +53,8 @@ struct MenuView: View {
                                 Spacer()
                                 Divider()
                                 Spacer()
+                            }.onAppear() {
+                                !menuLoaded ? viewModel.selectedCategoryId = viewModel.dishCategories[0]._id : nil
                             }
                         }
                         .fixedSize(horizontal: false, vertical: true)
@@ -84,13 +92,15 @@ struct MenuView: View {
                                     }
                                 }
                             }.id(category._id)
+                        }.onAppear() {
+                            self.menuLoaded = true
                         }
                         .navigationBarTitle(self.viewModel.restaurant.name, displayMode: .automatic)
                         .padding(.top, 20)
                         .padding(.bottom, 20)
                     }
                     .listStyle(InsetGroupedListStyle())
-                    .padding(.horizontal, -20)
+                    .padding(.horizontal, -20).progressViewStyle(CircularProgressViewStyle())
                 }
             }
         }.accentColor( .red)
