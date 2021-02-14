@@ -16,7 +16,6 @@ OnboardingCard(image: "logoymenu", title: "Bon appétit !", description: "Si vou
 
 struct ContentView : View {
 
-    
     @State var isOnboardingDone = false
     
     var body: some View {
@@ -40,31 +39,20 @@ struct Home: View {
     @State var selectedTab = "qrcode.viewfinder"
     @State var restaurant: RestaurantDTO = RestaurantDTO(_id: "", name: "")
     @Namespace var animation : Namespace.ID
-    @StateObject var modelData = ModelView()
     
     var body: some View{
         VStack(spacing : 0){
-            
             GeometryReader{_ in
-                
                 ZStack{
-                    MenuView(restaurant: restaurant)
-                        .opacity(selectedTab == "greetingcard.fill" ? 1 : 0)
-                    
-                    ScannerView(selectedTab: $selectedTab, restaurant: $restaurant).edgesIgnoringSafeArea(.top)
-                        .opacity(selectedTab == "qrcode.viewfinder" ? 1 : 0)
-                    
-                    Text("Cette page sera implémentée prochainement").bold()
-                        .opacity(selectedTab == "person.fill" ? 1 : 0)
-                }
-            }
-            .onChange(of: selectedTab) { (_) in
-                switch(selectedTab){
-                
-                case "greetingcard.fill": if !modelData.isHomeLoad{modelData.loadHome()}
-                case "qrcode.viewfinder": if !modelData.isQRLoad{modelData.loadQR()}
-                case "person.fill": if !modelData.isSettingLoad{modelData.loadSetting()}
-                default: ()
+                    switch(selectedTab){
+                        case "greetingcard.fill": MenuView(restaurant: restaurant)
+                            .opacity(selectedTab == "greetingcard.fill" ? 1 : 0)
+                        case "qrcode.viewfinder": ScannerView(selectedTab: $selectedTab, restaurant: $restaurant).edgesIgnoringSafeArea(.top)
+                            .opacity(selectedTab == "qrcode.viewfinder" ? 1 : 0)
+                    case "person.fill":  Text("Cette page sera implémentée prochainement").bold().frame(maxWidth: .infinity, alignment: .center)
+                            .opacity(selectedTab == "person.fill" ? 1 : 0)
+                        default: EmptyView()
+                    }
                 }
             }
             // tab view
@@ -135,28 +123,3 @@ struct CustomShape: Shape {
 
 
 var tabs = ["greetingcard.fill","qrcode.viewfinder","person.fill"]
-
-class ModelView : ObservableObject{
-    @Published var isHomeLoad = false
-    @Published var isQRLoad = false
-    @Published var isSettingLoad = false
-    
-    init() {
-        print("Home Data load")
-    }
-    
-    func loadHome(){
-        print("Home Loaded")
-        isHomeLoad = true
-    }
-    
-    func loadQR(){
-        print("QR Loaded")
-        isQRLoad = true
-    }
-    
-    func loadSetting(){
-        print("Setting Loaded")
-        isSettingLoad = true
-    }
-}
