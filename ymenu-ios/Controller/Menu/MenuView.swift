@@ -16,17 +16,19 @@ struct MenuView: View {
     @State var scrollPosition: CGFloat = 0.0
     var bag = Set<AnyCancellable>()
     @State var menuLoaded = false
-    
-    init(restaurant: RestaurantDTO) {
+    @State private var showAlert = false
+    var selectedTab: Binding<String>
+
+    init(restaurant: RestaurantDTO, selectedTab: Binding<String>) {
         UINavigationBar.appearance().largeTitleTextAttributes = [
             .font : UIFont(name:"SF Pro Rounded Bold", size: 40)!
         ]
-        
+
+        self.selectedTab = selectedTab
         self.viewModel = MenuViewModel(restaurant: restaurant)
     }
-    
+
     var body: some View {
-        // TODO: Hide loading indicator when no restaurant scanned (Disable it when no restaurant scanned OR show popup message and redirect to scanner page)
         if !self.menuLoaded {
              ProgressView("Chargement du menu")
                  .zIndex(1)
@@ -94,6 +96,7 @@ struct MenuView: View {
                             }.id(category._id)
                         }.onAppear() {
                             self.menuLoaded = true
+                           
                         }
                         .navigationBarTitle(self.viewModel.restaurant.name, displayMode: .automatic)
                         .padding(.top, 20)
@@ -101,15 +104,26 @@ struct MenuView: View {
                     }
                     .listStyle(InsetGroupedListStyle())
                     .padding(.horizontal, -20).progressViewStyle(CircularProgressViewStyle())
+                }.onAppear() {
+                    if self.viewModel.restaurant.name == "" {
+                        self.showAlert = true
+                    }
                 }
             }
-        }.accentColor( .red)
+        }.accentColor( .red).alert(isPresented: $showAlert) {
+            Alert(
+                title: Text("Aucun restaurant"),
+                message: Text("Veuillez scanner un QR Code afin de récupérer le menu du restaurant"),
+                dismissButton: .cancel(Text("Ouvrir le scanneur"), action: {
+                    selectedTab.wrappedValue = "qrcode.viewfinder"
+                }))
+        }
     }
 }
 
-struct MenuView_Previews: PreviewProvider {
-    static var previews: some View {
-        MenuView(restaurant: RestaurantDTO(_id: "6007fabd63c8d10017d2b3ba", name: "Minute Asia"))
-
-    }
-}
+//struct MenuView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MenuView(restaurant: RestaurantDTO(_id: "6007fabd63c8d10017d2b3ba", name: "Minute Asia"), selectedTab: "greetingcard.fill")
+//
+//    }
+//}

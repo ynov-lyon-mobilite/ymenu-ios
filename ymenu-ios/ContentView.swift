@@ -45,7 +45,7 @@ struct Home: View {
             GeometryReader{_ in
                 ZStack{
                     switch(selectedTab){
-                        case "greetingcard.fill": MenuView(restaurant: restaurant)
+                        case "greetingcard.fill": MenuView(restaurant: restaurant, selectedTab: $selectedTab)
                             .opacity(selectedTab == "greetingcard.fill" ? 1 : 0)
                         case "qrcode.viewfinder": ScannerView(selectedTab: $selectedTab, restaurant: $restaurant).edgesIgnoringSafeArea(.top)
                             .opacity(selectedTab == "qrcode.viewfinder" ? 1 : 0)
