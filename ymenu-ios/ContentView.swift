@@ -21,7 +21,7 @@ struct ContentView : View {
     var body: some View {
         Group {
             if isOnboardingDone {
-                Home()
+                LoginView()
             } else {
                 PageView(cards.map { OnboardingCardView(card: $0) }, isOnboardingDone: $isOnboardingDone)
             }
