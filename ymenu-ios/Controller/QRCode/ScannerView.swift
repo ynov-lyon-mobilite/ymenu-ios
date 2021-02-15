@@ -24,11 +24,11 @@ struct ScannerView: View {
                 VStack {
                     HStack {
                         Image(systemName: "qrcode.viewfinder")
-                        Text("Veuillez scanner un code QR").foregroundColor(.white)
+                        Text("Veuillez scanner un code QR").foregroundColor(.black)
                             .font(.subheadline).bold()
                     }
                     .padding()
-                    .foregroundColor(.white)
+                    .foregroundColor(.black)
                     .background(
                         Blur(
                              style: .systemUltraThinMaterial)
@@ -44,7 +44,7 @@ struct ScannerView: View {
                     }, label: {
                         Image(systemName: self.viewModel.torchIsOn ? "bolt.fill" : "bolt.slash.fill")
                             .imageScale(.large)
-                            .foregroundColor(self.viewModel.torchIsOn ? Color.yellow : Color.white)
+                            .foregroundColor(self.viewModel.torchIsOn ? Color.yellow : Color.black)
                             .padding()
                     })
                 }
