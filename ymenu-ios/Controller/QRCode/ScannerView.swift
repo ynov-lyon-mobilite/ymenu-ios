@@ -18,7 +18,7 @@ struct ScannerView: View {
             QrCodeScannerView()
             .found(r: self.viewModel.onFoundQrCode)
             .torchLight(isOn: self.viewModel.torchIsOn)
-                .interval(delay: self.viewModel.scanInterval)
+            .interval(delay: self.viewModel.scanInterval)
             
             VStack {
                 VStack {
