@@ -35,8 +35,12 @@ struct ScannerView: View {
                         )
                     .cornerRadius(.greatestFiniteMagnitude)
                 }
-                .padding(.vertical, 50)
-                
+                .padding(.vertical, 60)
+                Rectangle()
+                    .foregroundColor(.clear)
+                    .overlay(
+                        Image(systemName: "viewfinder").foregroundColor(.white).font(.system(size: 300).weight(.ultraLight))
+                    )
                 Spacer()
                 HStack {
                     Button(action: {
