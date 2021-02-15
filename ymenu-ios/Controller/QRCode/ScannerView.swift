@@ -12,7 +12,12 @@ struct ScannerView: View {
     @Binding var restaurant: RestaurantDTO
     
     @ObservedObject var viewModel = ScannerViewModel()
-
+    
+    func tapticSuccess() {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.success)
+    }
+    
     var body: some View {
         ZStack {
             QrCodeScannerView()
@@ -61,7 +66,8 @@ struct ScannerView: View {
         }
         .onChange(of: self.viewModel.lastQrCode) { (_) in
             print("qrCode change: ", self.viewModel.lastQrCode)
-            
+    
+            tapticSuccess()
             let result = self.viewModel.lastQrCode.components(separatedBy: ", ")
             
             restaurant = RestaurantDTO(_id: result[0], name: result[1])

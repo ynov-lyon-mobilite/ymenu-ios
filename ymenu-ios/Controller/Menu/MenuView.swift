@@ -27,12 +27,7 @@ struct MenuView: View {
         self.selectedTab = selectedTab
         self.viewModel = MenuViewModel(restaurant: restaurant)
     }
-    
-    func tapticSuccess() {
-        let generator = UINotificationFeedbackGenerator()
-        generator.notificationOccurred(.success)
-    }
-    
+ 
     func tapticFail() {
         let generator = UINotificationFeedbackGenerator()
         generator.notificationOccurred(.error)
