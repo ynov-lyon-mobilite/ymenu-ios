@@ -44,7 +44,7 @@ struct ScannerView: View {
                 Rectangle()
                     .foregroundColor(.clear)
                     .overlay(
-                        Image(systemName: "viewfinder").foregroundColor(.white).font(.system(size: 300).weight(.ultraLight))
+                        Image(systemName: "viewfinder").font(.system(size: 300, weight: .ultraLight)).foregroundColor(.white)
                     )
                 Spacer()
                 HStack {
