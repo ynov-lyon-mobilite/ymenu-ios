@@ -46,18 +46,18 @@ struct ScannerView: View {
                     Button(action: {
                         self.viewModel.torchIsOn.toggle()
                     }, label: {
-                        Image(systemName: self.viewModel.torchIsOn ? "bolt.fill" : "bolt.slash.fill")
-                            .imageScale(.large)
+                        Image(systemName: self.viewModel.torchIsOn ? "flashlight.on.fill" : "flashlight.off.fill").font(.system(size: 25))
                             .foregroundColor(self.viewModel.torchIsOn ? Color.yellow : Color.black)
                             .padding()
                     })
                 }
+                .frame(width: 65, height: 65)
                 .background(
                     Blur(
-                         style: .systemUltraThinMaterial)
+                        style: self.viewModel.torchIsOn ? .systemUltraThinMaterialDark : .systemUltraThinMaterialLight)
                     )
-                .cornerRadius(10)
-            }.padding()
+                .cornerRadius(.greatestFiniteMagnitude)
+            }.padding(.bottom, 20)
         }
         .onChange(of: self.viewModel.lastQrCode) { (_) in
             print("qrCode change: ", self.viewModel.lastQrCode)
