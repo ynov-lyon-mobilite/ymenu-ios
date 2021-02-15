@@ -12,13 +12,18 @@ struct ScannerView: View {
     @Binding var restaurant: RestaurantDTO
     
     @ObservedObject var viewModel = ScannerViewModel()
-
+    
+    func tapticSuccess() {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.success)
+    }
+    
     var body: some View {
         ZStack {
             QrCodeScannerView()
             .found(r: self.viewModel.onFoundQrCode)
             .torchLight(isOn: self.viewModel.torchIsOn)
-                .interval(delay: self.viewModel.scanInterval)
+            .interval(delay: self.viewModel.scanInterval)
             
             VStack {
                 VStack {
@@ -35,29 +40,34 @@ struct ScannerView: View {
                         )
                     .cornerRadius(.greatestFiniteMagnitude)
                 }
-                .padding(.vertical, 50)
-                
+                .padding(.vertical, 60)
+                Rectangle()
+                    .foregroundColor(.clear)
+                    .overlay(
+                        Image(systemName: "viewfinder").foregroundColor(.white).font(.system(size: 300).weight(.ultraLight))
+                    )
                 Spacer()
                 HStack {
                     Button(action: {
                         self.viewModel.torchIsOn.toggle()
                     }, label: {
-                        Image(systemName: self.viewModel.torchIsOn ? "bolt.fill" : "bolt.slash.fill")
-                            .imageScale(.large)
+                        Image(systemName: self.viewModel.torchIsOn ? "flashlight.on.fill" : "flashlight.off.fill").font(.system(size: 25))
                             .foregroundColor(self.viewModel.torchIsOn ? Color.yellow : Color.black)
                             .padding()
                     })
                 }
+                .frame(width: 65, height: 65)
                 .background(
                     Blur(
-                         style: .systemUltraThinMaterial)
+                        style: self.viewModel.torchIsOn ? .systemUltraThinMaterialDark : .systemUltraThinMaterialLight)
                     )
-                .cornerRadius(10)
-            }.padding()
+                .cornerRadius(.greatestFiniteMagnitude)
+            }.padding(.bottom, 20)
         }
         .onChange(of: self.viewModel.lastQrCode) { (_) in
             print("qrCode change: ", self.viewModel.lastQrCode)
-            
+    
+            tapticSuccess()
             let result = self.viewModel.lastQrCode.components(separatedBy: ", ")
             
             restaurant = RestaurantDTO(_id: result[0], name: result[1])

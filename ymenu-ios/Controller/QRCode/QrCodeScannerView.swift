@@ -95,12 +95,6 @@ struct QrCodeScannerView: UIViewRepresentable {
     func updateUIView(_ uiView: QrCodeScannerView.UIViewType, context: UIViewRepresentableContext<QrCodeScannerView>) {
         uiView.setContentHuggingPriority(.defaultHigh, for: .vertical)
         uiView.setContentHuggingPriority(.defaultLow, for: .horizontal)
-        
-        #if targetEnvironment(simulator)
-        uiView.createSimulatorView(delegate: self.delegate)
-        #else
-        setupCamera(uiView)
-        #endif
     }
     
     static func dismantleUIView(_ uiView: CameraPreview, coordinator: ()) {
