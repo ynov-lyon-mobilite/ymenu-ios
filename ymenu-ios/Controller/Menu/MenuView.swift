@@ -27,6 +27,16 @@ struct MenuView: View {
         self.selectedTab = selectedTab
         self.viewModel = MenuViewModel(restaurant: restaurant)
     }
+    
+    func tapticSuccess() {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.success)
+    }
+    
+    func tapticFail() {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.error)
+    }
 
     var body: some View {
         if !self.menuLoaded {
@@ -107,6 +117,10 @@ struct MenuView: View {
                 }.onAppear() {
                     if self.viewModel.restaurant.name == "" {
                         self.showAlert = true
+                        tapticFail()
+                    } else
+                    {
+                        tapticSuccess()
                     }
                 }
             }
