@@ -49,7 +49,6 @@ struct MenuView: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack (alignment: VerticalAlignment.center, spacing: 5){
                             IndexedForEach(viewModel.dishCategories) { index, category in
-
                                 Button(action: {
                                     withAnimation {
                                         proxy.scrollTo(category._id, anchor: .top)
@@ -106,7 +105,6 @@ struct MenuView: View {
                             }.id(category._id)
                         }.onAppear() {
                             self.menuLoaded = true
-                           
                         }
                         .navigationBarTitle(self.viewModel.restaurant.name, displayMode: .automatic)
                         .padding(.top, 20)
@@ -118,9 +116,6 @@ struct MenuView: View {
                     if self.viewModel.restaurant.name == "" {
                         self.showAlert = true
                         tapticFail()
-                    } else
-                    {
-                        tapticSuccess()
                     }
                 }
             }
