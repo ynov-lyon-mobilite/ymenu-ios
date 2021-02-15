@@ -18,14 +18,24 @@ struct ScannerView: View {
             QrCodeScannerView()
             .found(r: self.viewModel.onFoundQrCode)
             .torchLight(isOn: self.viewModel.torchIsOn)
-            .interval(delay: self.viewModel.scanInterval)
+                .interval(delay: self.viewModel.scanInterval)
             
             VStack {
                 VStack {
-                    Text("Veuillez scanner un code QR").foregroundColor(.white)
-                        .font(.subheadline).bold().padding(.top, 40)
+                    HStack {
+                        Image(systemName: "qrcode.viewfinder")
+                        Text("Veuillez scanner un code QR").foregroundColor(.black)
+                            .font(.subheadline).bold()
+                    }
+                    .padding()
+                    .foregroundColor(.black)
+                    .background(
+                        Blur(
+                             style: .systemUltraThinMaterial)
+                        )
+                    .cornerRadius(.greatestFiniteMagnitude)
                 }
-                .padding(.vertical, 20)
+                .padding(.vertical, 50)
                 
                 Spacer()
                 HStack {
@@ -34,13 +44,15 @@ struct ScannerView: View {
                     }, label: {
                         Image(systemName: self.viewModel.torchIsOn ? "bolt.fill" : "bolt.slash.fill")
                             .imageScale(.large)
-                            .foregroundColor(self.viewModel.torchIsOn ? Color.yellow : Color.blue)
+                            .foregroundColor(self.viewModel.torchIsOn ? Color.yellow : Color.black)
                             .padding()
                     })
                 }
-                .background(Color.white)
+                .background(
+                    Blur(
+                         style: .systemUltraThinMaterial)
+                    )
                 .cornerRadius(10)
-                
             }.padding()
         }
         .onChange(of: self.viewModel.lastQrCode) { (_) in
