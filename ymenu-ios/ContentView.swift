@@ -16,7 +16,7 @@ OnboardingCard(image: "logoymenu", title: "Bon appétit !", description: "Si vou
 
 struct ContentView : View {
 
-    @State var isOnboardingDone = false
+    @AppStorage("mustDisplayOnBoarding") var isOnboardingDone: Bool = false
     
     var body: some View {
         Group {
