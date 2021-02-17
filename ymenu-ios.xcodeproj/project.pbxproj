@@ -188,6 +188,7 @@
 		B38E711525B861ED00A67830 /* Dish */ = {
 			isa = PBXGroup;
 			children = (
+				E333305325C40F02008278B2 /* ARQuickLook.swift */,
 				B38E711625B861FD00A67830 /* DishDetailView.swift */,
 			);
 			path = Dish;
@@ -231,7 +232,6 @@
 				E36D853125333B0F00722077 /* Info.plist */,
 				E36D852E25333B0F00722077 /* Preview Content */,
 				E321F56C25C993BA00137DDB /* minuteasia_bobun.rcproject */,
-				E333305325C40F02008278B2 /* ARQuickLook.swift */,
 			);
 			path = "ymenu-ios";
 			sourceTree = "<group>";
@@ -337,7 +337,7 @@
 				4715A4EB256E6B4A00C24659 /* RestaurantDTO.swift in Sources */,
 				47CE67AE258A3FDE004940D7 /* MenuViewModel.swift in Sources */,
 				E321F56D25C993BA00137DDB /* minuteasia_bobun.rcproject in Sources */,
-                4715A4E5256E672E00C24659 /* DishApiService.swift in Sources */,
+				4715A4E5256E672E00C24659 /* DishApiService.swift in Sources */,
 				E3EB411125C9EA010016862A /* Blur.swift in Sources */,
 				0AFD1411256E7D31000EFEBA /* QrCodeCameraDelegate.swift in Sources */,
 				4765860A25CB498C00871FDC /* QrCodeScannerViewModel.swift in Sources */,
