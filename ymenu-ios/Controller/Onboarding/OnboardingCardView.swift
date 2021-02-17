@@ -30,7 +30,8 @@ struct OnboardingCardView: View {
                 .font(.custom("SF Pro Rounded Bold", size: 45))
                 .multilineTextAlignment(.center)
                 .lineSpacing(5)
-                .foregroundColor(Color(red: 235/255, green: 165/255, blue: 60/255))
+//                .foregroundColor(Color(red: 235/255, green: 165/255, blue: 60/255))
+                .foregroundColor(Color.orange)
                 .offset(y: -100)
             }
             VStack{
