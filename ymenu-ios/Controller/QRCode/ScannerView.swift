@@ -47,21 +47,22 @@ struct ScannerView: View {
                         Image(systemName: "viewfinder").font(.system(size: 300, weight: .ultraLight)).foregroundColor(.white)
                     )
                 Spacer()
-                HStack {
-                    Button(action: {
-                        self.viewModel.torchIsOn.toggle()
-                    }, label: {
-                        Image(systemName: self.viewModel.torchIsOn ? "flashlight.on.fill" : "flashlight.off.fill").font(.system(size: 25))
-                            .foregroundColor(self.viewModel.torchIsOn ? Color.yellow : Color.black)
-                            .padding()
-                    })
-                }
-                .frame(width: 65, height: 65)
-                .background(
-                    Blur(
-                        style: self.viewModel.torchIsOn ? .systemUltraThinMaterialDark : .systemUltraThinMaterialLight)
-                    )
-                .cornerRadius(.greatestFiniteMagnitude)
+                // TODO: [Issue] Activating the flash disables the scan interval entirely, even when turned off. App needs to be restarted to fix
+//                HStack {
+//                    Button(action: {
+//                        self.viewModel.torchIsOn.toggle()
+//                    }, label: {
+//                        Image(systemName: self.viewModel.torchIsOn ? "flashlight.on.fill" : "flashlight.off.fill").font(.system(size: 25))
+//                            .foregroundColor(self.viewModel.torchIsOn ? Color.yellow : Color.black)
+//                            .padding()
+//                    })
+//                }
+//                .frame(width: 65, height: 65)
+//                .background(
+//                    Blur(
+//                        style: self.viewModel.torchIsOn ? .systemUltraThinMaterialDark : .systemUltraThinMaterialLight)
+//                    )
+//                .cornerRadius(.greatestFiniteMagnitude)
             }.padding(.bottom, 20)
         }
         .onChange(of: self.viewModel.lastQrCode) { (_) in
