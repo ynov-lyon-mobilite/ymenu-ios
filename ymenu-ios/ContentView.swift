@@ -6,17 +6,16 @@
 //
 
 import SwiftUI
-import RealityKit
 
 var cards:[OnboardingCard] = [
-OnboardingCard(image: "logoymenu", title: "Bienvenue dans Y'Menu", description: "A travers cette application vous pourrez découvrir les différents menus proposés en réalité augmentée. Voyez votre plat sur votre table."),
-OnboardingCard(image: "logoymenu", title: "Comment ça marche ?", description: "Ouvrez votre caméra grâce a la fonctionnalité QR Code disponible sur l'écran d'accueil, scannez le QR Code et c'est prêt !"),
-OnboardingCard(image: "logoymenu", title: "Bon appétit !", description: "Si vous avez bien compris le fonctionnement, il ne vous reste plus qu'a essayer !")
+    OnboardingCard(image: "logoymenu", title: "Bienvenue dans Y'Menu", description: "A travers cette application vous pourrez découvrir les différents menus proposés en réalité augmentée. Voyez votre plat sur votre table."),
+    OnboardingCard(image: "logoymenu", title: "Comment ça marche ?", description: "Ouvrez votre caméra grâce a la fonctionnalité QR Code disponible sur l'écran d'accueil, scannez le QR Code et c'est prêt !"),
+    OnboardingCard(image: "logoymenu", title: "Bon appétit !", description: "Si vous avez bien compris le fonctionnement, il ne vous reste plus qu'a essayer !")
 ]
 
 struct ContentView : View {
 
-    @State var isOnboardingDone = false
+    @AppStorage("mustDisplayOnBoarding") var isOnboardingDone: Bool = false
     
     var body: some View {
         Group {
@@ -45,11 +44,11 @@ struct Home: View {
             GeometryReader{_ in
                 ZStack{
                     switch(selectedTab){
-                        case "greetingcard.fill": MenuView(restaurant: restaurant)
+                        case "greetingcard.fill": MenuView(restaurant: restaurant, selectedTab: $selectedTab)
                             .opacity(selectedTab == "greetingcard.fill" ? 1 : 0)
                         case "qrcode.viewfinder": ScannerView(selectedTab: $selectedTab, restaurant: $restaurant).edgesIgnoringSafeArea(.top)
                             .opacity(selectedTab == "qrcode.viewfinder" ? 1 : 0)
-                    case "person.fill":  Text("Cette page sera implémentée prochainement").bold().frame(maxWidth: .infinity, alignment: .center)
+                        case "person.fill":  Text("Cette page sera implémentée prochainement").bold().frame(maxWidth: .infinity, alignment: .center).padding(.top, 400)
                             .opacity(selectedTab == "person.fill" ? 1 : 0)
                         default: EmptyView()
                     }
@@ -72,13 +71,11 @@ struct Home: View {
             }
             .padding(.horizontal,30)
             .background(Color.white)
-            
         }
     }
 }
 
 //tabButton
-
 struct TabButton : View{
     var title : String
     @Binding var selectedTab : String
@@ -112,7 +109,6 @@ struct TabButton : View{
     }
 }
 
-
 struct CustomShape: Shape {
     func path(in rect: CGRect) -> Path {
         let path = UIBezierPath(roundedRect: rect, byRoundingCorners: [.bottomLeft,.bottomRight], cornerRadii: CGSize(width: 10, height: 20))
@@ -120,6 +116,5 @@ struct CustomShape: Shape {
         return Path(path.cgPath)
     }
 }
-
 
 var tabs = ["greetingcard.fill","qrcode.viewfinder","person.fill"]
