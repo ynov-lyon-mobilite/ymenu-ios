@@ -1,0 +1,28 @@
+fastlane_version '2.53.1'
+
+platform :ios do
+	desc 'Build the prod iOS application.'
+	lane :prod do |options|
+		match(type: 'appstore')
+		increment_build_number_in_plist(
+			 xcodeproj: './ymenu-ios.xcodeproj',
+			 target:"ymenu-ios"
+		)
+		update_code_signing_settings(
+	        use_automatic_signing: false,
+	        path: "./ymenu-ios.xcodeproj"
+		)
+		build_app(
+			project: "./ymenu-ios.xcodeproj",
+			scheme: "ymenu-ios",
+			clean: true,
+			export_method: "app-store"
+        )
+		pilot(skip_waiting_for_build_processing:true)
+	end
+
+	lane :devices do
+  		register_devices(devices_file: "./fastlane/devices.txt")
+  		match(type: "development", force_for_new_devices: true)
+	end
+end

@@ -3,25 +3,86 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A02F0C025C97ED7008F53F2 /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0A02F0BF25C97ED7008F53F2 /* SF-Pro-Text-Regular.otf */; };
+		0A02F0C325C97EF1008F53F2 /* SF-Pro-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0A02F0C225C97EF1008F53F2 /* SF-Pro-Rounded-Bold.otf */; };
+		0A02F0C625C97F06008F53F2 /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0A02F0C525C97F06008F53F2 /* SF-Pro-Text-Bold.otf */; };
+		0A9DFA312589FFEE001C3ECC /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DFA302589FFEE001C3ECC /* CameraPreview.swift */; };
+		0ABE4C5525A9D63F00463B1A /* OnboardingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABE4C5425A9D63F00463B1A /* OnboardingCard.swift */; };
+		0ABE4C5825A9D6AF00463B1A /* OnboardingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABE4C5725A9D6AF00463B1A /* OnboardingCardView.swift */; };
+		0ABE4C5B25A9E89600463B1A /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABE4C5A25A9E89600463B1A /* PageViewController.swift */; };
+		0ABE4C5E25A9EA6000463B1A /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABE4C5D25A9EA6000463B1A /* PageView.swift */; };
+		0ABE4C6125A9F3A000463B1A /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABE4C6025A9F3A000463B1A /* PageControl.swift */; };
+		0AFD140B256E7CD3000EFEBA /* ScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFD140A256E7CD3000EFEBA /* ScannerViewModel.swift */; };
+		0AFD140E256E7CF9000EFEBA /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFD140D256E7CF9000EFEBA /* ScannerView.swift */; };
+		0AFD1411256E7D31000EFEBA /* QrCodeCameraDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFD1410256E7D31000EFEBA /* QrCodeCameraDelegate.swift */; };
+		0AFD1417256E7DD1000EFEBA /* QrCodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFD1416256E7DD1000EFEBA /* QrCodeScannerView.swift */; };
+		470D972C256BBA080083912C /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470D972B256BBA080083912C /* Request.swift */; };
+		470D9731256BBB2D0083912C /* GenericServerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470D9730256BBB2D0083912C /* GenericServerResponse.swift */; };
+		470D9736256BBB4D0083912C /* AnyEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470D9735256BBB4D0083912C /* AnyEncodable.swift */; };
+		4715A4E2256E66F000C24659 /* RestaurantApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4715A4E1256E66F000C24659 /* RestaurantApiService.swift */; };
+		4715A4E5256E672E00C24659 /* DishApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4715A4E4256E672E00C24659 /* DishApiService.swift */; };
+		4715A4E8256E67BF00C24659 /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4715A4E7256E67BF00C24659 /* Dish.swift */; };
+		4715A4EB256E6B4A00C24659 /* RestaurantDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4715A4EA256E6B4A00C24659 /* RestaurantDTO.swift */; };
+		4765860A25CB498C00871FDC /* QrCodeScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4765860925CB498C00871FDC /* QrCodeScannerViewModel.swift */; };
+		47CE67AA258A0431004940D7 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE67A9258A0431004940D7 /* MenuView.swift */; };
+		47CE67AE258A3FDE004940D7 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE67AD258A3FDE004940D7 /* MenuViewModel.swift */; };
+		B3408E0F25B8275E006BD523 /* DishCategoryApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3408E0E25B8275E006BD523 /* DishCategoryApiService.swift */; };
+		B3408E1225B827C8006BD523 /* DishCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3408E1125B827C8006BD523 /* DishCategory.swift */; };
+		B3408E1925B82C5C006BD523 /* CategoriesTopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3408E1825B82C5C006BD523 /* CategoriesTopBarView.swift */; };
+		B38E711725B861FD00A67830 /* DishDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38E711625B861FD00A67830 /* DishDetailView.swift */; };
+		B38E711E25B877F900A67830 /* IndexedForEach.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38E711D25B877F900A67830 /* IndexedForEach.swift */; };
+		E321F56D25C993BA00137DDB /* minuteasia_bobun.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = E321F56C25C993BA00137DDB /* minuteasia_bobun.rcproject */; };
+		E322F68225CB1F65004AF310 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = E322F68125CB1F65004AF310 /* SDWebImageSwiftUI */; };
+		E333305425C40F02008278B2 /* ARQuickLook.swift in Sources */ = {isa = PBXBuildFile; fileRef = E333305325C40F02008278B2 /* ARQuickLook.swift */; };
+		E36599CF256EA10800D58F6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E36599CE256EA10800D58F6F /* Assets.xcassets */; };
 		E36D852725333B0E00722077 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36D852625333B0E00722077 /* AppDelegate.swift */; };
 		E36D852925333B0E00722077 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36D852825333B0E00722077 /* ContentView.swift */; };
-		E36D852B25333B0F00722077 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = E36D852A25333B0F00722077 /* Experience.rcproject */; };
-		E36D852D25333B0F00722077 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E36D852C25333B0F00722077 /* Assets.xcassets */; };
 		E36D853025333B0F00722077 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E36D852F25333B0F00722077 /* Preview Assets.xcassets */; };
+		E3EB411125C9EA010016862A /* Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EB411025C9EA010016862A /* Blur.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A02F0BF25C97ED7008F53F2 /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
+		0A02F0C225C97EF1008F53F2 /* SF-Pro-Rounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Bold.otf"; sourceTree = "<group>"; };
+		0A02F0C525C97F06008F53F2 /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
+		0A9DFA302589FFEE001C3ECC /* CameraPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
+		0ABE4C5425A9D63F00463B1A /* OnboardingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCard.swift; sourceTree = "<group>"; };
+		0ABE4C5725A9D6AF00463B1A /* OnboardingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCardView.swift; sourceTree = "<group>"; };
+		0ABE4C5A25A9E89600463B1A /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		0ABE4C5D25A9EA6000463B1A /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		0ABE4C6025A9F3A000463B1A /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
+		0AFD140A256E7CD3000EFEBA /* ScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewModel.swift; sourceTree = "<group>"; };
+		0AFD140D256E7CF9000EFEBA /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
+		0AFD1410256E7D31000EFEBA /* QrCodeCameraDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeCameraDelegate.swift; sourceTree = "<group>"; };
+		0AFD1416256E7DD1000EFEBA /* QrCodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeScannerView.swift; sourceTree = "<group>"; };
+		470D972B256BBA080083912C /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		470D9730256BBB2D0083912C /* GenericServerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericServerResponse.swift; sourceTree = "<group>"; };
+		470D9735256BBB4D0083912C /* AnyEncodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyEncodable.swift; sourceTree = "<group>"; };
+		4715A4E1256E66F000C24659 /* RestaurantApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantApiService.swift; sourceTree = "<group>"; };
+		4715A4E4256E672E00C24659 /* DishApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishApiService.swift; sourceTree = "<group>"; };
+		4715A4E7256E67BF00C24659 /* Dish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
+		4715A4EA256E6B4A00C24659 /* RestaurantDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDTO.swift; sourceTree = "<group>"; };
+		4765860925CB498C00871FDC /* QrCodeScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeScannerViewModel.swift; sourceTree = "<group>"; };
+		47CE67A9258A0431004940D7 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		47CE67AD258A3FDE004940D7 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
+		B3408E0E25B8275E006BD523 /* DishCategoryApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCategoryApiService.swift; sourceTree = "<group>"; };
+		B3408E1125B827C8006BD523 /* DishCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCategory.swift; sourceTree = "<group>"; };
+		B3408E1825B82C5C006BD523 /* CategoriesTopBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTopBarView.swift; sourceTree = "<group>"; };
+		B38E711625B861FD00A67830 /* DishDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDetailView.swift; sourceTree = "<group>"; };
+		B38E711D25B877F900A67830 /* IndexedForEach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexedForEach.swift; sourceTree = "<group>"; };
+		E321F56C25C993BA00137DDB /* minuteasia_bobun.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = minuteasia_bobun.rcproject; sourceTree = "<group>"; };
+		E333305325C40F02008278B2 /* ARQuickLook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARQuickLook.swift; sourceTree = "<group>"; };
+		E36599CE256EA10800D58F6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E36D852325333B0E00722077 /* ymenu-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ymenu-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E36D852625333B0E00722077 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E36D852825333B0E00722077 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		E36D852A25333B0F00722077 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
-		E36D852C25333B0F00722077 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E36D852F25333B0F00722077 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E36D853125333B0F00722077 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3EB411025C9EA010016862A /* Blur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blur.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +90,123 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E322F68225CB1F65004AF310 /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A6095E525B7548300952BDD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0A02F0C525C97F06008F53F2 /* SF-Pro-Text-Bold.otf */,
+				0A02F0C225C97EF1008F53F2 /* SF-Pro-Rounded-Bold.otf */,
+				0A02F0BF25C97ED7008F53F2 /* SF-Pro-Text-Regular.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		4701D01725CBE4CE0090D786 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				0ABE4C5425A9D63F00463B1A /* OnboardingCard.swift */,
+				0ABE4C5725A9D6AF00463B1A /* OnboardingCardView.swift */,
+				0ABE4C5A25A9E89600463B1A /* PageViewController.swift */,
+				0ABE4C5D25A9EA6000463B1A /* PageView.swift */,
+				0ABE4C6025A9F3A000463B1A /* PageControl.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		470D972A256BB9E80083912C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				470D972B256BBA080083912C /* Request.swift */,
+				4715A4E1256E66F000C24659 /* RestaurantApiService.swift */,
+				4715A4E4256E672E00C24659 /* DishApiService.swift */,
+				B3408E0E25B8275E006BD523 /* DishCategoryApiService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		470D972F256BBB0D0083912C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				470D9734256BBB390083912C /* DTO */,
+				470D9730256BBB2D0083912C /* GenericServerResponse.swift */,
+				4715A4E7256E67BF00C24659 /* Dish.swift */,
+				B3408E1125B827C8006BD523 /* DishCategory.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		470D9734256BBB390083912C /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				470D9735256BBB4D0083912C /* AnyEncodable.swift */,
+				4715A4EA256E6B4A00C24659 /* RestaurantDTO.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		479FEB2325C9BDD500A75197 /* QRCode */ = {
+			isa = PBXGroup;
+			children = (
+				0AFD1416256E7DD1000EFEBA /* QrCodeScannerView.swift */,
+				0AFD140D256E7CF9000EFEBA /* ScannerView.swift */,
+				0AFD140A256E7CD3000EFEBA /* ScannerViewModel.swift */,
+				0A9DFA302589FFEE001C3ECC /* CameraPreview.swift */,
+				0AFD1410256E7D31000EFEBA /* QrCodeCameraDelegate.swift */,
+				4765860925CB498C00871FDC /* QrCodeScannerViewModel.swift */,
+			);
+			path = QRCode;
+			sourceTree = "<group>";
+		};
+		B3408E1425B82B28006BD523 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4701D01725CBE4CE0090D786 /* Onboarding */,
+				479FEB2325C9BDD500A75197 /* QRCode */,
+				B38E711525B861ED00A67830 /* Dish */,
+				B3408E1525B82B39006BD523 /* Menu */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B3408E1525B82B39006BD523 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				47CE67AD258A3FDE004940D7 /* MenuViewModel.swift */,
+				47CE67A9258A0431004940D7 /* MenuView.swift */,
+				B3408E1825B82C5C006BD523 /* CategoriesTopBarView.swift */,
+				B38E711D25B877F900A67830 /* IndexedForEach.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		B38E711525B861ED00A67830 /* Dish */ = {
+			isa = PBXGroup;
+			children = (
+				E333305325C40F02008278B2 /* ARQuickLook.swift */,
+				B38E711625B861FD00A67830 /* DishDetailView.swift */,
+			);
+			path = Dish;
+			sourceTree = "<group>";
+		};
+		E322F68025CB1F65004AF310 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E36D851A25333B0E00722077 = {
 			isa = PBXGroup;
 			children = (
 				E36D852525333B0E00722077 /* ymenu-ios */,
 				E36D852425333B0E00722077 /* Products */,
+				E322F68025CB1F65004AF310 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,12 +221,17 @@
 		E36D852525333B0E00722077 /* ymenu-ios */ = {
 			isa = PBXGroup;
 			children = (
+				B3408E1425B82B28006BD523 /* Controller */,
+				0A6095E525B7548300952BDD /* Fonts */,
+				E3EB411325C9FF870016862A /* Additions */,
+				E36599CE256EA10800D58F6F /* Assets.xcassets */,
+				470D972F256BBB0D0083912C /* Model */,
+				470D972A256BB9E80083912C /* Service */,
 				E36D852625333B0E00722077 /* AppDelegate.swift */,
 				E36D852825333B0E00722077 /* ContentView.swift */,
-				E36D852A25333B0F00722077 /* Experience.rcproject */,
-				E36D852C25333B0F00722077 /* Assets.xcassets */,
 				E36D853125333B0F00722077 /* Info.plist */,
 				E36D852E25333B0F00722077 /* Preview Content */,
+				E321F56C25C993BA00137DDB /* minuteasia_bobun.rcproject */,
 			);
 			path = "ymenu-ios";
 			sourceTree = "<group>";
@@ -70,6 +242,14 @@
 				E36D852F25333B0F00722077 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E3EB411325C9FF870016862A /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				E3EB411025C9EA010016862A /* Blur.swift */,
+			);
+			path = Additions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -88,6 +268,9 @@
 			dependencies = (
 			);
 			name = "ymenu-ios";
+			packageProductDependencies = (
+				E322F68125CB1F65004AF310 /* SDWebImageSwiftUI */,
+			);
 			productName = "ymenu-ios";
 			productReference = E36D852325333B0E00722077 /* ymenu-ios.app */;
 			productType = "com.apple.product-type.application";
@@ -115,6 +298,9 @@
 				Base,
 			);
 			mainGroup = E36D851A25333B0E00722077;
+			packageReferences = (
+				E322F67D25CB1EB2004AF310 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = E36D852425333B0E00722077 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -129,8 +315,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E36599CF256EA10800D58F6F /* Assets.xcassets in Resources */,
+				0A02F0C625C97F06008F53F2 /* SF-Pro-Text-Bold.otf in Resources */,
+				0A02F0C025C97ED7008F53F2 /* SF-Pro-Text-Regular.otf in Resources */,
+				0A02F0C325C97EF1008F53F2 /* SF-Pro-Rounded-Bold.otf in Resources */,
 				E36D853025333B0F00722077 /* Preview Assets.xcassets in Resources */,
-				E36D852D25333B0F00722077 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,8 +331,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				E36D852925333B0E00722077 /* ContentView.swift in Sources */,
+				470D9731256BBB2D0083912C /* GenericServerResponse.swift in Sources */,
+				E333305425C40F02008278B2 /* ARQuickLook.swift in Sources */,
+				0AFD140B256E7CD3000EFEBA /* ScannerViewModel.swift in Sources */,
+				4715A4EB256E6B4A00C24659 /* RestaurantDTO.swift in Sources */,
+				47CE67AE258A3FDE004940D7 /* MenuViewModel.swift in Sources */,
+				E321F56D25C993BA00137DDB /* minuteasia_bobun.rcproject in Sources */,
+				4715A4E5256E672E00C24659 /* DishApiService.swift in Sources */,
+				E3EB411125C9EA010016862A /* Blur.swift in Sources */,
+				0AFD1411256E7D31000EFEBA /* QrCodeCameraDelegate.swift in Sources */,
+				4765860A25CB498C00871FDC /* QrCodeScannerViewModel.swift in Sources */,
+				B38E711725B861FD00A67830 /* DishDetailView.swift in Sources */,
+				B3408E1225B827C8006BD523 /* DishCategory.swift in Sources */,
+				B3408E1925B82C5C006BD523 /* CategoriesTopBarView.swift in Sources */,
+				0ABE4C5825A9D6AF00463B1A /* OnboardingCardView.swift in Sources */,
+				0ABE4C6125A9F3A000463B1A /* PageControl.swift in Sources */,
+				470D972C256BBA080083912C /* Request.swift in Sources */,
+				B38E711E25B877F900A67830 /* IndexedForEach.swift in Sources */,
 				E36D852725333B0E00722077 /* AppDelegate.swift in Sources */,
-				E36D852B25333B0F00722077 /* Experience.rcproject in Sources */,
+				0A9DFA312589FFEE001C3ECC /* CameraPreview.swift in Sources */,
+				0AFD1417256E7DD1000EFEBA /* QrCodeScannerView.swift in Sources */,
+				470D9736256BBB4D0083912C /* AnyEncodable.swift in Sources */,
+				47CE67AA258A0431004940D7 /* MenuView.swift in Sources */,
+				4715A4E8256E67BF00C24659 /* Dish.swift in Sources */,
+				0AFD140E256E7CF9000EFEBA /* ScannerView.swift in Sources */,
+				B3408E0F25B8275E006BD523 /* DishCategoryApiService.swift in Sources */,
+				0ABE4C5525A9D63F00463B1A /* OnboardingCard.swift in Sources */,
+				0ABE4C5B25A9E89600463B1A /* PageViewController.swift in Sources */,
+				4715A4E2256E66F000C24659 /* RestaurantApiService.swift in Sources */,
+				0ABE4C5E25A9EA6000463B1A /* PageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +487,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ymenu-ios/Preview Content\"";
 				DEVELOPMENT_TEAM = 94FLWD5X32;
@@ -280,8 +497,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ynov.ymenu-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ynovlyon.ymenu-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -292,6 +510,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ymenu-ios/Preview Content\"";
 				DEVELOPMENT_TEAM = 94FLWD5X32;
@@ -301,8 +520,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ynov.ymenu-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ynovlyon.ymenu-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -330,6 +550,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E322F67D25CB1EB2004AF310 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E322F68125CB1F65004AF310 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E322F67D25CB1EB2004AF310 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E36D851B25333B0E00722077 /* Project object */;
 }
