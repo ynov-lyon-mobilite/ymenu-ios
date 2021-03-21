@@ -10,7 +10,57 @@ import SDWebImageSwiftUI
 
 struct DishDetailView: View {
     var dish: Dish
+    @State var isDownloading = false
     @State var isPresented = false
+    @State var modelURL: String = "" {
+        didSet {
+            self.isPresented = true
+        }
+    }
+    
+    func checkUSDZExist(inputPath: String) -> String {
+        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+          let url = NSURL(fileURLWithPath: path)
+          if let pathComponent = url.appendingPathComponent(inputPath) {
+              let filePath = pathComponent.path
+              let fileManager = FileManager.default
+              if fileManager.fileExists(atPath: filePath) {
+                  print("File available, opening...")
+                    return pathComponent.absoluteString
+              } else {
+                  print("File not available, downloading...")
+                return ""
+              }
+          } else {
+              print("File path not available")
+            return ""
+          }
+    }
+    
+    func downloadUSDZ(inputURL: String) {
+        let url = URL(string: inputURL)!
+        let downloadTask = URLSession.shared.downloadTask(with: url) { urlOrNil, responseOrNil, errorOrNil in
+
+         guard let fileURL = urlOrNil else { return }
+            
+         do {
+             let documentsURL = try
+                 FileManager.default.url(for: .documentDirectory,
+                                         in: .userDomainMask,
+                                         appropriateFor: nil,
+                                         create: false)
+            let savedURL = documentsURL.appendingPathComponent(url.lastPathComponent)
+            self.modelURL = savedURL.absoluteString
+            self.isDownloading = false
+            print("done")
+             try FileManager.default.moveItem(at: fileURL, to: savedURL)
+       
+         } catch {
+             print ("file error: \(error)")
+         }
+     }
+     downloadTask.resume()
+    }
     
     init(dish: Dish) {
         UINavigationBar.appearance().largeTitleTextAttributes = [
@@ -78,22 +128,36 @@ struct DishDetailView: View {
                   
                    }.listStyle(InsetGroupedListStyle())
                 }
-                if (dish._id == "600a90429401f00017d24895"){
+                if (dish.url_model != ""){
                     Button(action: {
-                        self.isPresented = true
+                        let fileName = URL(string: dish.url_model)?.lastPathComponent
+                        let pathToUSDZ = checkUSDZExist(inputPath: fileName!)
+                        if (pathToUSDZ != "") {
+                            self.modelURL = pathToUSDZ
+                        } else {
+                            self.isDownloading = true
+                            downloadUSDZ(inputURL: dish.url_model)
+                        }
                     }) {
                     HStack {
-                        Image(systemName: "arkit")
-                        Text("Voir en RA")
-                            .bold()
+                        if isDownloading {
+                            ProgressView().padding(.horizontal, 3).progressViewStyle(CircularProgressViewStyle(tint: Color.white))
+                            Text("Téléchargement...")
+                                .bold()
+                        } else {
+                            Image(systemName: "arkit")
+                            Text("Voir en RA")
+                                .bold()
+                        }
                     }}
+                    .disabled(isDownloading)
                     .padding()
                     .foregroundColor(.white)
                     .background(Color.orange)
                     .cornerRadius(.greatestFiniteMagnitude)
                     .sheet(isPresented: $isPresented) {
                         ZStack (alignment: .topLeading){
-                            ARQuickLookView(fileName: "minuteasia_bobun", title: "Bobun", isPresented: self.$isPresented).edgesIgnoringSafeArea(.bottom)
+                            ARQuickLookView(filePath: self.$modelURL, title: dish.name, isPresented: self.$isPresented).edgesIgnoringSafeArea(.bottom)
                             HStack (alignment: .top){
                                 VStack (alignment: .leading) {
                                     Button(action: {
