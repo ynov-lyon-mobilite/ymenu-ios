@@ -27,39 +27,56 @@ struct DishDetailView: View {
             ZStack {
                 HStack {
                     List {
-                        WebImage(url: URL(string: dish.url_logo))
-                          .onSuccess { image, data, cacheType in
-                          }
-                          .resizable()
-                          .placeholder {
-                              Rectangle().foregroundColor(.gray)
-                          }
-                          .indicator(.activity)
-                          .transition(.fade(duration: 0.5))
-                          .scaledToFit()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: UIScreen.main.bounds.size.width - 30, height: 280, alignment: .center)
-                            .cornerRadius(30)
-                            .shadow(radius: 6, x: 3, y: 3)
-                        HStack {
-                            Text(dish.name)
-                            .padding(.top, 10)
-                            .padding(.bottom, 10)
-                            .font(.custom("SF Pro Text Bold", fixedSize: 22))
-                            Spacer()
-                            Text("\(String(describing: dish.price))0 €")
-                            .padding(.top, 10)
-                            .padding(.bottom, 10)
-                            .font(.custom("SF Pro Text Regular", fixedSize: 20))
+                        VStack(spacing: 0){
+                            Spacer().padding(.bottom, 200)
+                            HStack {
+                                VStack(alignment: .leading, spacing: 4){
+                                    HStack(spacing: 0){
+                                        Text(dish.name)
+                                        .padding(.top, 10)
+                                        .padding(.bottom, 12)
+                                        .padding(.leading, 10)
+                                        .font(.custom("SF Pro Text Bold", fixedSize: 22))
+                                        Spacer()
+                                        Text("\(String(describing: dish.price))0 €")
+                                        .padding(.top, 10)
+                                        .padding(.bottom, 12)
+                                        .padding(.trailing, 10)
+                                        .font(.custom("SF Pro Text Regular", fixedSize: 20))
+                                    }
+                                }
+                                Spacer()
+                            }
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            .background(Blur(style: .systemThinMaterialLight))
+                        }.listRowBackground(Color(UIColor.systemGray6)).listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
+                        .background(
+                            WebImage(url: URL(string: dish.url_logo))
+                              .onSuccess { image, data, cacheType in
+                              }
+                              .resizable()
+                              .placeholder {
+                                  Rectangle().foregroundColor(.gray)
+                              }
+                              .indicator(.activity)
+                              .transition(.fade(duration: 0.5))
+                                .aspectRatio(contentMode: .fill)
+                                .frame(alignment: .top)
+                                
+                            )
+                        .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
+                        Section() {
+                            Text("Ingrédients")
+                                .font(.custom("SF Pro Text Bold", fixedSize: 17))
+                            ForEach(ingredients!, id: \.self) { ingredient in
+                                Text(ingredient)
+                                    .font(.custom("SF Pro Text Regular", fixedSize: 17))
+                            }
+                            .padding(.trailing, 5)
                         }
-                        Text("Ingrédients:")
-                            .font(.custom("SF Pro Text Bold", fixedSize: 17))
-                        ForEach(ingredients!, id: \.self) { ingredient in
-                            Text(ingredient)
-                                .font(.custom("SF Pro Text Regular", fixedSize: 17))
-                        }
-                        .padding(.trailing, 5)
-                   }.padding(.horizontal, -20)
+                        Section(header: Text("")) {}
+                  
+                   }.listStyle(InsetGroupedListStyle())
                 }
                 if (dish._id == "600a90429401f00017d24895"){
                     Button(action: {
@@ -96,11 +113,11 @@ struct DishDetailView: View {
                         }
                     }.shadow(radius: 5, x: 2, y: 2)
                     .frame(maxHeight: .infinity, alignment: .bottom)
+                    .padding(.bottom, 20)
                     Spacer()
                 }
             }
         }
-        .padding()
         .navigationBarTitle(Text("Détails du produit"), displayMode: .automatic)
     }
 }
