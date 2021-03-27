@@ -57,7 +57,6 @@ struct Home: View {
             // tab view
             Divider()
                 .padding(.bottom,13)
-                .background(Color.white)
 
             HStack(spacing: 0){
                  ForEach(tabs,id: \.self){tab in
@@ -70,13 +69,13 @@ struct Home: View {
                 }
             }
             .padding(.horizontal,30)
-            .background(Color.white)
         }
     }
 }
 
 //tabButton
 struct TabButton : View{
+    @Environment(\.colorScheme) var colorScheme
     var title : String
     @Binding var selectedTab : String
     var animation : Namespace.ID
@@ -87,9 +86,9 @@ struct TabButton : View{
         }){
             VStack(spacing: 6){
                 Image(systemName: title)
-                    .renderingMode(.template)
                     .resizable()
-                    .foregroundColor(selectedTab == title ? Color(.black) : Color.black.opacity(0.4))
+                    .opacity(selectedTab == title ? 1 : 0.4)
+                    .foregroundColor(colorScheme == .dark ? .white : .black)
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 29, height: 30)
                 VStack{
