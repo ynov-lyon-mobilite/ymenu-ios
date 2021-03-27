@@ -10,12 +10,18 @@ import SwiftUI
 struct ScannerView: View {
     @Binding var selectedTab: String
     @Binding var restaurant: RestaurantDTO
+    @State var showAlert: Bool = false
     
     @ObservedObject var viewModel = ScannerViewModel()
     
     func tapticSuccess() {
         let generator = UINotificationFeedbackGenerator()
         generator.notificationOccurred(.success)
+    }
+    
+    func tapticFail() {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.error)
     }
     
     var body: some View {
@@ -73,6 +79,16 @@ struct ScannerView: View {
             
             restaurant = RestaurantDTO(_id: result[0], name: result[1])
             selectedTab = "greetingcard.fill"
+        }.alert(isPresented: $showAlert) {
+            Alert(
+                title: Text("QR code incompatible"),
+                message: Text("Veuillez scanner un QR Code compatible afin de récupérer le menu d'un restaurant"),
+                dismissButton: .cancel(Text("Réessayer"), action: {
+                    self.selectedTab = ""
+                    DispatchQueue.main.async {
+                        withAnimation { self.selectedTab = "qrcode.viewfinder" }
+                    }
+                }))
         }
     }
 }
