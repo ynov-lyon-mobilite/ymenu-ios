@@ -13,6 +13,7 @@ struct ScannerView: View {
     @State var showAlert: Bool = false
     
     @ObservedObject var viewModel = ScannerViewModel()
+    @ObservedObject var qrCodeViewModel = QrCodeScannerViewModel()
     
     func tapticSuccess() {
         let generator = UINotificationFeedbackGenerator()
@@ -74,11 +75,17 @@ struct ScannerView: View {
         .onChange(of: self.viewModel.lastQrCode) { (_) in
             print("qrCode change: ", self.viewModel.lastQrCode)
     
-            tapticSuccess()
             let result = self.viewModel.lastQrCode.components(separatedBy: ", ")
-            
-            restaurant = RestaurantDTO(_id: result[0], name: result[1])
-            selectedTab = "greetingcard.fill"
+//          TODO: Handle QR codes passing the regex but not sending back data from the API
+            if (self.viewModel.lastQrCode.range(of: #"^(\w{24}), [a-zA-Z0-9_ ]*"#,
+                                options: .regularExpression) != nil){
+                restaurant = RestaurantDTO(_id: result[0], name: result[1])
+                self.selectedTab = "greetingcard.fill"
+                tapticSuccess()
+            } else {
+                tapticFail()
+                self.showAlert = true
+            }
         }.alert(isPresented: $showAlert) {
             Alert(
                 title: Text("QR code incompatible"),
