@@ -11,7 +11,7 @@ import Combine
 import SDWebImageSwiftUI
 
 struct MenuView: View {
-    
+    @Environment(\.colorScheme) var colorScheme
     @ObservedObject var viewModel: MenuViewModel
     @State var scrollPosition: CGFloat = 0.0
     var bag = Set<AnyCancellable>()
@@ -52,7 +52,7 @@ struct MenuView: View {
                                 }) {
                                     Text(category.name)
                                         .overlay(viewModel.selectedCategory?._id == category._id ? RoundedRectangle(cornerRadius: .infinity).shadow(color: Color.red, radius: 2.5, x: 0, y: 1).foregroundColor(Color.red).frame(height: 3).offset(y: 5) : nil, alignment: .bottom)
-                                        .foregroundColor(Color.black)
+                                        .foregroundColor(colorScheme == .dark ? .white : .black)
                                         .padding(.top, 12)
                                         .padding(.bottom, 12)
                                 }
