@@ -47,10 +47,12 @@ struct MenuView: View {
                                 Button(action: {
                                     withAnimation {
                                         proxy.scrollTo(category._id, anchor: .top)
+                                        viewModel.selectedCategoryId = category._id
                                     }
-                                    viewModel.selectedCategoryId = category._id
+                                    
                                 }) {
                                     Text(category.name)
+                                        .fontWeight(viewModel.selectedCategory?._id == category._id ? .bold : .regular)
                                         .overlay(viewModel.selectedCategory?._id == category._id ? RoundedRectangle(cornerRadius: .infinity).shadow(color: Color.red, radius: 2.5, x: 0, y: 1).foregroundColor(Color.red).frame(height: 3).offset(y: 5) : nil, alignment: .bottom)
                                         .foregroundColor(colorScheme == .dark ? .white : .black)
                                         .padding(.top, 12)

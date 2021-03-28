@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ScannerView: View {
+    @Environment(\.colorScheme) var colorScheme
     @Binding var selectedTab: String
     @Binding var restaurant: RestaurantDTO
     @State var showAlert: Bool = false
@@ -36,7 +37,9 @@ struct ScannerView: View {
                 VStack {
                     HStack {
                         Image(systemName: "qrcode.viewfinder")
-                        Text("Veuillez scanner un code QR").foregroundColor(.black)
+                            .foregroundColor(colorScheme == .dark ? .white : .black)
+                        Text("Veuillez scanner un code QR")
+                            .foregroundColor(colorScheme == .dark ? .white : .black)
                             .font(.subheadline).bold()
                     }
                     .padding()
@@ -51,7 +54,9 @@ struct ScannerView: View {
                 Rectangle()
                     .foregroundColor(.clear)
                     .overlay(
-                        Image(systemName: "viewfinder").font(.system(size: 300, weight: .ultraLight)).foregroundColor(.white)
+                        Image(systemName: "viewfinder")
+                            .font(.system(size: 300, weight: .ultraLight))
+                            .foregroundColor(.white)
                     )
                 Spacer()
                 // TODO: [Issue] Activating the flash disables the scan interval entirely, even when turned off. App needs to be restarted to fix

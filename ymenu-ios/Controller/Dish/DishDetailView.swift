@@ -98,8 +98,8 @@ struct DishDetailView: View {
                                 Spacer()
                             }
                             .frame(maxWidth: .infinity, alignment: .center)
-                            .background(Blur(style: .systemThinMaterialLight))
-                        }.listRowBackground(Color(UIColor.systemGray6)).listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
+                            .background(Blur(style: .systemThinMaterial))
+                        }.listRowBackground(Color(UIColor.systemGray6)).listRowInsets(EdgeInsets())
                         .background(
                             WebImage(url: URL(string: dish.url_logo))
                               .onSuccess { image, data, cacheType in
