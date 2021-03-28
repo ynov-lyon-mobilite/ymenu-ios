@@ -10,12 +10,19 @@ import SwiftUI
 struct ScannerView: View {
     @Binding var selectedTab: String
     @Binding var restaurant: RestaurantDTO
+    @State var showAlert: Bool = false
     
     @ObservedObject var viewModel = ScannerViewModel()
+    @ObservedObject var qrCodeViewModel = QrCodeScannerViewModel()
     
     func tapticSuccess() {
         let generator = UINotificationFeedbackGenerator()
         generator.notificationOccurred(.success)
+    }
+    
+    func tapticFail() {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.error)
     }
     
     var body: some View {
@@ -68,11 +75,27 @@ struct ScannerView: View {
         .onChange(of: self.viewModel.lastQrCode) { (_) in
             print("qrCode change: ", self.viewModel.lastQrCode)
     
-            tapticSuccess()
             let result = self.viewModel.lastQrCode.components(separatedBy: ", ")
-            
-            restaurant = RestaurantDTO(_id: result[0], name: result[1])
-            selectedTab = "greetingcard.fill"
+//          TODO: Handle QR codes passing the regex but not sending back data from the API
+            if (self.viewModel.lastQrCode.range(of: #"^(\w{24}), [a-zA-Z0-9_ ]*"#,
+                                options: .regularExpression) != nil){
+                restaurant = RestaurantDTO(_id: result[0], name: result[1])
+                self.selectedTab = "greetingcard.fill"
+                tapticSuccess()
+            } else {
+                tapticFail()
+                self.showAlert = true
+            }
+        }.alert(isPresented: $showAlert) {
+            Alert(
+                title: Text("QR code incompatible"),
+                message: Text("Veuillez scanner un QR Code compatible afin de récupérer le menu d'un restaurant"),
+                dismissButton: .cancel(Text("Réessayer"), action: {
+                    self.selectedTab = ""
+                    DispatchQueue.main.async {
+                        withAnimation { self.selectedTab = "qrcode.viewfinder" }
+                    }
+                }))
         }
     }
 }
