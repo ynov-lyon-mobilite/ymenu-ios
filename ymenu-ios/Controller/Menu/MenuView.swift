@@ -74,21 +74,32 @@ struct MenuView: View {
                                         ZStack{
                                             Button("") {}
                                             NavigationLink(destination: DishDetailView(dish: dish)){
-                                                WebImage(url: URL(string: dish.url_logo))
-                                                  .onSuccess { image, data, cacheType in
-                                                  }
-                                                  .resizable()
-                                                  .placeholder {
-                                                    Rectangle().foregroundColor(.gray)
-                                                  }
-                                                  .indicator(.activity)
-                                                  .transition(.fade(duration: 0.5))
-                                                  .scaledToFit()
-                                                    .aspectRatio(contentMode: .fill)
-                                                    .frame(width: 126, height: 83, alignment: .center)
-                                                    .cornerRadius(13)
-                                                    .frame(maxWidth: .infinity, alignment: .center)
-                                                    .shadow(radius: 6, x: 3, y: 3)
+                                                ZStack {
+                                                    WebImage(url: URL(string: dish.url_logo))
+                                                      .onSuccess { image, data, cacheType in
+                                                      }
+                                                      .resizable()
+                                                      .placeholder {
+                                                        Rectangle().foregroundColor(.gray)
+                                                      }
+                                                      .indicator(.activity)
+                                                      .transition(.fade(duration: 0.5))
+                                                      .scaledToFit()
+                                                        .aspectRatio(contentMode: .fill)
+                                                        .frame(width: 126, height: 83, alignment: .center)
+                                                        .cornerRadius(13)
+                                                        .frame(maxWidth: .infinity, alignment: .center)
+                                                        .shadow(radius: 6, x: 3, y: 3)
+                                                    if (dish.url_model != "") {
+                                                        Image(systemName: "arkit")
+                                                            .font(.system(size: 16, weight: .light, design: .rounded))
+                                                            .padding(5)
+                                                            .background(
+                                                                Blur(style: .systemUltraThinMaterial)
+                                                            ).cornerRadius(13).offset(x: -42, y: -20)
+                                                    }
+                                                }
+                                                
                                                 Text(dish.name).multilineTextAlignment(.leading)
                                                     .padding(.leading, 10)
                                                 Spacer()
