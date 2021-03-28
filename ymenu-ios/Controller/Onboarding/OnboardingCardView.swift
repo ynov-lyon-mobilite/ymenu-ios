@@ -22,7 +22,7 @@ struct OnboardingCardView: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 120, height: 120, alignment: .center)
                 .padding(25)
-                .background(RoundedRectangle(cornerRadius: 40).foregroundColor(.white))
+                .background(RoundedRectangle(cornerRadius: 35).foregroundColor(.white))
                 .padding(.top)
                 .padding(.bottom)
                 .offset(y: -290)

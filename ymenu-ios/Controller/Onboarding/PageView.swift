@@ -12,7 +12,7 @@ struct PageView<Page:View>: View {
     var viewControllers: [UIHostingController<Page>]
     @Binding var isOnboardingDone: Bool
     
-    @State var currentPage:Int = 0
+    @State var currentPage: Int = 0
     
     init(_ views: [Page], isOnboardingDone: Binding<Bool>) {
         self.viewControllers = views.map { UIHostingController(rootView: $0) }
@@ -43,7 +43,7 @@ struct PageView<Page:View>: View {
                         .shadow(radius: 5, x: 2, y: 2)
                         .border(Color.black, width: 0)
                     .overlay(
-                        Text(self.currentPage < self.viewControllers.count - 1 ? "Suivant" : "C'est parti !" )
+                        Text(self.currentPage < self.viewControllers.count - 1 ? "Suivant" : "C'est parti!" )
                         .foregroundColor(.white)
                             .font(.custom("SF Pro Text Bold", size: 25))
                     )
