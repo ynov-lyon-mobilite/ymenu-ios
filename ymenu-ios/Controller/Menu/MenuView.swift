@@ -47,9 +47,8 @@ struct MenuView: View {
                                 Button(action: {
                                     withAnimation {
                                         proxy.scrollTo(category._id, anchor: .top)
-                                        viewModel.selectedCategoryId = category._id
                                     }
-                                    
+                                    viewModel.selectedCategoryId = category._id
                                 }) {
                                     Text(category.name)
                                         .fontWeight(viewModel.selectedCategory?._id == category._id ? .bold : .regular)
