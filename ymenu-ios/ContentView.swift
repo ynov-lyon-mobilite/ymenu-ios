@@ -8,9 +8,9 @@
 import SwiftUI
 
 var cards:[OnboardingCard] = [
-    OnboardingCard(image: "logoymenu", title: "Bienvenue dans Y'Menu", description: "A travers cette application vous pourrez découvrir les différents menus proposés en réalité augmentée. Voyez votre plat sur votre table."),
-    OnboardingCard(image: "logoymenu", title: "Comment ça marche ?", description: "Ouvrez votre caméra grâce a la fonctionnalité QR Code disponible sur l'écran d'accueil, scannez le QR Code et c'est prêt !"),
-    OnboardingCard(image: "logoymenu", title: "Bon appétit !", description: "Si vous avez bien compris le fonctionnement, il ne vous reste plus qu'a essayer !")
+    OnboardingCard(image: "logoymenu", title: "Bienvenue dans Y'Menu", description: "À travers cette application vous pourrez découvrir les différents plats du menu proposés en réalité augmentée. Visualisez votre plat sur la table."),
+    OnboardingCard(image: "logoymenu", title: "Comment ça marche ?", description: "Ouvrez le scanneur intégré à l'application disponible depuis l'écran d'accueil, scannez un QR Code compatible et c'est prêt !"),
+    OnboardingCard(image: "logoymenu", title: "Bon appétit !", description: "Si vous avez bien compris le fonctionnement, il ne vous reste plus qu'à essayer !")
 ]
 
 struct ContentView : View {
@@ -57,7 +57,6 @@ struct Home: View {
             // tab view
             Divider()
                 .padding(.bottom,13)
-                .background(Color.white)
 
             HStack(spacing: 0){
                  ForEach(tabs,id: \.self){tab in
@@ -70,13 +69,13 @@ struct Home: View {
                 }
             }
             .padding(.horizontal,30)
-            .background(Color.white)
         }
     }
 }
 
 //tabButton
 struct TabButton : View{
+    @Environment(\.colorScheme) var colorScheme
     var title : String
     @Binding var selectedTab : String
     var animation : Namespace.ID
@@ -87,9 +86,9 @@ struct TabButton : View{
         }){
             VStack(spacing: 6){
                 Image(systemName: title)
-                    .renderingMode(.template)
                     .resizable()
-                    .foregroundColor(selectedTab == title ? Color(.black) : Color.black.opacity(0.4))
+                    .opacity(selectedTab == title ? 1 : 0.4)
+                    .foregroundColor(colorScheme == .dark ? .white : .black)
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 29, height: 30)
                 VStack{
