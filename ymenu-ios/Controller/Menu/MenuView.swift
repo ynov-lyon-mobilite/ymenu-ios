@@ -11,7 +11,7 @@ import Combine
 import SDWebImageSwiftUI
 
 struct MenuView: View {
-    
+    @Environment(\.colorScheme) var colorScheme
     @ObservedObject var viewModel: MenuViewModel
     @State var scrollPosition: CGFloat = 0.0
     var bag = Set<AnyCancellable>()
@@ -51,8 +51,9 @@ struct MenuView: View {
                                     viewModel.selectedCategoryId = category._id
                                 }) {
                                     Text(category.name)
+                                        .fontWeight(viewModel.selectedCategory?._id == category._id ? .bold : .regular)
                                         .overlay(viewModel.selectedCategory?._id == category._id ? RoundedRectangle(cornerRadius: .infinity).shadow(color: Color.red, radius: 2.5, x: 0, y: 1).foregroundColor(Color.red).frame(height: 3).offset(y: 5) : nil, alignment: .bottom)
-                                        .foregroundColor(Color.black)
+                                        .foregroundColor(colorScheme == .dark ? .white : .black)
                                         .padding(.top, 12)
                                         .padding(.bottom, 12)
                                 }
@@ -74,21 +75,32 @@ struct MenuView: View {
                                         ZStack{
                                             Button("") {}
                                             NavigationLink(destination: DishDetailView(dish: dish)){
-                                                WebImage(url: URL(string: dish.url_logo))
-                                                  .onSuccess { image, data, cacheType in
-                                                  }
-                                                  .resizable()
-                                                  .placeholder {
-                                                    Rectangle().foregroundColor(.gray)
-                                                  }
-                                                  .indicator(.activity)
-                                                  .transition(.fade(duration: 0.5))
-                                                  .scaledToFit()
-                                                    .aspectRatio(contentMode: .fill)
-                                                    .frame(width: 126, height: 83, alignment: .center)
-                                                    .cornerRadius(13)
-                                                    .frame(maxWidth: .infinity, alignment: .center)
-                                                    .shadow(radius: 6, x: 3, y: 3)
+                                                ZStack {
+                                                    WebImage(url: URL(string: dish.url_logo))
+                                                      .onSuccess { image, data, cacheType in
+                                                      }
+                                                      .resizable()
+                                                      .placeholder {
+                                                        Rectangle().foregroundColor(.gray)
+                                                      }
+                                                      .indicator(.activity)
+                                                      .transition(.fade(duration: 0.5))
+                                                      .scaledToFit()
+                                                        .aspectRatio(contentMode: .fill)
+                                                        .frame(width: 126, height: 83, alignment: .center)
+                                                        .cornerRadius(13)
+                                                        .frame(maxWidth: .infinity, alignment: .center)
+                                                        .shadow(radius: 6, x: 3, y: 3)
+                                                    if (dish.url_model != "") {
+                                                        Image(systemName: "arkit")
+                                                            .font(.system(size: 16, weight: .light, design: .rounded))
+                                                            .padding(5)
+                                                            .background(
+                                                                Blur(style: .systemUltraThinMaterial)
+                                                            ).cornerRadius(13).offset(x: -42, y: -20)
+                                                    }
+                                                }
+                                                
                                                 Text(dish.name).multilineTextAlignment(.leading)
                                                     .padding(.leading, 10)
                                                 Spacer()

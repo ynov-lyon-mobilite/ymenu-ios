@@ -8,14 +8,22 @@
 import SwiftUI
 
 struct ScannerView: View {
+    @Environment(\.colorScheme) var colorScheme
     @Binding var selectedTab: String
     @Binding var restaurant: RestaurantDTO
+    @State var showAlert: Bool = false
     
     @ObservedObject var viewModel = ScannerViewModel()
+    @ObservedObject var qrCodeViewModel = QrCodeScannerViewModel()
     
     func tapticSuccess() {
         let generator = UINotificationFeedbackGenerator()
         generator.notificationOccurred(.success)
+    }
+    
+    func tapticFail() {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.error)
     }
     
     var body: some View {
@@ -29,7 +37,9 @@ struct ScannerView: View {
                 VStack {
                     HStack {
                         Image(systemName: "qrcode.viewfinder")
-                        Text("Veuillez scanner un code QR").foregroundColor(.black)
+                            .foregroundColor(colorScheme == .dark ? .white : .black)
+                        Text("Veuillez scanner un code QR")
+                            .foregroundColor(colorScheme == .dark ? .white : .black)
                             .font(.subheadline).bold()
                     }
                     .padding()
@@ -44,7 +54,9 @@ struct ScannerView: View {
                 Rectangle()
                     .foregroundColor(.clear)
                     .overlay(
-                        Image(systemName: "viewfinder").font(.system(size: 300, weight: .ultraLight)).foregroundColor(.white)
+                        Image(systemName: "viewfinder")
+                            .font(.system(size: 300, weight: .ultraLight))
+                            .foregroundColor(.white)
                     )
                 Spacer()
                 // TODO: [Issue] Activating the flash disables the scan interval entirely, even when turned off. App needs to be restarted to fix
@@ -68,11 +80,27 @@ struct ScannerView: View {
         .onChange(of: self.viewModel.lastQrCode) { (_) in
             print("qrCode change: ", self.viewModel.lastQrCode)
     
-            tapticSuccess()
             let result = self.viewModel.lastQrCode.components(separatedBy: ", ")
-            
-            restaurant = RestaurantDTO(_id: result[0], name: result[1])
-            selectedTab = "greetingcard.fill"
+//          TODO: Handle QR codes passing the regex but not sending back data from the API
+            if (self.viewModel.lastQrCode.range(of: #"^(\w{24}), [a-zA-Z0-9_ ]*"#,
+                                options: .regularExpression) != nil){
+                restaurant = RestaurantDTO(_id: result[0], name: result[1])
+                self.selectedTab = "greetingcard.fill"
+                tapticSuccess()
+            } else {
+                tapticFail()
+                self.showAlert = true
+            }
+        }.alert(isPresented: $showAlert) {
+            Alert(
+                title: Text("QR code incompatible"),
+                message: Text("Veuillez scanner un QR Code compatible afin de récupérer le menu d'un restaurant"),
+                dismissButton: .cancel(Text("Réessayer"), action: {
+                    self.selectedTab = ""
+                    DispatchQueue.main.async {
+                        withAnimation { self.selectedTab = "qrcode.viewfinder" }
+                    }
+                }))
         }
     }
 }
