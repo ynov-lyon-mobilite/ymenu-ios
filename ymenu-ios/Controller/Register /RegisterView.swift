@@ -90,7 +90,7 @@ struct RegisterView: View {
                 Button("") {}
                 Button(action: {
                     
-                    self.showRegister = false
+                    
                 }) {
                     HStack {
                         //                    if viewModel.isLoading {
@@ -116,7 +116,7 @@ struct RegisterView: View {
             HStack(spacing: 0) {
                 Text("Déjà un compte?")
                 Button(action: {
-                    
+                    self.showRegister.toggle()
                 })
                 {
                     Text("Se connecter")
