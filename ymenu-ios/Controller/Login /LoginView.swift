@@ -26,7 +26,7 @@ struct LoginView: View {
                     .padding(.bottom, 40)
                 
                 Text("Connectez-vous")
-                    .font(.custom("SF Pro Text Bold", fixedSize: 22))
+                    .font(.custom("SF Pro Rounded Bold", fixedSize: 24))
                     .padding([.top, .bottom], 20)
                 
                 VStack(alignment: .leading, spacing: 15) {
@@ -59,13 +59,13 @@ struct LoginView: View {
 //                        Text("Chargement...")
 //                            .bold()
 //                    } else {
-                        Image(systemName: "key.fill")
                         Text("Connexion")
                             .bold()
 //                    }
                 }}.padding()
                 .foregroundColor(.white)
-                .background(Color.orange)
+                .padding([.trailing, .leading], 50)
+                .background(Color.themeTextField)
                 .cornerRadius(.greatestFiniteMagnitude)
                 .shadow(radius: 6, x: 3, y: 3)
                 .padding(.top, 40)
@@ -78,8 +78,8 @@ struct LoginView: View {
                     {
                         Text("S'inscrire")
                             .bold()
-                            .padding(.leading, 20)
-                            .foregroundColor(.orange)
+                            .padding(.leading, 10)
+                            .foregroundColor(Color.themeTextField)
                     }.sheet(isPresented: $showRegister){
                         RegisterView(showRegister: $showRegister)
                     }
