@@ -13,6 +13,7 @@ struct RegisterView: View {
     @State private var confirmpassword = ""
     @State private var nom = ""
     @State private var prenom = ""
+    @Binding var showRegister: Bool
     // MARK: - View
     var disableForm: Bool {
         password.count < 5 || confirmpassword.count < 5
@@ -108,6 +109,18 @@ struct RegisterView: View {
             }
             
             Spacer()
+            HStack(spacing: 0) {
+                Text("Déjà un compte?")
+                Button(action: {
+                    
+                })
+                {
+                    Text("Se connecter")
+                        .bold()
+                        .padding(.leading, 10)
+                        .foregroundColor(Color.themeTextField)
+                }
+            }.padding(.bottom, 30)
         }
         .background(
             LinearGradient(gradient: Gradient(colors: [.white, .white]), startPoint: .top, endPoint: .bottom)
@@ -115,6 +128,11 @@ struct RegisterView: View {
     }
 }
 
-
+struct RegisterView_Previews: PreviewProvider {
+    static var previews: some View {
+        RegisterView(showRegister: .constant(true))
+        
+    }
+}
 
 

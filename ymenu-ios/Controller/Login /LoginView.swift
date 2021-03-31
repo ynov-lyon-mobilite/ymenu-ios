@@ -11,6 +11,7 @@ struct LoginView: View {
     // MARK: - Propertiers
     @State private var email = ""
     @State private var password = ""
+    @State private var showRegister = false
     
     // MARK: - View
     var body: some View {
@@ -71,12 +72,16 @@ struct LoginView: View {
                 Spacer()
                 HStack(spacing: 0) {
                     Text("Pas de compte?")
-                    NavigationLink(destination: RegisterView())
+                    Button(action: {
+                        showRegister.toggle()
+                    })
                     {
                         Text("S'inscrire")
                             .bold()
                             .padding(.leading, 20)
                             .foregroundColor(.orange)
+                    }.sheet(isPresented: $showRegister){
+                        RegisterView(showRegister: $showRegister)
                     }
                 }.padding(.bottom, 30)
             }
