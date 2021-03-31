@@ -69,7 +69,7 @@ struct Home: View {
                 }
             }
             .padding(.horizontal,30)
-        }
+        }.ignoresSafeArea(.keyboard, edges: .bottom)
     }
 }
 
