@@ -18,18 +18,19 @@ struct LoginView: View {
             VStack() {
                 Image("logoymenu")
                     .resizable()
-                    .frame(width: 154, height: 155)
-                    .padding(.bottom, 20)
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 120, height: 120, alignment: .center)
+                    .padding(25)
+                    .background(RoundedRectangle(cornerRadius: 35).foregroundColor(.white))
+                    .padding(.bottom, 40)
                 
                 Text("Connectez-vous")
-                    .font(.largeTitle).foregroundColor(Color.black)
+                    .font(.custom("SF Pro Text Bold", fixedSize: 22))
                     .padding([.top, .bottom], 20)
-                    .shadow(radius: 10.0, x: 20, y: 10)
                 
                 VStack(alignment: .leading, spacing: 15) {
                     TextField("Email", text: self.$email)
                         .padding()
-                        .background(Color.white)
                         .cornerRadius(20.0)
                         .shadow(radius: 6, x: 3, y: 3)
                         .overlay(
@@ -39,7 +40,6 @@ struct LoginView: View {
                     
                     SecureField("Mot de passe", text: self.$password)
                         .padding()
-                        .background(Color.white)
                         .cornerRadius(20.0)
                         .shadow(radius: 6, x: 3, y: 3)
                         .overlay(
@@ -48,31 +48,38 @@ struct LoginView: View {
                         )
                 }.padding([.leading, .trailing], 27.5)
                 
-                Button("") {}
-                NavigationLink(destination: Home()) {
-                    Text("Se connecter")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .padding()
-                        .frame(width: 300, height: 50)
-                        .background(Color.orange)
-                        .cornerRadius(15.0)
-                        .shadow(radius: 6, x: 3, y: 3)
-                }.padding(.top, 50)
-                
+                Button(action: {
+                    
+                    
+                }) {
+                HStack {
+//                    if viewModel.isLoading {
+//                        ProgressView().padding(.horizontal, 3).progressViewStyle(CircularProgressViewStyle(tint: Color.white))
+//                        Text("Chargement...")
+//                            .bold()
+//                    } else {
+                        Image(systemName: "key.fill")
+                        Text("Connexion")
+                            .bold()
+//                    }
+                }}.padding()
+                .foregroundColor(.white)
+                .background(Color.orange)
+                .cornerRadius(.greatestFiniteMagnitude)
+                .shadow(radius: 6, x: 3, y: 3)
+                .padding(.top, 40)
                 Spacer()
                 HStack(spacing: 0) {
                     Text("Pas de compte?")
                     NavigationLink(destination: RegisterView())
                     {
-                        Text(" S'inscrire")
+                        Text("S'inscrire")
+                            .bold()
+                            .padding(.leading, 20)
                             .foregroundColor(.orange)
                     }
-                }
+                }.padding(.bottom, 30)
             }
-            .background(
-                LinearGradient(gradient: Gradient(colors: [.white, .white]), startPoint: .top, endPoint: .bottom)
-                    .edgesIgnoringSafeArea(.all))
             
         }
     }
@@ -81,6 +88,14 @@ struct LoginView: View {
 extension Color {
     static var themeTextField: Color {
         return Color(red: 255.0/255.0, green: 188.0/255.0, blue: 102.0/255.0, opacity: 1.0)
+    }
+}
+
+struct LoginView_Previews: PreviewProvider {
+    static var previews: some View {
+        LoginView()
+            .preferredColorScheme(.light)
+            
     }
 }
 
