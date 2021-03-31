@@ -10,6 +10,7 @@
 		0A02F0C025C97ED7008F53F2 /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0A02F0BF25C97ED7008F53F2 /* SF-Pro-Text-Regular.otf */; };
 		0A02F0C325C97EF1008F53F2 /* SF-Pro-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0A02F0C225C97EF1008F53F2 /* SF-Pro-Rounded-Bold.otf */; };
 		0A02F0C625C97F06008F53F2 /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0A02F0C525C97F06008F53F2 /* SF-Pro-Text-Bold.otf */; };
+		0A42155A261496E8002BC7B2 /* InfoProfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A421559261496E8002BC7B2 /* InfoProfilView.swift */; };
 		0A9DFA312589FFEE001C3ECC /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9DFA302589FFEE001C3ECC /* CameraPreview.swift */; };
 		0ABE4C5525A9D63F00463B1A /* OnboardingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABE4C5425A9D63F00463B1A /* OnboardingCard.swift */; };
 		0ABE4C5825A9D6AF00463B1A /* OnboardingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABE4C5725A9D6AF00463B1A /* OnboardingCardView.swift */; };
@@ -63,6 +64,7 @@
 		0A02F0BF25C97ED7008F53F2 /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
 		0A02F0C225C97EF1008F53F2 /* SF-Pro-Rounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Bold.otf"; sourceTree = "<group>"; };
 		0A02F0C525C97F06008F53F2 /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
+		0A421559261496E8002BC7B2 /* InfoProfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoProfilView.swift; sourceTree = "<group>"; };
 		0A9DFA302589FFEE001C3ECC /* CameraPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
 		0ABE4C5425A9D63F00463B1A /* OnboardingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCard.swift; sourceTree = "<group>"; };
 		0ABE4C5725A9D6AF00463B1A /* OnboardingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCardView.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				BAFA3E27260939030082C3EE /* ProfilView.swift */,
+				0A421559261496E8002BC7B2 /* InfoProfilView.swift */,
 			);
 			path = Profil;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				E36D852925333B0E00722077 /* ContentView.swift in Sources */,
 				E3BC0DD42614BF6C00ED1900 /* RoutingProvider.swift in Sources */,
 				470D9731256BBB2D0083912C /* GenericServerResponse.swift in Sources */,
+				0A42155A261496E8002BC7B2 /* InfoProfilView.swift in Sources */,
 				E333305425C40F02008278B2 /* ARQuickLook.swift in Sources */,
 				BAFA3E28260939030082C3EE /* ProfilView.swift in Sources */,
 				0AFD140B256E7CD3000EFEBA /* ScannerViewModel.swift in Sources */,
