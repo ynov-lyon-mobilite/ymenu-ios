@@ -35,6 +35,10 @@
 		B3408E1925B82C5C006BD523 /* CategoriesTopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3408E1825B82C5C006BD523 /* CategoriesTopBarView.swift */; };
 		B38E711725B861FD00A67830 /* DishDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38E711625B861FD00A67830 /* DishDetailView.swift */; };
 		B38E711E25B877F900A67830 /* IndexedForEach.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38E711D25B877F900A67830 /* IndexedForEach.swift */; };
+		BA446996261467B800CFBF1D /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA446995261467B800CFBF1D /* HistoryView.swift */; };
+		BA44699A26146A0000CFBF1D /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA44699926146A0000CFBF1D /* HistoryViewModel.swift */; };
+		BA4469A526146E2800CFBF1D /* IndexedForEachHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4469A426146E2800CFBF1D /* IndexedForEachHistory.swift */; };
+		BA4469A926146E5800CFBF1D /* HistoryTopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4469A826146E5800CFBF1D /* HistoryTopBarView.swift */; };
 		E321F56D25C993BA00137DDB /* minuteasia_bobun.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = E321F56C25C993BA00137DDB /* minuteasia_bobun.rcproject */; };
 		E322F68225CB1F65004AF310 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = E322F68125CB1F65004AF310 /* SDWebImageSwiftUI */; };
 		E333305425C40F02008278B2 /* ARQuickLook.swift in Sources */ = {isa = PBXBuildFile; fileRef = E333305325C40F02008278B2 /* ARQuickLook.swift */; };
@@ -74,6 +78,10 @@
 		B3408E1825B82C5C006BD523 /* CategoriesTopBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTopBarView.swift; sourceTree = "<group>"; };
 		B38E711625B861FD00A67830 /* DishDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDetailView.swift; sourceTree = "<group>"; };
 		B38E711D25B877F900A67830 /* IndexedForEach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexedForEach.swift; sourceTree = "<group>"; };
+		BA446995261467B800CFBF1D /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		BA44699926146A0000CFBF1D /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
+		BA4469A426146E2800CFBF1D /* IndexedForEachHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexedForEachHistory.swift; sourceTree = "<group>"; };
+		BA4469A826146E5800CFBF1D /* HistoryTopBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTopBarView.swift; sourceTree = "<group>"; };
 		E321F56C25C993BA00137DDB /* minuteasia_bobun.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = minuteasia_bobun.rcproject; sourceTree = "<group>"; };
 		E333305325C40F02008278B2 /* ARQuickLook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARQuickLook.swift; sourceTree = "<group>"; };
 		E36599CE256EA10800D58F6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -166,6 +174,7 @@
 		B3408E1425B82B28006BD523 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BA4469942614679300CFBF1D /* History */,
 				4701D01725CBE4CE0090D786 /* Onboarding */,
 				479FEB2325C9BDD500A75197 /* QRCode */,
 				B38E711525B861ED00A67830 /* Dish */,
@@ -192,6 +201,17 @@
 				B38E711625B861FD00A67830 /* DishDetailView.swift */,
 			);
 			path = Dish;
+			sourceTree = "<group>";
+		};
+		BA4469942614679300CFBF1D /* History */ = {
+			isa = PBXGroup;
+			children = (
+				BA446995261467B800CFBF1D /* HistoryView.swift */,
+				BA44699926146A0000CFBF1D /* HistoryViewModel.swift */,
+				BA4469A426146E2800CFBF1D /* IndexedForEachHistory.swift */,
+				BA4469A826146E5800CFBF1D /* HistoryTopBarView.swift */,
+			);
+			path = History;
 			sourceTree = "<group>";
 		};
 		E322F68025CB1F65004AF310 /* Frameworks */ = {
@@ -345,13 +365,17 @@
 				B3408E1225B827C8006BD523 /* DishCategory.swift in Sources */,
 				B3408E1925B82C5C006BD523 /* CategoriesTopBarView.swift in Sources */,
 				0ABE4C5825A9D6AF00463B1A /* OnboardingCardView.swift in Sources */,
+				BA44699A26146A0000CFBF1D /* HistoryViewModel.swift in Sources */,
 				0ABE4C6125A9F3A000463B1A /* PageControl.swift in Sources */,
+				BA446996261467B800CFBF1D /* HistoryView.swift in Sources */,
 				470D972C256BBA080083912C /* Request.swift in Sources */,
 				B38E711E25B877F900A67830 /* IndexedForEach.swift in Sources */,
 				E36D852725333B0E00722077 /* AppDelegate.swift in Sources */,
+				BA4469A526146E2800CFBF1D /* IndexedForEachHistory.swift in Sources */,
 				0A9DFA312589FFEE001C3ECC /* CameraPreview.swift in Sources */,
 				0AFD1417256E7DD1000EFEBA /* QrCodeScannerView.swift in Sources */,
 				470D9736256BBB4D0083912C /* AnyEncodable.swift in Sources */,
+				BA4469A926146E5800CFBF1D /* HistoryTopBarView.swift in Sources */,
 				47CE67AA258A0431004940D7 /* MenuView.swift in Sources */,
 				4715A4E8256E67BF00C24659 /* Dish.swift in Sources */,
 				0AFD140E256E7CF9000EFEBA /* ScannerView.swift in Sources */,
