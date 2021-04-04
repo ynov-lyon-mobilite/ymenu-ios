@@ -38,6 +38,8 @@ struct LoginView: View {
                             RoundedRectangle(cornerRadius: 20)
                                 .stroke(Color.themeTextField, lineWidth: 2)
                         )
+                        .keyboardType(.emailAddress)
+                        .autocapitalization(.none)
                     
                     SecureField("Mot de passe", text: self.$password)
                         .padding()
