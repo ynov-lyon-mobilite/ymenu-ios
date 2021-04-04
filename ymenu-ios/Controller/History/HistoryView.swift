@@ -9,12 +9,33 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct HistoryView: View {
+//    @Environment(\.colorScheme) var colorScheme
+    @ObservedObject var viewModel: HistoryViewModel
+//    @State var scrollPosition: CGFloat = 0.0
+//    var bag = Set<AnyCancellable>()
+//    @State var menuLoaded = false
+//    @State private var showAlert = false
+//    var selectedTab: Binding<String>
+
+    init(restaurant: RestaurantDTO, selectedTab: Binding<String>) {
+        UINavigationBar.appearance().largeTitleTextAttributes = [
+            .font : UIFont(name:"SF Pro Rounded Bold", size: 40)!
+        ]
+//
+//        self.selectedTab = selectedTab
+        self.viewModel = HistoryViewModel(restaurant: restaurant)
+    }
+ 
+    func tapticFail() {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.error)
+    }
     var body: some View {
         VStack(alignment: .leading) {
             Text("Antoine Mousset")
             Text("a@m.com")
                             VStack {
-                                WebImage(url: URL(string: "https://e7.pngegg.com/pngimages/505/761/png-clipart-login-computer-icons-avatar-icon-monochrome-black.png"))
+                                WebImage(url: URL(string: RestaurantDTO.url_logo))
                                                          .onSuccess { image, data, cacheType in
                                                          }
                                                          .resizable()
@@ -79,12 +100,12 @@ struct HistoryView: View {
 
 
 
-
-struct HistoryView_Previews: PreviewProvider {
-    static var previews: some View {
-        HistoryView()
-    }
-}
+//
+//struct HistoryView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        HistoryView(restaurant: restaurant)
+//    }
+//}
 
 
 

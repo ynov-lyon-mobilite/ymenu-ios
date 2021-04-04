@@ -8,48 +8,44 @@
 import Foundation
 
 final class HistoryViewModel : ObservableObject {
-    @Published var dishes: [Dish] = []
-    @Published var dishCategories: [DishCategory] = []
-    @Published var selectedCategoryId: String = ""
-    @Published var restaurant: RestaurantDTO
+    @Published var user: UserDTO
     
-    var selectedCategory: DishCategory? {
-        get {
-            guard let category = dishCategories.first(where: { $0._id == selectedCategoryId }) else { return nil }
-            
-            return category
-        }
-    }
-    let dishApiService = DishApiService()
-    let dishCategoryApiService = DishCategoryApiService()
+//    var selectedCategory: DishCategory? {
+//        get {
+//            guard let category = dishCategories.first(where: { $0._id == selectedCategoryId }) else { return nil }
+//
+//            return category
+//        }
+//    }
+    let restaurantApiService = RestaurantApiService()
     
-    init(restaurant: RestaurantDTO) {
-        self.restaurant = restaurant
+    init(user: UserDTO) {
+        self.user = user
         
-        dishApiService.getDishesByRestaurantId(restaurant) { [weak self] in
+        UserApi.getRestaurantByUserId(user) { [weak self] in
             guard let strongSelf = self else { return }
             
             switch $0 {
-            case .success(let dishes):
+            case .success(let restaurant):
                 DispatchQueue.main.async {
-                    strongSelf.dishes.append(contentsOf: dishes)
+                    strongSelf.restaurant.append(contentsOf: dishes)
                 }
             case .failure(_):
-                print("failed getting dishes for restaurant " + self!.restaurant._id)
+                print("failed getting user for restaurant " + self!.user._id)
             }
         }
         
-        dishCategoryApiService.getDisheCategoriesByRestaurantId(restaurant) { [weak self] in
-            guard let strongSelf = self else { return }
-            
-            switch $0 {
-            case .success(let dishCategories):
-                DispatchQueue.main.async {
-                    strongSelf.dishCategories.append(contentsOf: dishCategories)
-                }
-            case .failure(_):
-                print("failed getting dish categories for restaurant " + self!.restaurant._id)
-            }
-        }
+//        dishCategoryApiService.getDisheCategoriesByRestaurantId(restaurant) { [weak self] in
+//            guard let strongSelf = self else { return }
+//
+//            switch $0 {
+//            case .success(let dishCategories):
+//                DispatchQueue.main.async {
+//                    strongSelf.dishCategories.append(contentsOf: dishCategories)
+//                }
+//            case .failure(_):
+//                print("failed getting dish categories for restaurant " + self!.restaurant._id)
+//            }
+//        }
     }
 }

@@ -48,7 +48,7 @@ struct Home: View {
                             .opacity(selectedTab == "greetingcard.fill" ? 1 : 0)
                         case "qrcode.viewfinder": ScannerView(selectedTab: $selectedTab, restaurant: $restaurant).edgesIgnoringSafeArea(.top)
                             .opacity(selectedTab == "qrcode.viewfinder" ? 1 : 0)
-                        case "person.fill":  HistoryView()
+                    case "person.fill":  HistoryView(restaurant: restaurant, selectedTab: $selectedTab)
                             .opacity(selectedTab == "person.fill" ? 1 : 0)
                         default: EmptyView()
                     }
