@@ -8,7 +8,7 @@
 import Foundation
 
 final class HistoryViewModel : ObservableObject {
-    @Published var user: UserDTO
+    @Published var restaurants: [Restaurant] = []
     
 //    var selectedCategory: DishCategory? {
 //        get {
@@ -19,19 +19,20 @@ final class HistoryViewModel : ObservableObject {
 //    }
     let restaurantApiService = RestaurantApiService()
     
-    init(user: UserDTO) {
-        self.user = user
+    init() {
         
-        UserApi.getRestaurantByUserId(user) { [weak self] in
+        restaurantApiService.getRestaurant() { [weak self] in
             guard let strongSelf = self else { return }
             
             switch $0 {
-            case .success(let restaurant):
+            case .success(let restaurants):
                 DispatchQueue.main.async {
-                    strongSelf.restaurant.append(contentsOf: dishes)
+                    print(restaurants)
+//                    strongSelf.restaurants.append(contentsOf: restaurants)
                 }
-            case .failure(_):
-                print("failed getting user for restaurant " + self!.user._id)
+            case .failure(let error):
+//                print("Failed getting restaurants")
+            print(error)
             }
         }
         

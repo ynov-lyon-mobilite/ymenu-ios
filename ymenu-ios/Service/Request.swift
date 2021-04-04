@@ -122,12 +122,13 @@ class Request {
     }
     
     func withAuthentication() -> Request {
-           guard let tokenSaved = AuthenticationManager.getToken() else {
-               return self
-           }
-           self.token = tokenSaved
-           
+//           guard let tokenSaved = AuthenticationManager.getToken() else {
+//               return self
+//           }
+        
+           self.token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MDYwYjk3NTI5MjZkZDAwMTcwZTQ2NjEiLCJpYXQiOjE2MTc1NDI3MDZ9.RAaU7lL6NuCFMl0AzSE9rc6E1aEuTCRsIseMrL7AHco"
            return self
+     
        }
     
     func send(completion: @escaping (Result<NSNull, Error>) -> Void) {

@@ -8,11 +8,12 @@
 import Foundation
 
 final class RestaurantApiService {
-    func getRestaurantByUserId(_ completion: @escaping (Result<[RestaurantDTO], Error>) -> Void) -> Void {
+    func getRestaurant(completion: @escaping (Result<[Restaurant], Error>) -> Void) -> Void {
         Request()
-            .setPath("/api/restaurants/user/history")
+            .setPath("/restaurants/user/history")
             .setMethod(.GET)
-            .sendWithDecode([RestaurantDTO].self, completion: completion)
+            .withAuthentication()
+            .sendWithDecode([Restaurant].self, completion: completion)
     }
 }
 
@@ -23,3 +24,4 @@ final class RestaurantApiService {
 //            .setMethod(.GET)
 //            .sendWithDecode([Dish].self, completion: completion)
 //    }
+

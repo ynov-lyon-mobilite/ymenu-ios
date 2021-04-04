@@ -11,5 +11,4 @@ import SwiftUI
 struct RestaurantDTO: Decodable {
     let _id: String
     let name: String
-    let url_logo: String?
 }
