@@ -12,6 +12,7 @@ struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
     @State private var showRegister = false
+    @ObservedObject var viewModel: LoginViewModel
     
     // MARK: - View
     var body: some View {
@@ -30,7 +31,7 @@ struct LoginView: View {
                     .padding([.top, .bottom], 20)
                 
                 VStack(alignment: .leading, spacing: 15) {
-                    TextField("Email", text: self.$email)
+                    TextField("Email", text: $viewModel.mail)
                         .padding()
                         .cornerRadius(20.0)
                         .shadow(radius: 6, x: 3, y: 3)
@@ -41,7 +42,7 @@ struct LoginView: View {
                         .keyboardType(.emailAddress)
                         .autocapitalization(.none)
                     
-                    SecureField("Mot de passe", text: self.$password)
+                    SecureField("Mot de passe", text: $viewModel.password)
                         .padding()
                         .cornerRadius(20.0)
                         .shadow(radius: 6, x: 3, y: 3)
@@ -52,8 +53,8 @@ struct LoginView: View {
                 }.padding([.leading, .trailing], 27.5)
                 
                 Button(action: {
-                    
-                    
+                    viewModel.handleLogin()
+                    hideKeyboard()
                 }) {
                 HStack {
 //                    if viewModel.isLoading {
@@ -98,9 +99,17 @@ extension Color {
     }
 }
 
+#if canImport(UIKit)
+extension View {
+    func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+}
+#endif
+
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView(viewModel: LoginViewModel())
             .preferredColorScheme(.light)
             
     }
