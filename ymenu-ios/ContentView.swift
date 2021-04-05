@@ -39,6 +39,7 @@ struct Home: View {
     @State var restaurant: RestaurantDTO = RestaurantDTO(_id: "", name: "")
     @Namespace var animation : Namespace.ID
     
+    
     var body: some View{
         VStack(spacing : 0){
             GeometryReader{_ in
@@ -48,7 +49,7 @@ struct Home: View {
                             .opacity(selectedTab == "greetingcard.fill" ? 1 : 0)
                         case "qrcode.viewfinder": ScannerView(selectedTab: $selectedTab, restaurant: $restaurant).edgesIgnoringSafeArea(.top)
                             .opacity(selectedTab == "qrcode.viewfinder" ? 1 : 0)
-                        case "person.fill":  Text("Cette page sera implémentée prochainement").bold().frame(maxWidth: .infinity, alignment: .center).padding(.top, 400)
+                        case "person.fill":  AccountView()
                             .opacity(selectedTab == "person.fill" ? 1 : 0)
                         default: EmptyView()
                     }
@@ -69,7 +70,7 @@ struct Home: View {
                 }
             }
             .padding(.horizontal,30)
-        }
+        }.ignoresSafeArea(.keyboard, edges: .bottom)
     }
 }
 
