@@ -10,8 +10,10 @@ import Foundation
 class LoginViewModel: RoutingProvider {
     var loginWebService = LoginWebService()
     
-    var mail: String = ""
-    var password: String = ""
+    @Published var mail: String = ""
+    @Published var password: String = ""
+    @Published var isLoading: Bool = false
+    @Published var wrongCredentials: Bool = false
     
     func handleLogin() {
         let parameters = LoginWebServiceParameters(mail: mail, password: password)
@@ -20,9 +22,16 @@ class LoginViewModel: RoutingProvider {
         execute(with: loginWebService) { result in
             switch result {
             case .failure(let error):
+                DispatchQueue.main.async {
+                    self.wrongCredentials = true
+                    self.isLoading = false
+                }
                 print(error)
             case .success(let tokenPair):
-                ApplicationState.shared.authenticate(with: tokenPair)
+                DispatchQueue.main.async {
+                    ApplicationState.shared.authenticate(with: tokenPair)
+                    self.isLoading = false
+                }
             }
         }
     }

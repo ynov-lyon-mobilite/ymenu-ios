@@ -20,113 +20,121 @@ struct RegisterView: View {
         password.count < 5 || confirmpassword.count < 5
     }
     var body: some View {
-        VStack() {
-            Image("logoymenu")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 120, height: 120, alignment: .center)
-                .padding(25)
-                .background(RoundedRectangle(cornerRadius: 35).foregroundColor(.white))
-                .padding(.bottom, 40)
-                .padding(.top, 30)
-            
-            Text("Inscrivez-vous")
-                .font(.custom("SF Pro Rounded Bold", fixedSize: 24))
-            
-            Text("Accédez à votre historique de restaurants visités")
-                .font(.custom("SF Pro Text Regular", fixedSize: 16))
-                .lineLimit(2)
-                .padding([.top, .bottom], 20)
-            
-            
-            VStack(alignment: .leading, spacing: 15) {
-                SecureField("Nom", text: self.$nom)
-                    .padding()
-                    .cornerRadius(20.0)
-                    .shadow(radius: 6, x: 3, y: 3)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 20)
-                            .stroke(Color.themeTextField, lineWidth: 2)
-                    )
-                 
-                SecureField("Prenom", text: self.$prenom)
-                    .padding()
-                    .cornerRadius(20.0)
-                    .shadow(radius: 6, x: 3, y: 3)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 20)
-                            .stroke(Color.themeTextField, lineWidth: 2)
-                    )
+        NavigationView {
+            VStack {
+                Image("logoymenu")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 120, height: 120, alignment: .center)
+                    .padding(25)
+                    .background(RoundedRectangle(cornerRadius: 35).foregroundColor(.white))
+                    .padding(.bottom, 20)
+                    .padding(.top, -50)
                 
-                TextField("Email", text: self.$email)
-                    .padding()
-                    .cornerRadius(20.0)
-                    .shadow(radius: 6, x: 3, y: 3)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 20)
-                            .stroke(Color.themeTextField, lineWidth: 2)
-                    )
-                    .keyboardType(.emailAddress)
-                    .autocapitalization(.none)
+                Text("Inscrivez-vous")
+                    .font(.custom("SF Pro Rounded Bold", fixedSize: 24))
                 
-                SecureField("Mot de passe", text: self.$password)
-                    .padding()
-                    .cornerRadius(20.0)
-                    .shadow(radius: 6, x: 3, y: 3)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 20)
-                            .stroke(Color.themeTextField, lineWidth: 2)
-                    )
+                Text("Gardez un historique des restaurants visités")
+                    .font(.custom("SF Pro Text Regular", fixedSize: 16))
+                    .lineLimit(2)
+                    .padding([.top, .bottom], 20)
                 
-                SecureField("Confirmer le mot de passe", text: self.$confirmpassword)
-                    .padding()
-                    .cornerRadius(20.0)
-                    .shadow(radius: 6, x: 3, y: 3)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 20)
-                            .stroke(Color.themeTextField, lineWidth: 2)
-                    )
-            }.padding([.leading, .trailing], 27.5)
-            
-            if password == confirmpassword{
-                Button("") {}
-                Button(action: {
+                
+                VStack(alignment: .leading, spacing: 15) {
+                    SecureField("Nom", text: self.$nom)
+                        .padding()
+                        .cornerRadius(20.0)
+                        .shadow(radius: 6, x: 3, y: 3)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(Color.themeTextField, lineWidth: 2)
+                        )
+                     
+                    SecureField("Prenom", text: self.$prenom)
+                        .padding()
+                        .cornerRadius(20.0)
+                        .shadow(radius: 6, x: 3, y: 3)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(Color.themeTextField, lineWidth: 2)
+                        )
                     
+                    TextField("Email", text: self.$email)
+                        .padding()
+                        .cornerRadius(20.0)
+                        .shadow(radius: 6, x: 3, y: 3)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(Color.themeTextField, lineWidth: 2)
+                        )
+                        .keyboardType(.emailAddress)
+                        .autocapitalization(.none)
                     
-                }) {
-                    HStack {
-                        //                    if viewModel.isLoading {
-                        //                        ProgressView().padding(.horizontal, 3).progressViewStyle(CircularProgressViewStyle(tint: Color.white))
-                        //                        Text("Chargement...")
-                        //                            .bold()
-                        //                    } else {
-                        Text("S'inscrire")
-                            .bold()
-                        //                    }
-                    }}.padding()
-                .foregroundColor(.white)
-                .padding([.trailing, .leading], 50)
-                .background(Color.themeTextField)
-                .cornerRadius(.greatestFiniteMagnitude)
-                .shadow(radius: 6, x: 3, y: 3)
-                .disabled(disableForm)
-            }
-            else {
+                    SecureField("Mot de passe", text: self.$password)
+                        .padding()
+                        .cornerRadius(20.0)
+                        .shadow(radius: 6, x: 3, y: 3)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(Color.themeTextField, lineWidth: 2)
+                        )
+                    
+                    SecureField("Confirmer le mot de passe", text: self.$confirmpassword)
+                        .padding()
+                        .cornerRadius(20.0)
+                        .shadow(radius: 6, x: 3, y: 3)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(Color.themeTextField, lineWidth: 2)
+                        )
+                }.padding([.leading, .trailing], 27.5)
                 
-            }
-            Spacer()
-            HStack(spacing: 0) {
-                Text("Déjà un compte?")
-                Button(action: {
-                    self.showRegister.toggle()
-                })
-                {
-                    Text("Se connecter")
-                        .bold()
-                        .padding(.leading, 10)
-                        .foregroundColor(Color.themeTextField)
+                if password == confirmpassword{
+                    Button("") {}
+                    Button(action: {
+                        
+                        
+                    }) {
+                        HStack {
+                            //                    if viewModel.isLoading {
+                            //                        ProgressView().padding(.horizontal, 3).progressViewStyle(CircularProgressViewStyle(tint: Color.white))
+                            //                        Text("Chargement...")
+                            //                            .bold()
+                            //                    } else {
+                            Text("S'inscrire")
+                                .bold()
+                            //                    }
+                        }}.padding()
+                    .foregroundColor(.white)
+                    .padding([.trailing, .leading], 50)
+                    .background(Color.themeTextField)
+                    .cornerRadius(.greatestFiniteMagnitude)
+                    .shadow(radius: 6, x: 3, y: 3)
+                    .disabled(disableForm)
                 }
-            }.padding(.bottom, 30)
+                else {
+                    
+                }
+                Spacer()
+                HStack(spacing: 0) {
+                    Text("Déjà un compte?")
+                    Button(action: {
+                        self.showRegister.toggle()
+                    })
+                    {
+                        Text("Se connecter")
+                            .bold()
+                            .padding(.leading, 10)
+                            .foregroundColor(Color.themeTextField)
+                    }
+                }.padding(.bottom, 30).navigationBarItems(leading:
+                    Button(action: {
+                        self.showRegister.toggle()
+                    }) {
+                        Text("Retour").accentColor(Color.themeTextField)
+                    }
+                )
+            }
         }
     }
 }
