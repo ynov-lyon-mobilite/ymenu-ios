@@ -8,8 +8,10 @@
 import Foundation
 import SwiftUI
 
-struct Restaurant: Hashable,Decodable {
+struct Restaurant: Hashable, Decodable {
     let _id: String
     let name: String
     let url_logo: String
+    let address: String
+    let updatedAt: String
 }
