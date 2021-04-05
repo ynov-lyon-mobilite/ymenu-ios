@@ -41,6 +41,8 @@
 		BA4469A926146E5800CFBF1D /* HistoryTopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4469A826146E5800CFBF1D /* HistoryTopBarView.swift */; };
 		BA85DD182619EBF6009247EF /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA85DD172619EBF6009247EF /* UserDTO.swift */; };
 		BACCEDAC2619FEA800752D60 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACCEDAB2619FEA800752D60 /* Restaurant.swift */; };
+		BA51E1492610C288006AC7DB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA51E1482610C288006AC7DB /* LoginView.swift */; };
+		BA51E14D2610C290006AC7DB /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA51E14C2610C290006AC7DB /* RegisterView.swift */; };
 		E321F56D25C993BA00137DDB /* minuteasia_bobun.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = E321F56C25C993BA00137DDB /* minuteasia_bobun.rcproject */; };
 		E322F68225CB1F65004AF310 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = E322F68125CB1F65004AF310 /* SDWebImageSwiftUI */; };
 		E333305425C40F02008278B2 /* ARQuickLook.swift in Sources */ = {isa = PBXBuildFile; fileRef = E333305325C40F02008278B2 /* ARQuickLook.swift */; };
@@ -48,6 +50,17 @@
 		E36D852725333B0E00722077 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36D852625333B0E00722077 /* AppDelegate.swift */; };
 		E36D852925333B0E00722077 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36D852825333B0E00722077 /* ContentView.swift */; };
 		E36D853025333B0F00722077 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E36D852F25333B0F00722077 /* Preview Assets.xcassets */; };
+		E3BC0DB726149B6E00ED1900 /* ApplicationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BC0DB626149B6E00ED1900 /* ApplicationState.swift */; };
+		E3BC0DBA26149B9C00ED1900 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E3BC0DB926149B9C00ED1900 /* KeychainSwift */; };
+		E3BC0DBD26149C0400ED1900 /* JWTDecode in Frameworks */ = {isa = PBXBuildFile; productRef = E3BC0DBC26149C0400ED1900 /* JWTDecode */; };
+		E3BC0DC12614AE4900ED1900 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BC0DC02614AE4900ED1900 /* User.swift */; };
+		E3BC0DC42614B22C00ED1900 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BC0DC32614B22C00ED1900 /* AccountView.swift */; };
+		E3BC0DC62614B6CA00ED1900 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BC0DC52614B6CA00ED1900 /* LoginViewModel.swift */; };
+		E3BC0DD22614BF5F00ED1900 /* Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BC0DD12614BF5F00ED1900 /* Routing.swift */; };
+		E3BC0DD42614BF6C00ED1900 /* RoutingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BC0DD32614BF6C00ED1900 /* RoutingProvider.swift */; };
+		E3BC0DD62614BF7500ED1900 /* Weakable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BC0DD52614BF7500ED1900 /* Weakable.swift */; };
+		E3BC0DD82614C04F00ED1900 /* Hostname.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BC0DD72614C04F00ED1900 /* Hostname.swift */; };
+		E3BC0DDA2614C0A400ED1900 /* LoginWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BC0DD92614C0A400ED1900 /* LoginWebService.swift */; };
 		E3EB411125C9EA010016862A /* Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EB411025C9EA010016862A /* Blur.swift */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +99,8 @@
 		BA4469A826146E5800CFBF1D /* HistoryTopBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTopBarView.swift; sourceTree = "<group>"; };
 		BA85DD172619EBF6009247EF /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		BACCEDAB2619FEA800752D60 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		BA51E1482610C288006AC7DB /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		BA51E14C2610C290006AC7DB /* RegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		E321F56C25C993BA00137DDB /* minuteasia_bobun.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = minuteasia_bobun.rcproject; sourceTree = "<group>"; };
 		E333305325C40F02008278B2 /* ARQuickLook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARQuickLook.swift; sourceTree = "<group>"; };
 		E36599CE256EA10800D58F6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -94,6 +109,15 @@
 		E36D852825333B0E00722077 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E36D852F25333B0F00722077 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E36D853125333B0F00722077 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3BC0DB626149B6E00ED1900 /* ApplicationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationState.swift; sourceTree = "<group>"; };
+		E3BC0DC02614AE4900ED1900 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E3BC0DC32614B22C00ED1900 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		E3BC0DC52614B6CA00ED1900 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		E3BC0DD12614BF5F00ED1900 /* Routing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routing.swift; sourceTree = "<group>"; };
+		E3BC0DD32614BF6C00ED1900 /* RoutingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingProvider.swift; sourceTree = "<group>"; };
+		E3BC0DD52614BF7500ED1900 /* Weakable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weakable.swift; sourceTree = "<group>"; };
+		E3BC0DD72614C04F00ED1900 /* Hostname.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hostname.swift; sourceTree = "<group>"; };
+		E3BC0DD92614C0A400ED1900 /* LoginWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWebService.swift; sourceTree = "<group>"; };
 		E3EB411025C9EA010016862A /* Blur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blur.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,7 +126,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3BC0DBA26149B9C00ED1900 /* KeychainSwift in Frameworks */,
 				E322F68225CB1F65004AF310 /* SDWebImageSwiftUI in Frameworks */,
+				E3BC0DBD26149C0400ED1900 /* JWTDecode in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,10 +160,12 @@
 		470D972A256BB9E80083912C /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				E3BC0DD02614BF4000ED1900 /* Extendables */,
 				470D972B256BBA080083912C /* Request.swift */,
 				4715A4E1256E66F000C24659 /* RestaurantApiService.swift */,
 				4715A4E4256E672E00C24659 /* DishApiService.swift */,
 				B3408E0E25B8275E006BD523 /* DishCategoryApiService.swift */,
+				E3BC0DD92614C0A400ED1900 /* LoginWebService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -150,6 +178,7 @@
 				BACCEDAB2619FEA800752D60 /* Restaurant.swift */,
 				4715A4E7256E67BF00C24659 /* Dish.swift */,
 				B3408E1125B827C8006BD523 /* DishCategory.swift */,
+				E3BC0DC02614AE4900ED1900 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -181,6 +210,9 @@
 			isa = PBXGroup;
 			children = (
 				BA4469942614679300CFBF1D /* History */,
+				E3BC0DC22614B22000ED1900 /* Account */,
+				BA51E14B2610C290006AC7DB /* Register  */,
+				BA51E1472610C288006AC7DB /* Login  */,
 				4701D01725CBE4CE0090D786 /* Onboarding */,
 				479FEB2325C9BDD500A75197 /* QRCode */,
 				B38E711525B861ED00A67830 /* Dish */,
@@ -218,6 +250,21 @@
 				BA4469A826146E5800CFBF1D /* HistoryTopBarView.swift */,
 			);
 			path = History;
+		BA51E1472610C288006AC7DB /* Login  */ = {
+			isa = PBXGroup;
+			children = (
+				BA51E1482610C288006AC7DB /* LoginView.swift */,
+				E3BC0DC52614B6CA00ED1900 /* LoginViewModel.swift */,
+			);
+			path = "Login ";
+			sourceTree = "<group>";
+		};
+		BA51E14B2610C290006AC7DB /* Register  */ = {
+			isa = PBXGroup;
+			children = (
+				BA51E14C2610C290006AC7DB /* RegisterView.swift */,
+			);
+			path = "Register ";
 			sourceTree = "<group>";
 		};
 		E322F68025CB1F65004AF310 /* Frameworks */ = {
@@ -258,6 +305,7 @@
 				E36D853125333B0F00722077 /* Info.plist */,
 				E36D852E25333B0F00722077 /* Preview Content */,
 				E321F56C25C993BA00137DDB /* minuteasia_bobun.rcproject */,
+				E3BC0DB626149B6E00ED1900 /* ApplicationState.swift */,
 			);
 			path = "ymenu-ios";
 			sourceTree = "<group>";
@@ -268,6 +316,25 @@
 				E36D852F25333B0F00722077 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E3BC0DC22614B22000ED1900 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				E3BC0DC32614B22C00ED1900 /* AccountView.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		E3BC0DD02614BF4000ED1900 /* Extendables */ = {
+			isa = PBXGroup;
+			children = (
+				E3BC0DD12614BF5F00ED1900 /* Routing.swift */,
+				E3BC0DD32614BF6C00ED1900 /* RoutingProvider.swift */,
+				E3BC0DD52614BF7500ED1900 /* Weakable.swift */,
+				E3BC0DD72614C04F00ED1900 /* Hostname.swift */,
+			);
+			path = Extendables;
 			sourceTree = "<group>";
 		};
 		E3EB411325C9FF870016862A /* Additions */ = {
@@ -296,6 +363,8 @@
 			name = "ymenu-ios";
 			packageProductDependencies = (
 				E322F68125CB1F65004AF310 /* SDWebImageSwiftUI */,
+				E3BC0DB926149B9C00ED1900 /* KeychainSwift */,
+				E3BC0DBC26149C0400ED1900 /* JWTDecode */,
 			);
 			productName = "ymenu-ios";
 			productReference = E36D852325333B0E00722077 /* ymenu-ios.app */;
@@ -326,6 +395,8 @@
 			mainGroup = E36D851A25333B0E00722077;
 			packageReferences = (
 				E322F67D25CB1EB2004AF310 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				E3BC0DB826149B9C00ED1900 /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				E3BC0DBB26149C0400ED1900 /* XCRemoteSwiftPackageReference "JWTDecode" */,
 			);
 			productRefGroup = E36D852425333B0E00722077 /* Products */;
 			projectDirPath = "";
@@ -357,11 +428,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E36D852925333B0E00722077 /* ContentView.swift in Sources */,
+				E3BC0DD42614BF6C00ED1900 /* RoutingProvider.swift in Sources */,
 				470D9731256BBB2D0083912C /* GenericServerResponse.swift in Sources */,
 				E333305425C40F02008278B2 /* ARQuickLook.swift in Sources */,
 				0AFD140B256E7CD3000EFEBA /* ScannerViewModel.swift in Sources */,
+				E3BC0DD22614BF5F00ED1900 /* Routing.swift in Sources */,
 				4715A4EB256E6B4A00C24659 /* RestaurantDTO.swift in Sources */,
 				47CE67AE258A3FDE004940D7 /* MenuViewModel.swift in Sources */,
+				E3BC0DB726149B6E00ED1900 /* ApplicationState.swift in Sources */,
 				E321F56D25C993BA00137DDB /* minuteasia_bobun.rcproject in Sources */,
 				4715A4E5256E672E00C24659 /* DishApiService.swift in Sources */,
 				BACCEDAC2619FEA800752D60 /* Restaurant.swift in Sources */,
@@ -369,25 +443,33 @@
 				0AFD1411256E7D31000EFEBA /* QrCodeCameraDelegate.swift in Sources */,
 				4765860A25CB498C00871FDC /* QrCodeScannerViewModel.swift in Sources */,
 				B38E711725B861FD00A67830 /* DishDetailView.swift in Sources */,
+				E3BC0DC12614AE4900ED1900 /* User.swift in Sources */,
 				B3408E1225B827C8006BD523 /* DishCategory.swift in Sources */,
+				BA51E14D2610C290006AC7DB /* RegisterView.swift in Sources */,
 				B3408E1925B82C5C006BD523 /* CategoriesTopBarView.swift in Sources */,
 				0ABE4C5825A9D6AF00463B1A /* OnboardingCardView.swift in Sources */,
 				BA44699A26146A0000CFBF1D /* HistoryViewModel.swift in Sources */,
 				0ABE4C6125A9F3A000463B1A /* PageControl.swift in Sources */,
 				BA446996261467B800CFBF1D /* HistoryView.swift in Sources */,
+				E3BC0DD62614BF7500ED1900 /* Weakable.swift in Sources */,
 				470D972C256BBA080083912C /* Request.swift in Sources */,
 				B38E711E25B877F900A67830 /* IndexedForEach.swift in Sources */,
 				E36D852725333B0E00722077 /* AppDelegate.swift in Sources */,
 				BA4469A526146E2800CFBF1D /* IndexedForEachHistory.swift in Sources */,
 				0A9DFA312589FFEE001C3ECC /* CameraPreview.swift in Sources */,
 				0AFD1417256E7DD1000EFEBA /* QrCodeScannerView.swift in Sources */,
+				E3BC0DC42614B22C00ED1900 /* AccountView.swift in Sources */,
 				470D9736256BBB4D0083912C /* AnyEncodable.swift in Sources */,
 				BA4469A926146E5800CFBF1D /* HistoryTopBarView.swift in Sources */,
+				BA51E1492610C288006AC7DB /* LoginView.swift in Sources */,
 				47CE67AA258A0431004940D7 /* MenuView.swift in Sources */,
 				4715A4E8256E67BF00C24659 /* Dish.swift in Sources */,
+				E3BC0DC62614B6CA00ED1900 /* LoginViewModel.swift in Sources */,
 				0AFD140E256E7CF9000EFEBA /* ScannerView.swift in Sources */,
+				E3BC0DDA2614C0A400ED1900 /* LoginWebService.swift in Sources */,
 				B3408E0F25B8275E006BD523 /* DishCategoryApiService.swift in Sources */,
 				0ABE4C5525A9D63F00463B1A /* OnboardingCard.swift in Sources */,
+				E3BC0DD82614C04F00ED1900 /* Hostname.swift in Sources */,
 				0ABE4C5B25A9E89600463B1A /* PageViewController.swift in Sources */,
 				4715A4E2256E66F000C24659 /* RestaurantApiService.swift in Sources */,
 				BA85DD182619EBF6009247EF /* UserDTO.swift in Sources */,
@@ -592,6 +674,22 @@
 				minimumVersion = 1.5.0;
 			};
 		};
+		E3BC0DB826149B9C00ED1900 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 19.0.0;
+			};
+		};
+		E3BC0DBB26149C0400ED1900 /* XCRemoteSwiftPackageReference "JWTDecode" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/auth0/JWTDecode.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.6.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -599,6 +697,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E322F67D25CB1EB2004AF310 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
+		};
+		E3BC0DB926149B9C00ED1900 /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E3BC0DB826149B9C00ED1900 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
+		};
+		E3BC0DBC26149C0400ED1900 /* JWTDecode */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E3BC0DBB26149C0400ED1900 /* XCRemoteSwiftPackageReference "JWTDecode" */;
+			productName = JWTDecode;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

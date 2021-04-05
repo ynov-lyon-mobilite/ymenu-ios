@@ -50,7 +50,7 @@ struct ScannerView: View {
                         )
                     .cornerRadius(.greatestFiniteMagnitude)
                 }
-                .padding(.vertical, 60)
+                .padding(.top, 60)
                 Rectangle()
                     .foregroundColor(.clear)
                     .overlay(
