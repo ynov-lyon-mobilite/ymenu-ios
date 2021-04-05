@@ -16,12 +16,3 @@ final class RestaurantApiService {
             .sendWithDecode([Restaurant].self, completion: completion)
     }
 }
-
-//final class DishApiService {
-//    func getDishesByRestaurantId(_ RestaurantDTO: RestaurantDTO,completion: @escaping (Result<[Dish], Error>) -> Void) -> Void {
-//        Request()
-//            .setPath("/dishes/restaurant/" + RestaurantDTO._id)
-//            .setMethod(.GET)
-//            .sendWithDecode([Dish].self, completion: completion)
-//    }
-
