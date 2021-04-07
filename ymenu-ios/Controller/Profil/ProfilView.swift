@@ -42,45 +42,37 @@ struct ProfilView: View {
                 .offset(y: -90)
             }
             VStack{
-                RoundedRectangle(cornerRadius: 100)
-                    .frame(width: 300, height: 55)
-                    .foregroundColor(Color.orange)
-                    .padding()
-                        .shadow(radius: 5, x: 2, y: 2)
-                        .border(Color.black, width: 0)
-                    .overlay(
-                        NavigationLink(
-                            destination: InfoProfilView(), // <3>
-                                label: {
-                                    Label("Mes informations", systemImage: "") // <7>
-                                    })
-                        .foregroundColor(.white)
-                            .font(.custom("SF Pro Text Bold", size: 24))
-                    ).offset(y:20)
-                }
-            
+                NavigationLink(
+                    destination: InfoProfilView()) {
+                    Text("Mes informations")
+                        .frame(width: 270, height: 25)
+                        .font(.custom("SF Pro Text Regular", size: 22))
+                        .padding()
+                        .foregroundColor(.gray)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 100)
+                                .stroke(Color.orange, lineWidth: 2)
+                        )
+                }.offset(y: 25)
+            }
             VStack{
-                RoundedRectangle(cornerRadius: 100)
-                    .frame(width: 300, height: 55)
-                    .foregroundColor(Color.orange)
-                    .padding()
-                        .shadow(radius: 5, x: 2, y: 2)
-                        .border(Color.black, width: 0)
-                    .overlay(
-                        NavigationLink(
-                            // destination: mettre view historique
-                            destination: InfoProfilView(), // <3>
-                                label: {
-                                    Label("Historique de visite", systemImage: "") // <7>
-                                    })
-                        .foregroundColor(.white)
-                            .font(.custom("SF Pro Text Bold", size: 24))
-                    ).offset(y: 120)
-                }
-            .navigationBarTitle("Profil")
+                NavigationLink(
+                    destination: InfoProfilView()) {
+                    Text("Historique de visite")
+                        .frame(width: 270, height: 25)
+                        .font(.custom("SF Pro Text Regular", size: 22))
+                        .padding()
+                        .foregroundColor(.gray)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 100)
+                                .stroke(Color.orange, lineWidth: 2)
+                        )
+                }.offset(y: 125)
+            }
+            .navigationBarTitle("Profil")// retour (back -> profil)
             .navigationBarHidden(true)
         }.edgesIgnoringSafeArea(.all)
-        }.accentColor(.orange)
+        }.accentColor(.orange)// color (profil)
     }
 }
 struct ProfilView_Previews: PreviewProvider {

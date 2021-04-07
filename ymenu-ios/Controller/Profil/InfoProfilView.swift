@@ -39,47 +39,44 @@ struct InfoProfilView: View {
                 .offset(y: -90)
             }
             VStack{
-                RoundedRectangle(cornerRadius: 100)
-                    .frame(width: 300, height: 55)
-    //                    .foregroundColor(Color(red: 235/255, green: 165/255, blue: 60/255))
-                    .foregroundColor(Color.orange)
-                    .padding()
-                        .shadow(radius: 5, x: 2, y: 2)
-                        .border(Color.black, width: 0)
-                    .overlay(
-                        Text("Nom")
-                        .foregroundColor(.white)
-                            .font(.custom("SF Pro Text Bold", size: 24))
-                    ).offset(y:20)
-            }.padding()
+                 {
+                    Text("Email")
+                        .frame(width: 270, height: 25)
+                        .font(.custom("SF Pro Text Regular", size: 22))
+                        .padding()
+                        .foregroundColor(.gray)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 100)
+                                .stroke(Color.orange, lineWidth: 2)
+                        )
+                }().offset(y: 25)
+            }
             VStack{
-                RoundedRectangle(cornerRadius: 100)
-                    .frame(width: 300, height: 55)
-    //                    .foregroundColor(Color(red: 235/255, green: 165/255, blue: 60/255))
-                    .foregroundColor(Color.orange)
-                    .padding()
-                        .shadow(radius: 5, x: 2, y: 2)
-                        .border(Color.black, width: 0)
-                    .overlay(
-                        Text("Prénom")
-                        .foregroundColor(.white)
-                            .font(.custom("SF Pro Text Bold", size: 24))
-                    ).offset(y:110)
-            }.padding()
+                 {
+                    Text("Nom")
+                        .frame(width: 270, height: 25)
+                        .font(.custom("SF Pro Text Regular", size: 22))
+                        .padding()
+                        .foregroundColor(.gray)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 100)
+                                .stroke(Color.orange, lineWidth: 2)
+                        )
+                }().offset(y: 125)
+            }
             VStack{
-                RoundedRectangle(cornerRadius: 100)
-                    .frame(width: 300, height: 55)
-    //                    .foregroundColor(Color(red: 235/255, green: 165/255, blue: 60/255))
-                    .foregroundColor(Color.orange)
-                    .padding()
-                        .shadow(radius: 5, x: 2, y: 2)
-                        .border(Color.black, width: 0)
-                    .overlay(
-                        Text("Email")
-                        .foregroundColor(.white)
-                            .font(.custom("SF Pro Text Bold", size: 24))
-                    ).offset(y:200)
-            }.padding()
+                 {
+                    Text("Prénom")
+                        .frame(width: 270, height: 25)
+                        .font(.custom("SF Pro Text Regular", size: 22))
+                        .padding()
+                        .foregroundColor(.gray)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 100)
+                                .stroke(Color.orange, lineWidth: 2)
+                        )
+                 }().offset(y: 225)
+            }
         }.edgesIgnoringSafeArea(.all)
     }
     }
