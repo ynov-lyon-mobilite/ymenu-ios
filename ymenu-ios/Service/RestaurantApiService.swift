@@ -8,5 +8,11 @@
 import Foundation
 
 final class RestaurantApiService {
-        
+    func getRestaurant(completion: @escaping (Result<[Restaurant], Error>) -> Void) -> Void {
+        Request()
+            .setPath("/restaurants/user/history")
+            .setMethod(.GET)
+            .withAuthentication()
+            .sendWithDecode([Restaurant].self, completion: completion)
+    }
 }

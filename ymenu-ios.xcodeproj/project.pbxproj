@@ -35,6 +35,12 @@
 		B3408E1925B82C5C006BD523 /* CategoriesTopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3408E1825B82C5C006BD523 /* CategoriesTopBarView.swift */; };
 		B38E711725B861FD00A67830 /* DishDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38E711625B861FD00A67830 /* DishDetailView.swift */; };
 		B38E711E25B877F900A67830 /* IndexedForEach.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38E711D25B877F900A67830 /* IndexedForEach.swift */; };
+		BA446996261467B800CFBF1D /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA446995261467B800CFBF1D /* HistoryView.swift */; };
+		BA44699A26146A0000CFBF1D /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA44699926146A0000CFBF1D /* HistoryViewModel.swift */; };
+		BA4469A526146E2800CFBF1D /* IndexedForEachHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4469A426146E2800CFBF1D /* IndexedForEachHistory.swift */; };
+		BA4469A926146E5800CFBF1D /* HistoryTopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4469A826146E5800CFBF1D /* HistoryTopBarView.swift */; };
+		BA85DD182619EBF6009247EF /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA85DD172619EBF6009247EF /* UserDTO.swift */; };
+		BACCEDAC2619FEA800752D60 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACCEDAB2619FEA800752D60 /* Restaurant.swift */; };
 		BA51E1492610C288006AC7DB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA51E1482610C288006AC7DB /* LoginView.swift */; };
 		BA51E14D2610C290006AC7DB /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA51E14C2610C290006AC7DB /* RegisterView.swift */; };
 		E321F56D25C993BA00137DDB /* minuteasia_bobun.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = E321F56C25C993BA00137DDB /* minuteasia_bobun.rcproject */; };
@@ -87,6 +93,12 @@
 		B3408E1825B82C5C006BD523 /* CategoriesTopBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTopBarView.swift; sourceTree = "<group>"; };
 		B38E711625B861FD00A67830 /* DishDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDetailView.swift; sourceTree = "<group>"; };
 		B38E711D25B877F900A67830 /* IndexedForEach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexedForEach.swift; sourceTree = "<group>"; };
+		BA446995261467B800CFBF1D /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		BA44699926146A0000CFBF1D /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
+		BA4469A426146E2800CFBF1D /* IndexedForEachHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexedForEachHistory.swift; sourceTree = "<group>"; };
+		BA4469A826146E5800CFBF1D /* HistoryTopBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTopBarView.swift; sourceTree = "<group>"; };
+		BA85DD172619EBF6009247EF /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
+		BACCEDAB2619FEA800752D60 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		BA51E1482610C288006AC7DB /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		BA51E14C2610C290006AC7DB /* RegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		E321F56C25C993BA00137DDB /* minuteasia_bobun.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = minuteasia_bobun.rcproject; sourceTree = "<group>"; };
@@ -163,6 +175,7 @@
 			children = (
 				470D9734256BBB390083912C /* DTO */,
 				470D9730256BBB2D0083912C /* GenericServerResponse.swift */,
+				BACCEDAB2619FEA800752D60 /* Restaurant.swift */,
 				4715A4E7256E67BF00C24659 /* Dish.swift */,
 				B3408E1125B827C8006BD523 /* DishCategory.swift */,
 				E3BC0DC02614AE4900ED1900 /* User.swift */,
@@ -175,6 +188,7 @@
 			children = (
 				470D9735256BBB4D0083912C /* AnyEncodable.swift */,
 				4715A4EA256E6B4A00C24659 /* RestaurantDTO.swift */,
+				BA85DD172619EBF6009247EF /* UserDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -195,6 +209,7 @@
 		B3408E1425B82B28006BD523 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BA4469942614679300CFBF1D /* History */,
 				E3BC0DC22614B22000ED1900 /* Account */,
 				BA51E14B2610C290006AC7DB /* Register  */,
 				BA51E1472610C288006AC7DB /* Login  */,
@@ -226,6 +241,15 @@
 			path = Dish;
 			sourceTree = "<group>";
 		};
+		BA4469942614679300CFBF1D /* History */ = {
+			isa = PBXGroup;
+			children = (
+				BA446995261467B800CFBF1D /* HistoryView.swift */,
+				BA44699926146A0000CFBF1D /* HistoryViewModel.swift */,
+				BA4469A426146E2800CFBF1D /* IndexedForEachHistory.swift */,
+				BA4469A826146E5800CFBF1D /* HistoryTopBarView.swift */,
+			);
+			path = History;
 		BA51E1472610C288006AC7DB /* Login  */ = {
 			isa = PBXGroup;
 			children = (
@@ -414,6 +438,7 @@
 				E3BC0DB726149B6E00ED1900 /* ApplicationState.swift in Sources */,
 				E321F56D25C993BA00137DDB /* minuteasia_bobun.rcproject in Sources */,
 				4715A4E5256E672E00C24659 /* DishApiService.swift in Sources */,
+				BACCEDAC2619FEA800752D60 /* Restaurant.swift in Sources */,
 				E3EB411125C9EA010016862A /* Blur.swift in Sources */,
 				0AFD1411256E7D31000EFEBA /* QrCodeCameraDelegate.swift in Sources */,
 				4765860A25CB498C00871FDC /* QrCodeScannerViewModel.swift in Sources */,
@@ -423,15 +448,19 @@
 				BA51E14D2610C290006AC7DB /* RegisterView.swift in Sources */,
 				B3408E1925B82C5C006BD523 /* CategoriesTopBarView.swift in Sources */,
 				0ABE4C5825A9D6AF00463B1A /* OnboardingCardView.swift in Sources */,
+				BA44699A26146A0000CFBF1D /* HistoryViewModel.swift in Sources */,
 				0ABE4C6125A9F3A000463B1A /* PageControl.swift in Sources */,
+				BA446996261467B800CFBF1D /* HistoryView.swift in Sources */,
 				E3BC0DD62614BF7500ED1900 /* Weakable.swift in Sources */,
 				470D972C256BBA080083912C /* Request.swift in Sources */,
 				B38E711E25B877F900A67830 /* IndexedForEach.swift in Sources */,
 				E36D852725333B0E00722077 /* AppDelegate.swift in Sources */,
+				BA4469A526146E2800CFBF1D /* IndexedForEachHistory.swift in Sources */,
 				0A9DFA312589FFEE001C3ECC /* CameraPreview.swift in Sources */,
 				0AFD1417256E7DD1000EFEBA /* QrCodeScannerView.swift in Sources */,
 				E3BC0DC42614B22C00ED1900 /* AccountView.swift in Sources */,
 				470D9736256BBB4D0083912C /* AnyEncodable.swift in Sources */,
+				BA4469A926146E5800CFBF1D /* HistoryTopBarView.swift in Sources */,
 				BA51E1492610C288006AC7DB /* LoginView.swift in Sources */,
 				47CE67AA258A0431004940D7 /* MenuView.swift in Sources */,
 				4715A4E8256E67BF00C24659 /* Dish.swift in Sources */,
@@ -443,6 +472,7 @@
 				E3BC0DD82614C04F00ED1900 /* Hostname.swift in Sources */,
 				0ABE4C5B25A9E89600463B1A /* PageViewController.swift in Sources */,
 				4715A4E2256E66F000C24659 /* RestaurantApiService.swift in Sources */,
+				BA85DD182619EBF6009247EF /* UserDTO.swift in Sources */,
 				0ABE4C5E25A9EA6000463B1A /* PageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
