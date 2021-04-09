@@ -16,6 +16,7 @@ struct HistoryView: View {
     @State var scrollPosition: CGFloat = 0.0
     var bag = Set<AnyCancellable>()
     @State var historyLoaded = false
+    @State var showAlert = false
     
     @ObservedObject var applicationState: ApplicationState = ApplicationState.shared
     @EnvironmentObject var viewRouter: ViewRouter
@@ -80,6 +81,7 @@ struct HistoryView: View {
                 .listStyle(InsetGroupedListStyle())
                 .progressViewStyle(CircularProgressViewStyle())
                 Button(action: {
+                    self.showAlert = true
                 }) {
                     HStack {
                         Text("Déconnexion")
@@ -96,6 +98,16 @@ struct HistoryView: View {
             UINavigationBar.appearance().largeTitleTextAttributes = [
                 .font : UIFont(name:"SF Pro Rounded Bold", size: 40)!
             ]
+        }
+        .alert(isPresented: $showAlert) {
+            Alert(title: Text("Déconnexion"),
+             message: Text("Êtes-vous sûr(e) de vouloir vous déconnecter?"),
+             primaryButton: .cancel(Text("Annuler")),
+             secondaryButton: .destructive(Text("Se déconnecter"), action: {
+                withAnimation {
+                    applicationState.disconnect()
+                }
+             }))
         }
     }
 }
