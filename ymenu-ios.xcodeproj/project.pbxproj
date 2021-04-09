@@ -250,6 +250,8 @@
 				BA4469A826146E5800CFBF1D /* HistoryTopBarView.swift */,
 			);
 			path = History;
+            sourceTree = "<group>";
+        };
 		BA51E1472610C288006AC7DB /* Login  */ = {
 			isa = PBXGroup;
 			children = (
