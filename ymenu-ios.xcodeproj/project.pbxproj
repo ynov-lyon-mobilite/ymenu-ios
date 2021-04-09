@@ -38,14 +38,14 @@
 		BA446996261467B800CFBF1D /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA446995261467B800CFBF1D /* HistoryView.swift */; };
 		BA44699A26146A0000CFBF1D /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA44699926146A0000CFBF1D /* HistoryViewModel.swift */; };
 		BA4469A526146E2800CFBF1D /* IndexedForEachHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4469A426146E2800CFBF1D /* IndexedForEachHistory.swift */; };
-		BA4469A926146E5800CFBF1D /* HistoryTopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4469A826146E5800CFBF1D /* HistoryTopBarView.swift */; };
-		BA85DD182619EBF6009247EF /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA85DD172619EBF6009247EF /* UserDTO.swift */; };
-		BACCEDAC2619FEA800752D60 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACCEDAB2619FEA800752D60 /* Restaurant.swift */; };
 		BA51E1492610C288006AC7DB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA51E1482610C288006AC7DB /* LoginView.swift */; };
 		BA51E14D2610C290006AC7DB /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA51E14C2610C290006AC7DB /* RegisterView.swift */; };
+		BA85DD182619EBF6009247EF /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA85DD172619EBF6009247EF /* UserDTO.swift */; };
+		BACCEDAC2619FEA800752D60 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACCEDAB2619FEA800752D60 /* Restaurant.swift */; };
 		E321F56D25C993BA00137DDB /* minuteasia_bobun.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = E321F56C25C993BA00137DDB /* minuteasia_bobun.rcproject */; };
 		E322F68225CB1F65004AF310 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = E322F68125CB1F65004AF310 /* SDWebImageSwiftUI */; };
 		E333305425C40F02008278B2 /* ARQuickLook.swift in Sources */ = {isa = PBXBuildFile; fileRef = E333305325C40F02008278B2 /* ARQuickLook.swift */; };
+		E33883A22620ED04009FEA0F /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33883A12620ED04009FEA0F /* ViewRouter.swift */; };
 		E36599CF256EA10800D58F6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E36599CE256EA10800D58F6F /* Assets.xcassets */; };
 		E36D852725333B0E00722077 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36D852625333B0E00722077 /* AppDelegate.swift */; };
 		E36D852925333B0E00722077 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36D852825333B0E00722077 /* ContentView.swift */; };
@@ -96,13 +96,13 @@
 		BA446995261467B800CFBF1D /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		BA44699926146A0000CFBF1D /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		BA4469A426146E2800CFBF1D /* IndexedForEachHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexedForEachHistory.swift; sourceTree = "<group>"; };
-		BA4469A826146E5800CFBF1D /* HistoryTopBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTopBarView.swift; sourceTree = "<group>"; };
-		BA85DD172619EBF6009247EF /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
-		BACCEDAB2619FEA800752D60 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		BA51E1482610C288006AC7DB /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		BA51E14C2610C290006AC7DB /* RegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		BA85DD172619EBF6009247EF /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
+		BACCEDAB2619FEA800752D60 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		E321F56C25C993BA00137DDB /* minuteasia_bobun.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = minuteasia_bobun.rcproject; sourceTree = "<group>"; };
 		E333305325C40F02008278B2 /* ARQuickLook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARQuickLook.swift; sourceTree = "<group>"; };
+		E33883A12620ED04009FEA0F /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		E36599CE256EA10800D58F6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E36D852325333B0E00722077 /* ymenu-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ymenu-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E36D852625333B0E00722077 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -247,11 +247,10 @@
 				BA446995261467B800CFBF1D /* HistoryView.swift */,
 				BA44699926146A0000CFBF1D /* HistoryViewModel.swift */,
 				BA4469A426146E2800CFBF1D /* IndexedForEachHistory.swift */,
-				BA4469A826146E5800CFBF1D /* HistoryTopBarView.swift */,
 			);
 			path = History;
-            sourceTree = "<group>";
-        };
+			sourceTree = "<group>";
+		};
 		BA51E1472610C288006AC7DB /* Login  */ = {
 			isa = PBXGroup;
 			children = (
@@ -308,6 +307,7 @@
 				E36D852E25333B0F00722077 /* Preview Content */,
 				E321F56C25C993BA00137DDB /* minuteasia_bobun.rcproject */,
 				E3BC0DB626149B6E00ED1900 /* ApplicationState.swift */,
+				E33883A12620ED04009FEA0F /* ViewRouter.swift */,
 			);
 			path = "ymenu-ios";
 			sourceTree = "<group>";
@@ -462,9 +462,9 @@
 				0AFD1417256E7DD1000EFEBA /* QrCodeScannerView.swift in Sources */,
 				E3BC0DC42614B22C00ED1900 /* AccountView.swift in Sources */,
 				470D9736256BBB4D0083912C /* AnyEncodable.swift in Sources */,
-				BA4469A926146E5800CFBF1D /* HistoryTopBarView.swift in Sources */,
 				BA51E1492610C288006AC7DB /* LoginView.swift in Sources */,
 				47CE67AA258A0431004940D7 /* MenuView.swift in Sources */,
+				E33883A22620ED04009FEA0F /* ViewRouter.swift in Sources */,
 				4715A4E8256E67BF00C24659 /* Dish.swift in Sources */,
 				E3BC0DC62614B6CA00ED1900 /* LoginViewModel.swift in Sources */,
 				0AFD140E256E7CF9000EFEBA /* ScannerView.swift in Sources */,
