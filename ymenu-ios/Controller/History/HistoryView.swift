@@ -34,7 +34,7 @@ struct HistoryView: View {
                                 Button(action: {
                                     DispatchQueue.main.async {
                                         self.viewRouter.restaurant = RestaurantDTO(_id: restaurant._id, name: restaurant.name)
-                                    withAnimation {
+                                        withAnimation {
                                             self.viewRouter.currentPage = "greetingcard.fill"
                                         }
                                     }
@@ -69,15 +69,28 @@ struct HistoryView: View {
                             self.historyLoaded = true
                         }
                     }
-                    .navigationBarTitle("Historique", displayMode: .large).navigationBarItems(
-                        leading:
-                            Text("adresse mail".uppercased()).bold()
-                            .padding(.top, 23)
-                            .font(.footnote)
-                            .foregroundColor(Color(.systemGray)))
+                    .navigationBarTitle("Historique", displayMode: .large)
+//                    .navigationBarItems(
+//                        leading:
+//                            Text("adresse mail".uppercased()).bold()
+//                            .padding(.top, 23)
+//                            .font(.footnote)
+//                            .foregroundColor(Color(.systemGray)))
                 }
                 .listStyle(InsetGroupedListStyle())
                 .progressViewStyle(CircularProgressViewStyle())
+                Button(action: {
+                }) {
+                    HStack {
+                        Text("Déconnexion")
+                            .bold()
+                    }}.padding()
+                .foregroundColor(.white)
+                .padding([.trailing, .leading], 50)
+                .background(Color.themeTextField)
+                .cornerRadius(.greatestFiniteMagnitude)
+                .shadow(radius: 6, x: 3, y: 3)
+                .padding(.top, 40)
             }
         }.buttonStyle(PlainButtonStyle()).onAppear {
             UINavigationBar.appearance().largeTitleTextAttributes = [
