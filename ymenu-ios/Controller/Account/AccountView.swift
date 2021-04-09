@@ -10,6 +10,7 @@ import SwiftUI
 struct AccountView: View {
     
     @ObservedObject var applicationState: ApplicationState = ApplicationState.shared
+    @EnvironmentObject var viewRouter: ViewRouter
     
     var body: some View {
         ZStack {

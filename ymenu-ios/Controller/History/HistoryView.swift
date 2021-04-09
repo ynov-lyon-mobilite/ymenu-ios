@@ -16,8 +16,9 @@ struct HistoryView: View {
     @State var scrollPosition: CGFloat = 0.0
     var bag = Set<AnyCancellable>()
     @State var historyLoaded = false
-    @Binding var selectedTab: String
-    @Binding var restaurant: RestaurantDTO
+    
+    @ObservedObject var applicationState: ApplicationState = ApplicationState.shared
+    @EnvironmentObject var viewRouter: ViewRouter
     
     var body: some View {
         if !self.historyLoaded {
@@ -31,9 +32,11 @@ struct HistoryView: View {
                         ForEach(viewModel.restaurants, id: \.self) { restaurant in
                             HStack {
                                 Button(action: {
+                                    DispatchQueue.main.async {
+                                        self.viewRouter.restaurant = RestaurantDTO(_id: restaurant._id, name: restaurant.name)
                                     withAnimation {
-                                        self.restaurant = RestaurantDTO(_id: restaurant._id, name: restaurant.name)
-                                        self.selectedTab = "greetingcard.fill"
+                                            self.viewRouter.currentPage = "greetingcard.fill"
+                                        }
                                     }
                                 }){
                                     WebImage(url: URL(string: restaurant.url_logo))
