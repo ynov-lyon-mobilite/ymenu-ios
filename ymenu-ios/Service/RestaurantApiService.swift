@@ -15,4 +15,12 @@ final class RestaurantApiService {
             .withAuthentication()
             .sendWithDecode([Restaurant].self, completion: completion)
     }
+    
+    func addRestaurantToHistory(_ RestaurantDTO: RestaurantDTO,completion: @escaping (Result<[Restaurant], Error>) -> Void) -> Void {
+        Request()
+            .setPath("/user/history/" + RestaurantDTO._id)
+            .setMethod(.POST)
+            .withAuthentication()
+            .sendWithDecode([Restaurant].self, completion: completion)
+    }
 }

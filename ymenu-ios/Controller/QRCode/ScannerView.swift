@@ -13,6 +13,7 @@ struct ScannerView: View {
     @EnvironmentObject var viewRouter: ViewRouter
     @ObservedObject var viewModel = ScannerViewModel()
     @ObservedObject var qrCodeViewModel = QrCodeScannerViewModel()
+    @ObservedObject var applicationState: ApplicationState = ApplicationState.shared
     
     func tapticSuccess() {
         let generator = UINotificationFeedbackGenerator()
@@ -77,12 +78,19 @@ struct ScannerView: View {
         }
         .onChange(of: self.viewModel.lastQrCode) { (_) in
             print("qrCode change: ", self.viewModel.lastQrCode)
-    
+
             let result = self.viewModel.lastQrCode.components(separatedBy: ", ")
+            let scannedRestaurant = RestaurantDTO(_id: result[0], name: result[1])
+            
 //          TODO: Handle QR codes passing the regex but not sending back data from the API
             if (self.viewModel.lastQrCode.range(of: #"^(\w{24}), [a-zA-Z0-9_ ]*"#,
                                 options: .regularExpression) != nil){
-                viewRouter.restaurant = RestaurantDTO(_id: result[0], name: result[1])
+                
+                viewRouter.restaurant = scannedRestaurant
+                
+                if (applicationState.state == .authenticated) {
+                    self.viewModel.addRestaurantToHistory(inputRestaurant: scannedRestaurant)
+                }
                 
                 self.viewRouter.currentPage = "greetingcard.fill"
                 tapticSuccess()
