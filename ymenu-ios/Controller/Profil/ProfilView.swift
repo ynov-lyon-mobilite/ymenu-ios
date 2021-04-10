@@ -10,6 +10,7 @@ import SwiftUI
 struct ProfilView: View {
     @State var isPresented = false
     @ObservedObject var applicationState: ApplicationState = ApplicationState.shared
+    @State var showAlert = false
     
     var body: some View {
         NavigationView{
@@ -72,9 +73,7 @@ struct ProfilView: View {
                 }
                 VStack{
                     Button(action: {
-                        withAnimation {
-                            applicationState.disconnect()
-                        }
+                        self.showAlert = true
                     }) {
                         HStack {
                             Text("Déconnexion")
@@ -92,6 +91,16 @@ struct ProfilView: View {
                 .navigationBarHidden(true)
             }.edgesIgnoringSafeArea(.all)
         }.accentColor(Color.themeTextField)// color (profil)
+        .alert(isPresented: $showAlert) {
+            Alert(title: Text("Déconnexion"),
+             message: Text("Êtes-vous sûr(e) de vouloir vous déconnecter?"),
+             primaryButton: .cancel(Text("Annuler")),
+             secondaryButton: .destructive(Text("Se déconnecter"), action: {
+                withAnimation {
+                    applicationState.disconnect()
+                }
+             }))
+        }
     }
 }
 struct ProfilView_Previews: PreviewProvider {
