@@ -14,12 +14,12 @@ struct InfoProfilView: View {
                     .edgesIgnoringSafeArea(.all)
             VStack{
                 Image("logoymenu")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                    .frame(width: 135, height: 135, alignment: .center)
-                .padding(.top)
-                .padding(.bottom)
-                .offset(y: -230)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 120, height: 120, alignment: .center)
+                    .padding(25)
+                    .background(RoundedRectangle(cornerRadius: 35).foregroundColor(.white))
+                    .offset( y: -230)
             }
             VStack{
                 Image("profil")
@@ -40,40 +40,40 @@ struct InfoProfilView: View {
             }
             VStack{
                  {
-                    Text("Email")
+                    Text(UserDefaults.standard.string(forKey: "mail") ?? "")
                         .frame(width: 270, height: 25)
                         .font(.custom("SF Pro Text Regular", size: 22))
                         .padding()
                         .foregroundColor(.gray)
                         .overlay(
                             RoundedRectangle(cornerRadius: 100)
-                                .stroke(Color.orange, lineWidth: 2)
+                                .stroke(Color.themeTextField, lineWidth: 2)
                         )
                 }().offset(y: 25)
             }
             VStack{
                  {
-                    Text("Nom")
+                    Text(UserDefaults.standard.string(forKey: "lastname") ?? "")
                         .frame(width: 270, height: 25)
                         .font(.custom("SF Pro Text Regular", size: 22))
                         .padding()
                         .foregroundColor(.gray)
                         .overlay(
                             RoundedRectangle(cornerRadius: 100)
-                                .stroke(Color.orange, lineWidth: 2)
+                                .stroke(Color.themeTextField, lineWidth: 2)
                         )
                 }().offset(y: 125)
             }
             VStack{
                  {
-                    Text("Prénom")
+                    Text(UserDefaults.standard.string(forKey: "firstname") ?? "")
                         .frame(width: 270, height: 25)
                         .font(.custom("SF Pro Text Regular", size: 22))
                         .padding()
                         .foregroundColor(.gray)
                         .overlay(
                             RoundedRectangle(cornerRadius: 100)
-                                .stroke(Color.orange, lineWidth: 2)
+                                .stroke(Color.themeTextField, lineWidth: 2)
                         )
                  }().offset(y: 225)
             }

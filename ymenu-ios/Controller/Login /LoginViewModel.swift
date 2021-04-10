@@ -29,6 +29,9 @@ class LoginViewModel: RoutingProvider {
                 print(error)
             case .success(let tokenPair):
                 DispatchQueue.main.async {
+                    UserDefaults.standard.set(tokenPair.user.mail,forKey: "mail")
+                    UserDefaults.standard.set(tokenPair.user.firstname,forKey: "firstname")
+                    UserDefaults.standard.set(tokenPair.user.lastname,forKey: "lastname")
                     ApplicationState.shared.authenticate(with: tokenPair)
                     self.isLoading = false
                 }
