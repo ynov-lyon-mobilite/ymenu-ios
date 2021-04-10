@@ -36,6 +36,7 @@ struct ContentView_Previews : PreviewProvider {
 
 struct Home: View {
     @EnvironmentObject var viewRouter: ViewRouter
+    @ObservedObject var applicationState: ApplicationState = ApplicationState.shared
 //    @State var restaurant: RestaurantDTO = RestaurantDTO(_id: "", name: "")
     @Namespace var animation : Namespace.ID
     
@@ -49,7 +50,6 @@ struct Home: View {
                             .opacity(viewRouter.currentPage == "greetingcard.fill" ? 1 : 0)
                         case "qrcode.viewfinder": ScannerView().edgesIgnoringSafeArea(.top)
                             .opacity(viewRouter.currentPage == "qrcode.viewfinder" ? 1 : 0)
-                    // case "person.fill":  HistoryView(viewModel: HistoryViewModel(), selectedTab: $selectedTab, restaurant: $restaurant)
                         case "person.fill":  AccountView()
                             .opacity(viewRouter.currentPage == "person.fill" ? 1 : 0)
                         default: EmptyView()
@@ -72,6 +72,9 @@ struct Home: View {
             }
             .padding(.horizontal,30)
         }.ignoresSafeArea(.keyboard, edges: .bottom)
+        .onAppear(perform: {
+            applicationState.startApplication()
+        })
     }
 }
 

@@ -24,9 +24,7 @@ struct AccountView: View {
                     LoginView(viewModel: LoginViewModel())
                 }
             }
-        }.onAppear(perform: {
-            applicationState.startApplication()
-        })
+        }
     }
 }
 
