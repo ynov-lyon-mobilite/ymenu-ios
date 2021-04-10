@@ -52,7 +52,7 @@ struct DishDetailView: View {
             let savedURL = documentsURL.appendingPathComponent(url.lastPathComponent)
             self.modelURL = savedURL.absoluteString
             self.isDownloading = false
-            print("done")
+            print("Downloading done")
              try FileManager.default.moveItem(at: fileURL, to: savedURL)
        
          } catch {

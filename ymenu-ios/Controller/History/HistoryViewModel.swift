@@ -20,7 +20,6 @@ final class HistoryViewModel : ObservableObject {
             switch $0 {
             case .success(let restaurants):
                 DispatchQueue.main.async {
-                    print(restaurants)
                     strongSelf.restaurants.append(contentsOf: restaurants)
                 }
             case .failure(let error):
