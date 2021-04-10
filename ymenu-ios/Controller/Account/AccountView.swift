@@ -17,7 +17,7 @@ struct AccountView: View {
             Group {
                 switch applicationState.state {
                 case .authenticated:
-                    HistoryView(viewModel: HistoryViewModel())
+                    ProfilView()
                 case .loading:
                     Text("Loading ...")
                 case .requireLogin:
