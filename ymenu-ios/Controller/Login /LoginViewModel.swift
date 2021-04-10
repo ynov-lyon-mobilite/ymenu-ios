@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class LoginViewModel: RoutingProvider {
     var loginWebService = LoginWebService()
@@ -23,7 +24,7 @@ class LoginViewModel: RoutingProvider {
             switch result {
             case .failure(let error):
                 DispatchQueue.main.async {
-                    self.wrongCredentials = true
+                    withAnimation {self.wrongCredentials = true}
                     self.isLoading = false
                 }
                 print(error)
@@ -32,7 +33,7 @@ class LoginViewModel: RoutingProvider {
                     UserDefaults.standard.set(tokenPair.user.mail,forKey: "mail")
                     UserDefaults.standard.set(tokenPair.user.firstname,forKey: "firstname")
                     UserDefaults.standard.set(tokenPair.user.lastname,forKey: "lastname")
-                    ApplicationState.shared.authenticate(with: tokenPair)
+                    withAnimation {ApplicationState.shared.authenticate(with: tokenPair)}
                     self.isLoading = false
                 }
             }

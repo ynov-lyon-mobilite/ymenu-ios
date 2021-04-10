@@ -9,10 +9,8 @@ import SwiftUI
 
 struct ScannerView: View {
     @Environment(\.colorScheme) var colorScheme
-    @Binding var selectedTab: String
-    @Binding var restaurant: RestaurantDTO
     @State var showAlert: Bool = false
-    
+    @EnvironmentObject var viewRouter: ViewRouter
     @ObservedObject var viewModel = ScannerViewModel()
     @ObservedObject var qrCodeViewModel = QrCodeScannerViewModel()
     
@@ -84,8 +82,9 @@ struct ScannerView: View {
 //          TODO: Handle QR codes passing the regex but not sending back data from the API
             if (self.viewModel.lastQrCode.range(of: #"^(\w{24}), [a-zA-Z0-9_ ]*"#,
                                 options: .regularExpression) != nil){
-                restaurant = RestaurantDTO(_id: result[0], name: result[1])
-                self.selectedTab = "greetingcard.fill"
+                viewRouter.restaurant = RestaurantDTO(_id: result[0], name: result[1])
+                
+                self.viewRouter.currentPage = "greetingcard.fill"
                 tapticSuccess()
             } else {
                 tapticFail()
@@ -96,9 +95,9 @@ struct ScannerView: View {
                 title: Text("QR code incompatible"),
                 message: Text("Veuillez scanner un QR Code compatible afin de récupérer le menu d'un restaurant"),
                 dismissButton: .cancel(Text("Réessayer"), action: {
-                    self.selectedTab = ""
+                    self.viewRouter.currentPage = ""
                     DispatchQueue.main.async {
-                        withAnimation { self.selectedTab = "qrcode.viewfinder" }
+                        withAnimation { self.viewRouter.currentPage = "qrcode.viewfinder" }
                     }
                 }))
         }
