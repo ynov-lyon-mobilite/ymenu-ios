@@ -58,8 +58,9 @@ struct ProfilView: View {
                     }.offset(y: 25)
                 }
                 VStack{
+                    
                     NavigationLink(
-                        destination: InfoProfilView()) {
+                        destination: HistoryView(viewModel: HistoryViewModel())) {
                         Text("Historique de visite")
                             .frame(width: 270, height: 25)
                             .font(.custom("SF Pro Text Regular", size: 22))
