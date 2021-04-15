@@ -153,7 +153,7 @@ struct DishDetailView: View {
                     .disabled(isDownloading)
                     .padding()
                     .foregroundColor(.white)
-                    .background(Color.orange)
+                    .background(Color.themeTextField)
                     .cornerRadius(.greatestFiniteMagnitude)
                     .sheet(isPresented: $isPresented) {
                         ZStack (alignment: .topLeading){

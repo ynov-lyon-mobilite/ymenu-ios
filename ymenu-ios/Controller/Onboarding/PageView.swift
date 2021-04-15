@@ -38,7 +38,7 @@ struct PageView<Page:View>: View {
                 RoundedRectangle(cornerRadius: 100)
                     .frame(width: 180, height: 70)
 //                    .foregroundColor(Color(red: 235/255, green: 165/255, blue: 60/255))
-                    .foregroundColor(Color.orange)
+                    .foregroundColor(Color.themeTextField)
                     .padding()
                         .shadow(radius: 5, x: 2, y: 2)
                         .border(Color.black, width: 0)
