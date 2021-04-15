@@ -45,7 +45,7 @@ struct PageView<Page:View>: View {
                     .overlay(
                         Text(self.currentPage < self.viewControllers.count - 1 ? "Suivant" : "C'est parti!" )
                         .foregroundColor(.white)
-                            .font(.custom("SF Pro Text Bold", size: 25))
+                            .font(.custom("SF Pro Rounded Bold", size: 25))
                     )
             }.padding(.bottom, 60)
         }.edgesIgnoringSafeArea(.all)
