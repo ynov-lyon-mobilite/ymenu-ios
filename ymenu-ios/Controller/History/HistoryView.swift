@@ -20,13 +20,14 @@ struct HistoryView: View {
     
     @ObservedObject var applicationState: ApplicationState = ApplicationState.shared
     @EnvironmentObject var viewRouter: ViewRouter
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     var body: some View {
         ZStack {
-        if !self.historyLoaded {
-            ProgressView("Chargement de l'historique")
-                .zIndex(1)
-        }
+            if !self.historyLoaded {
+                ProgressView("Chargement de l'historique")
+                    .zIndex(1)
+            }
             VStack {
                 List {
                     ForEach(viewModel.restaurants, id: \.self) { restaurant in
@@ -79,10 +80,27 @@ struct HistoryView: View {
             }
             .listStyle(InsetGroupedListStyle())
             .progressViewStyle(CircularProgressViewStyle())
+            .onAppear() {
+                if self.viewModel.restaurants == [] {
+                    self.showAlert = true
+                }
+            }
+            
         }.buttonStyle(PlainButtonStyle()).onAppear {
             UINavigationBar.appearance().largeTitleTextAttributes = [
                 .font : UIFont(name:"SF Pro Rounded Bold", size: 40)!
             ]
+        }.alert(isPresented: $showAlert) {
+            Alert(
+                title: Text("Historique vide"),
+                message: Text("Votre historique de restaurants scannés est vide, veuillez scanner un QR code afin qu'il apparaisse ici"),
+                dismissButton: .cancel(Text("Retourner sur le profil"), action: {
+                    DispatchQueue.main.async{
+                        withAnimation(.easeOut(duration: 0.2)) {
+                            presentationMode.wrappedValue.dismiss()
+                        }
+                    }
+                }))
         }
     }
 }
