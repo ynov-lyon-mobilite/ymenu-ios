@@ -22,11 +22,11 @@ struct HistoryView: View {
     @EnvironmentObject var viewRouter: ViewRouter
     
     var body: some View {
+        ZStack {
         if !self.historyLoaded {
             ProgressView("Chargement de l'historique")
                 .zIndex(1)
         }
-        ZStack {
             VStack {
                 List {
                     ForEach(viewModel.restaurants, id: \.self) { restaurant in
