@@ -36,7 +36,6 @@ struct ContentView_Previews : PreviewProvider {
 
 struct Home: View {
     @EnvironmentObject var viewRouter: ViewRouter
-    @ObservedObject var applicationState: ApplicationState = ApplicationState.shared
 //    @State var restaurant: RestaurantDTO = RestaurantDTO(_id: "", name: "")
     @Namespace var animation : Namespace.ID
     
@@ -72,9 +71,6 @@ struct Home: View {
             }
             .padding(.horizontal,30)
         }.ignoresSafeArea(.keyboard, edges: .bottom)
-        .onAppear(perform: {
-            applicationState.startApplication()
-        })
     }
 }
 
