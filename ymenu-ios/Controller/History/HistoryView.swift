@@ -81,7 +81,7 @@ struct HistoryView: View {
             .listStyle(InsetGroupedListStyle())
             .progressViewStyle(CircularProgressViewStyle())
             .onAppear() {
-                if self.viewModel.restaurants == [] {
+                if self.viewModel.noRestaurants  {
                     self.showAlert = true
                 }
             }

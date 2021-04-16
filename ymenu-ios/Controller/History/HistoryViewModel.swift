@@ -9,11 +9,11 @@ import Foundation
 
 final class HistoryViewModel : ObservableObject {
     @Published var restaurants: [Restaurant] = []
+    @Published var noRestaurants: Bool = false
     
     let restaurantApiService = RestaurantApiService()
     
     init() {
-        
         restaurantApiService.getRestaurant() { [weak self] in
             guard let strongSelf = self else { return }
             
@@ -21,6 +21,9 @@ final class HistoryViewModel : ObservableObject {
             case .success(let restaurants):
                 DispatchQueue.main.async {
                     strongSelf.restaurants.append(contentsOf: restaurants)
+                    if restaurants == [] {
+                        strongSelf.noRestaurants = true
+                    }
                 }
             case .failure(let error):
                 print("Failed getting restaurants")
