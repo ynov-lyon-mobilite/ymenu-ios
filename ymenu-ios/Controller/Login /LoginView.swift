@@ -110,7 +110,7 @@ struct LoginView: View {
                             .padding(.leading, 10)
                             .foregroundColor(Color.themeTextField)
                     }.sheet(isPresented: $showRegister){
-                        RegisterView(showRegister: $showRegister)
+                        RegisterView(showRegister: $showRegister, viewModel: RegisterViewModel())
                     }
                 }.padding(.bottom, 30)
             }

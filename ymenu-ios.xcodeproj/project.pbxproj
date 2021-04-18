@@ -41,9 +41,11 @@
 		BA4469A526146E2800CFBF1D /* IndexedForEachHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4469A426146E2800CFBF1D /* IndexedForEachHistory.swift */; };
 		BA51E1492610C288006AC7DB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA51E1482610C288006AC7DB /* LoginView.swift */; };
 		BA51E14D2610C290006AC7DB /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA51E14C2610C290006AC7DB /* RegisterView.swift */; };
-		BAFA3E28260939030082C3EE /* ProfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFA3E27260939030082C3EE /* ProfilView.swift */; };
 		BA85DD182619EBF6009247EF /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA85DD172619EBF6009247EF /* UserDTO.swift */; };
 		BACCEDAC2619FEA800752D60 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACCEDAB2619FEA800752D60 /* Restaurant.swift */; };
+		BAF8267A262C6CC600427AE7 /* RegisterWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF82679262C6CC600427AE7 /* RegisterWebService.swift */; };
+		BAF8267D262C6DD100427AE7 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF8267C262C6DD100427AE7 /* RegisterViewModel.swift */; };
+		BAFA3E28260939030082C3EE /* ProfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFA3E27260939030082C3EE /* ProfilView.swift */; };
 		E321F56D25C993BA00137DDB /* minuteasia_bobun.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = E321F56C25C993BA00137DDB /* minuteasia_bobun.rcproject */; };
 		E322F68225CB1F65004AF310 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = E322F68125CB1F65004AF310 /* SDWebImageSwiftUI */; };
 		E333305425C40F02008278B2 /* ARQuickLook.swift in Sources */ = {isa = PBXBuildFile; fileRef = E333305325C40F02008278B2 /* ARQuickLook.swift */; };
@@ -101,9 +103,11 @@
 		BA4469A426146E2800CFBF1D /* IndexedForEachHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexedForEachHistory.swift; sourceTree = "<group>"; };
 		BA51E1482610C288006AC7DB /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		BA51E14C2610C290006AC7DB /* RegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
-		BAFA3E27260939030082C3EE /* ProfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilView.swift; sourceTree = "<group>"; };
 		BA85DD172619EBF6009247EF /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		BACCEDAB2619FEA800752D60 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		BAF82679262C6CC600427AE7 /* RegisterWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterWebService.swift; sourceTree = "<group>"; };
+		BAF8267C262C6DD100427AE7 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		BAFA3E27260939030082C3EE /* ProfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilView.swift; sourceTree = "<group>"; };
 		E321F56C25C993BA00137DDB /* minuteasia_bobun.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = minuteasia_bobun.rcproject; sourceTree = "<group>"; };
 		E333305325C40F02008278B2 /* ARQuickLook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARQuickLook.swift; sourceTree = "<group>"; };
 		E33883A12620ED04009FEA0F /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
@@ -170,6 +174,7 @@
 				4715A4E4256E672E00C24659 /* DishApiService.swift */,
 				B3408E0E25B8275E006BD523 /* DishCategoryApiService.swift */,
 				E3BC0DD92614C0A400ED1900 /* LoginWebService.swift */,
+				BAF82679262C6CC600427AE7 /* RegisterWebService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -269,10 +274,11 @@
 			isa = PBXGroup;
 			children = (
 				BA51E14C2610C290006AC7DB /* RegisterView.swift */,
+				BAF8267C262C6DD100427AE7 /* RegisterViewModel.swift */,
 			);
 			path = "Register ";
-            sourceTree = "<group>";
-        };
+			sourceTree = "<group>";
+		};
 		BAFA3E26260938F00082C3EE /* Profil */ = {
 			isa = PBXGroup;
 			children = (
@@ -472,6 +478,7 @@
 				E3BC0DD62614BF7500ED1900 /* Weakable.swift in Sources */,
 				470D972C256BBA080083912C /* Request.swift in Sources */,
 				B38E711E25B877F900A67830 /* IndexedForEach.swift in Sources */,
+				BAF8267A262C6CC600427AE7 /* RegisterWebService.swift in Sources */,
 				E36D852725333B0E00722077 /* AppDelegate.swift in Sources */,
 				BA4469A526146E2800CFBF1D /* IndexedForEachHistory.swift in Sources */,
 				0A9DFA312589FFEE001C3ECC /* CameraPreview.swift in Sources */,
@@ -485,6 +492,7 @@
 				E3BC0DC62614B6CA00ED1900 /* LoginViewModel.swift in Sources */,
 				0AFD140E256E7CF9000EFEBA /* ScannerView.swift in Sources */,
 				E3BC0DDA2614C0A400ED1900 /* LoginWebService.swift in Sources */,
+				BAF8267D262C6DD100427AE7 /* RegisterViewModel.swift in Sources */,
 				B3408E0F25B8275E006BD523 /* DishCategoryApiService.swift in Sources */,
 				0ABE4C5525A9D63F00463B1A /* OnboardingCard.swift in Sources */,
 				E3BC0DD82614C04F00ED1900 /* Hostname.swift in Sources */,

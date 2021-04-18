@@ -13,8 +13,10 @@ struct RegisterView: View {
     @State private var confirmpassword = ""
     @State private var nom = ""
     @State private var prenom = ""
+    @State private var emptyFields: Bool = false
     @Binding var showRegister: Bool
-    
+    @ObservedObject var viewModel: RegisterViewModel
+
     // MARK: - View
     var disableForm: Bool {
         password.count < 5 || confirmpassword.count < 5
@@ -41,7 +43,7 @@ struct RegisterView: View {
                 
                 
                 VStack(alignment: .leading, spacing: 15) {
-                    SecureField("Nom", text: self.$nom)
+                    TextField("Nom", text: $viewModel.firstname)
                         .padding()
                         .cornerRadius(20.0)
                         .shadow(radius: 6, x: 3, y: 3)
@@ -50,7 +52,7 @@ struct RegisterView: View {
                                 .stroke(Color.themeTextField, lineWidth: 2)
                         )
                      
-                    SecureField("Prenom", text: self.$prenom)
+                    TextField("Prenom", text: $viewModel.lastname)
                         .padding()
                         .cornerRadius(20.0)
                         .shadow(radius: 6, x: 3, y: 3)
@@ -59,7 +61,7 @@ struct RegisterView: View {
                                 .stroke(Color.themeTextField, lineWidth: 2)
                         )
                     
-                    TextField("Email", text: self.$email)
+                    TextField("Email", text: $viewModel.mail)
                         .padding()
                         .cornerRadius(20.0)
                         .shadow(radius: 6, x: 3, y: 3)
@@ -70,7 +72,7 @@ struct RegisterView: View {
                         .keyboardType(.emailAddress)
                         .autocapitalization(.none)
                     
-                    SecureField("Mot de passe", text: self.$password)
+                    SecureField("Mot de passe", text: $viewModel.password)
                         .padding()
                         .cornerRadius(20.0)
                         .shadow(radius: 6, x: 3, y: 3)
@@ -79,7 +81,7 @@ struct RegisterView: View {
                                 .stroke(Color.themeTextField, lineWidth: 2)
                         )
                     
-                    SecureField("Confirmer le mot de passe", text: self.$confirmpassword)
+                    SecureField("Confirmer le mot de passe", text: $viewModel.confirmpassword)
                         .padding()
                         .cornerRadius(20.0)
                         .shadow(radius: 6, x: 3, y: 3)
@@ -88,33 +90,36 @@ struct RegisterView: View {
                                 .stroke(Color.themeTextField, lineWidth: 2)
                         )
                 }.padding([.leading, .trailing], 27.5)
-                
-                if password == confirmpassword{
-                    Button("") {}
                     Button(action: {
-                        
-                        
+                        viewModel.wrongCredentials = false
+                        emptyFields = false
+                        if(viewModel.mail.isEmpty || viewModel.password.isEmpty || viewModel.firstname.isEmpty || viewModel.lastname.isEmpty || viewModel.confirmpassword.isEmpty || password != confirmpassword) {
+                            withAnimation {
+                                emptyFields = true
+                            }
+                        } else {
+                            viewModel.isLoading.toggle()
+                            viewModel.handleRegister()
+                            hideKeyboard()
+                        }
                     }) {
                         HStack {
-                            //                    if viewModel.isLoading {
-                            //                        ProgressView().padding(.horizontal, 3).progressViewStyle(CircularProgressViewStyle(tint: Color.white))
-                            //                        Text("Chargement...")
-                            //                            .bold()
-                            //                    } else {
+                                if viewModel.isLoading {
+                                    ProgressView().padding(.horizontal, 3).progressViewStyle(CircularProgressViewStyle(tint: Color.white))
+                                    Text("Chargement...")
+                                        .bold()
+                                } else {
                             Text("S'inscrire")
                                 .bold()
-                            //                    }
+                            }
                         }}.padding()
                     .foregroundColor(.white)
                     .padding([.trailing, .leading], 50)
                     .background(Color.themeTextField)
                     .cornerRadius(.greatestFiniteMagnitude)
                     .shadow(radius: 6, x: 3, y: 3)
-                    .disabled(disableForm)
-                }
-                else {
-                    
-                }
+//                    .disabled(disableForm)
+               
                 Spacer()
                 HStack(spacing: 0) {
                     Text("Déjà un compte?")
@@ -141,7 +146,7 @@ struct RegisterView: View {
 
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterView(showRegister: .constant(true))
+        RegisterView(showRegister: .constant(true), viewModel: RegisterViewModel())
         
     }
 }
