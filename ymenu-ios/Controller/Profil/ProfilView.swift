@@ -79,13 +79,14 @@ struct ProfilView: View {
                         HStack {
                             Text("Déconnexion")
                                 .bold()
-                        }}.padding()
+                        }.frame(maxWidth:.infinity)
+                    }.padding()
                     .foregroundColor(.white)
-                    .padding([.trailing, .leading], 50)
                     .background(Color.themeTextField)
                     .cornerRadius(.greatestFiniteMagnitude)
                     .shadow(radius: 6, x: 3, y: 3)
                     .padding(.top, 40)
+                    .padding([.trailing, .leading], 100)
                     .offset( y: 205)
                 }
                 .navigationBarTitle("Profil")// retour (back -> profil)
