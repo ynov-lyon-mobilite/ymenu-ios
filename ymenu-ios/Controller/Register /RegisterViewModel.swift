@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
 class RegisterViewModel: RoutingProvider {
     var registerWebService = RegisterWebService()
@@ -17,7 +18,16 @@ class RegisterViewModel: RoutingProvider {
     @Published var firstname: String = ""
     @Published var lastname: String = ""
     @Published var isLoading: Bool = false
-    @Published var wrongCredentials: Bool = false
+    @Published var accountExist: Bool = false
+    @Published var error: Bool = false
+
+    var viewDismissalModePublisher = PassthroughSubject<Bool, Never>()
+    
+    private var dismissRegister = false {
+        didSet {
+            viewDismissalModePublisher.send(dismissRegister)
+        }
+    }
     
     func handleRegister() {
         let parameters = RegisterWebServiceParameters(firstname: firstname, lastname: lastname, history: [], role: "ROLE_USER", mail: mail, password: password)
@@ -26,14 +36,20 @@ class RegisterViewModel: RoutingProvider {
         execute(with: registerWebService) { result in
             switch result {
             case .failure(let error):
+                let errorCode = (error as NSError).code
                 DispatchQueue.main.async {
-                    withAnimation {self.wrongCredentials = true}
+                    if errorCode != 400 {
+                        withAnimation {self.error = true}
+                    } else {
+                        withAnimation {self.accountExist = true}
+                    }
                     self.isLoading = false
                 }
                 print(error)
-            case .success(let tokenPair):
+            case .success:
                 DispatchQueue.main.async {
 //                    withAnimation {ApplicationState.shared.authenticate(with: tokenPair)}
+                    self.dismissRegister = true
                     self.isLoading = false
                 }
             }
