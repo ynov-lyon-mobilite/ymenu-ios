@@ -1,19 +1,13 @@
 //
-//  ContentView.swift
-//  LoginScreenTutorial
+//  RegisterView.swift
 //
-//  Created by Antoine Mousset on Today.
+//  Created by Antoine Mousset on 18/04/2021
 //
 import SwiftUI
 
 struct RegisterView: View {
     // MARK: - Propertiers
     @ObservedObject var viewModel: RegisterViewModel
-    @State private var email = ""
-    @State private var password = ""
-    @State private var confirmpassword = ""
-    @State private var nom = ""
-    @State private var prenom = ""
     @State private var unvalidPassword: Bool = false
     @State private var emptyFields: Bool = false
     @State private var unmatchedPasswords: Bool = false
