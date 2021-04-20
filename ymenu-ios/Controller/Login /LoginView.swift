@@ -9,9 +9,10 @@ import SwiftUI
 
 struct LoginView: View {
     // MARK: - Propertiers
-    @State private var showRegister = false
+    @State private var dismissRegister = false
     @ObservedObject var viewModel: LoginViewModel
     @State private var emptyFields: Bool = false
+    
     
     // MARK: - View
     var body: some View {
@@ -102,17 +103,18 @@ struct LoginView: View {
                 HStack(spacing: 0) {
                     Text("Pas de compte?")
                     Button(action: {
-                        showRegister.toggle()
+                        dismissRegister.toggle()
                     })
                     {
                         Text("S'inscrire")
                             .bold()
                             .padding(.leading, 10)
                             .foregroundColor(Color.themeTextField)
-                    }.sheet(isPresented: $showRegister){
-                        RegisterView(showRegister: $showRegister)
+                    }.sheet(isPresented: $dismissRegister){
+                        RegisterView(viewModel: RegisterViewModel(), dismissRegister: $dismissRegister)
                     }
                 }.padding(.bottom, 30)
+                
             }
             
         }
