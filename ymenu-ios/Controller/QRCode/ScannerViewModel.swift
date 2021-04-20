@@ -14,9 +14,21 @@ class ScannerViewModel: ObservableObject {
     
     @Published var torchIsOn: Bool = false
     @Published var lastQrCode: String = "restaurantId"
-    
+    let restaurantApiService = RestaurantApiService()
     
     func onFoundQrCode(_ code: String) {
         self.lastQrCode = code
+    }
+    
+    func addRestaurantToHistory(inputRestaurant: RestaurantDTO) {
+        restaurantApiService.addRestaurantToHistory(inputRestaurant) {
+            switch $0 {
+            case .success:
+                print("Restaurant saved")
+            case .failure(let error):
+                print("Failed saving restaurant")
+                print(error)
+            }
+        }
     }
 }

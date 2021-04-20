@@ -13,18 +13,18 @@ import SDWebImageSwiftUI
 struct MenuView: View {
     @Environment(\.colorScheme) var colorScheme
     @ObservedObject var viewModel: MenuViewModel
+    @EnvironmentObject var viewRouter: ViewRouter
+    
     @State var scrollPosition: CGFloat = 0.0
     var bag = Set<AnyCancellable>()
     @State var menuLoaded = false
     @State private var showAlert = false
-    var selectedTab: Binding<String>
 
-    init(restaurant: RestaurantDTO, selectedTab: Binding<String>) {
+    init(restaurant: RestaurantDTO) {
         UINavigationBar.appearance().largeTitleTextAttributes = [
             .font : UIFont(name:"SF Pro Rounded Bold", size: 40)!
         ]
 
-        self.selectedTab = selectedTab
         self.viewModel = MenuViewModel(restaurant: restaurant)
     }
  
@@ -131,7 +131,11 @@ struct MenuView: View {
                 title: Text("Aucun restaurant"),
                 message: Text("Veuillez scanner un QR Code afin de récupérer le menu du restaurant"),
                 dismissButton: .cancel(Text("Ouvrir le scanneur"), action: {
-                    selectedTab.wrappedValue = "qrcode.viewfinder"
+                    DispatchQueue.main.async{
+                        withAnimation(.easeOut(duration: 0.2)) {
+                            self.viewRouter.currentPage = "qrcode.viewfinder"
+                        }
+                    }
                 }))
         }
     }

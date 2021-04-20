@@ -52,7 +52,7 @@ struct DishDetailView: View {
             let savedURL = documentsURL.appendingPathComponent(url.lastPathComponent)
             self.modelURL = savedURL.absoluteString
             self.isDownloading = false
-            print("done")
+            print("Downloading done")
              try FileManager.default.moveItem(at: fileURL, to: savedURL)
        
          } catch {
@@ -153,7 +153,7 @@ struct DishDetailView: View {
                     .disabled(isDownloading)
                     .padding()
                     .foregroundColor(.white)
-                    .background(Color.orange)
+                    .background(Color.themeTextField)
                     .cornerRadius(.greatestFiniteMagnitude)
                     .sheet(isPresented: $isPresented) {
                         ZStack (alignment: .topLeading){

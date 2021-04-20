@@ -35,21 +35,22 @@ struct ContentView_Previews : PreviewProvider {
 }
 
 struct Home: View {
-    @State var selectedTab = "qrcode.viewfinder"
-    @State var restaurant: RestaurantDTO = RestaurantDTO(_id: "", name: "")
+    @EnvironmentObject var viewRouter: ViewRouter
+//    @State var restaurant: RestaurantDTO = RestaurantDTO(_id: "", name: "")
     @Namespace var animation : Namespace.ID
+    
     
     var body: some View{
         VStack(spacing : 0){
             GeometryReader{_ in
                 ZStack{
-                    switch(selectedTab){
-                        case "greetingcard.fill": MenuView(restaurant: restaurant, selectedTab: $selectedTab)
-                            .opacity(selectedTab == "greetingcard.fill" ? 1 : 0)
-                        case "qrcode.viewfinder": ScannerView(selectedTab: $selectedTab, restaurant: $restaurant).edgesIgnoringSafeArea(.top)
-                            .opacity(selectedTab == "qrcode.viewfinder" ? 1 : 0)
-                        case "person.fill":  Text("Cette page sera implémentée prochainement").bold().frame(maxWidth: .infinity, alignment: .center).padding(.top, 400)
-                            .opacity(selectedTab == "person.fill" ? 1 : 0)
+                    switch(viewRouter.currentPage){
+                        case "greetingcard.fill": MenuView(restaurant: viewRouter.restaurant)
+                            .opacity(viewRouter.currentPage == "greetingcard.fill" ? 1 : 0)
+                        case "qrcode.viewfinder": ScannerView().edgesIgnoringSafeArea(.top)
+                            .opacity(viewRouter.currentPage == "qrcode.viewfinder" ? 1 : 0)
+                        case "person.fill":  AccountView()
+                            .opacity(viewRouter.currentPage == "person.fill" ? 1 : 0)
                         default: EmptyView()
                     }
                 }
@@ -61,7 +62,7 @@ struct Home: View {
             HStack(spacing: 0){
                  ForEach(tabs,id: \.self){tab in
                     
-                    TabButton(title: tab, selectedTab: $selectedTab, animation: animation)
+                    TabButton(title: tab, animation: animation)
                     
                     if tab != tabs.last{
                         Spacer(minLength: 0)
@@ -69,7 +70,7 @@ struct Home: View {
                 }
             }
             .padding(.horizontal,30)
-        }
+        }.ignoresSafeArea(.keyboard, edges: .bottom)
     }
 }
 
@@ -77,17 +78,23 @@ struct Home: View {
 struct TabButton : View{
     @Environment(\.colorScheme) var colorScheme
     var title : String
-    @Binding var selectedTab : String
+    @EnvironmentObject var viewRouter: ViewRouter
     var animation : Namespace.ID
     
     var body: some View{
         Button(action: {
-            withAnimation{selectedTab = title}
+            if viewRouter.currentPage != title {
+                DispatchQueue.main.async{
+                    withAnimation(.easeOut(duration: 0.2)) {
+                        viewRouter.currentPage = title
+                    }
+                }
+            }
         }){
             VStack(spacing: 6){
                 Image(systemName: title)
                     .resizable()
-                    .opacity(selectedTab == title ? 1 : 0.4)
+                    .opacity(viewRouter.currentPage == title ? 1 : 0.4)
                     .foregroundColor(colorScheme == .dark ? .white : .black)
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 29, height: 30)
@@ -95,7 +102,7 @@ struct TabButton : View{
                     CustomShape()
                         .fill(Color.clear)
                         .frame(width: 45, height: 6)
-                    if selectedTab == title{
+                    if viewRouter.currentPage == title{
                         CustomShape()
                             .fill(Color.red).cornerRadius(3.0)
                             .frame(width: 35, height: 5)
