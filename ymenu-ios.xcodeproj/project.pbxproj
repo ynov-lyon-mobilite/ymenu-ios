@@ -46,7 +46,6 @@
 		BAF8267A262C6CC600427AE7 /* RegisterWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF82679262C6CC600427AE7 /* RegisterWebService.swift */; };
 		BAF8267D262C6DD100427AE7 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF8267C262C6DD100427AE7 /* RegisterViewModel.swift */; };
 		BAFA3E28260939030082C3EE /* ProfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFA3E27260939030082C3EE /* ProfilView.swift */; };
-		E321F56D25C993BA00137DDB /* minuteasia_bobun.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = E321F56C25C993BA00137DDB /* minuteasia_bobun.rcproject */; };
 		E322F68225CB1F65004AF310 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = E322F68125CB1F65004AF310 /* SDWebImageSwiftUI */; };
 		E333305425C40F02008278B2 /* ARQuickLook.swift in Sources */ = {isa = PBXBuildFile; fileRef = E333305325C40F02008278B2 /* ARQuickLook.swift */; };
 		E33883A22620ED04009FEA0F /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33883A12620ED04009FEA0F /* ViewRouter.swift */; };
@@ -108,7 +107,6 @@
 		BAF82679262C6CC600427AE7 /* RegisterWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterWebService.swift; sourceTree = "<group>"; };
 		BAF8267C262C6DD100427AE7 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		BAFA3E27260939030082C3EE /* ProfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilView.swift; sourceTree = "<group>"; };
-		E321F56C25C993BA00137DDB /* minuteasia_bobun.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = minuteasia_bobun.rcproject; sourceTree = "<group>"; };
 		E333305325C40F02008278B2 /* ARQuickLook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARQuickLook.swift; sourceTree = "<group>"; };
 		E33883A12620ED04009FEA0F /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		E36599CE256EA10800D58F6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -325,7 +323,6 @@
 				E36D852825333B0E00722077 /* ContentView.swift */,
 				E36D853125333B0F00722077 /* Info.plist */,
 				E36D852E25333B0F00722077 /* Preview Content */,
-				E321F56C25C993BA00137DDB /* minuteasia_bobun.rcproject */,
 				E3BC0DB626149B6E00ED1900 /* ApplicationState.swift */,
 				E33883A12620ED04009FEA0F /* ViewRouter.swift */,
 			);
@@ -460,7 +457,6 @@
 				4715A4EB256E6B4A00C24659 /* RestaurantDTO.swift in Sources */,
 				47CE67AE258A3FDE004940D7 /* MenuViewModel.swift in Sources */,
 				E3BC0DB726149B6E00ED1900 /* ApplicationState.swift in Sources */,
-				E321F56D25C993BA00137DDB /* minuteasia_bobun.rcproject in Sources */,
 				4715A4E5256E672E00C24659 /* DishApiService.swift in Sources */,
 				BACCEDAC2619FEA800752D60 /* Restaurant.swift in Sources */,
 				E3EB411125C9EA010016862A /* Blur.swift in Sources */,
@@ -629,6 +625,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_ASSET_PATHS = "\"ymenu-ios/Preview Content\"";
 				DEVELOPMENT_TEAM = 94FLWD5X32;
 				ENABLE_PREVIEWS = YES;
@@ -650,19 +647,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_ASSET_PATHS = "\"ymenu-ios/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 94FLWD5X32;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "ymenu-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ynovlyon.ymenu-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ynovlyon.ymenu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.ynovlyon.ymenu";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

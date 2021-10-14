@@ -56,3 +56,4 @@ fastlane/screenshots
 fastlane/test_output
 Pods/
 *.mobileprovision
+fastlane/artefacts
