@@ -49,6 +49,7 @@
 		E322F68225CB1F65004AF310 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = E322F68125CB1F65004AF310 /* SDWebImageSwiftUI */; };
 		E333305425C40F02008278B2 /* ARQuickLook.swift in Sources */ = {isa = PBXBuildFile; fileRef = E333305325C40F02008278B2 /* ARQuickLook.swift */; };
 		E33883A22620ED04009FEA0F /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33883A12620ED04009FEA0F /* ViewRouter.swift */; };
+		E33D6D052790BD78002D0DE1 /* ARQLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D6D042790BD78002D0DE1 /* ARQLView.swift */; };
 		E36599CF256EA10800D58F6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E36599CE256EA10800D58F6F /* Assets.xcassets */; };
 		E36D852725333B0E00722077 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36D852625333B0E00722077 /* AppDelegate.swift */; };
 		E36D852925333B0E00722077 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36D852825333B0E00722077 /* ContentView.swift */; };
@@ -109,6 +110,7 @@
 		BAFA3E27260939030082C3EE /* ProfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilView.swift; sourceTree = "<group>"; };
 		E333305325C40F02008278B2 /* ARQuickLook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARQuickLook.swift; sourceTree = "<group>"; };
 		E33883A12620ED04009FEA0F /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
+		E33D6D042790BD78002D0DE1 /* ARQLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARQLView.swift; sourceTree = "<group>"; };
 		E36599CE256EA10800D58F6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E36D852325333B0E00722077 /* ymenu-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ymenu-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E36D852625333B0E00722077 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 			children = (
 				E333305325C40F02008278B2 /* ARQuickLook.swift */,
 				B38E711625B861FD00A67830 /* DishDetailView.swift */,
+				E33D6D042790BD78002D0DE1 /* ARQLView.swift */,
 			);
 			path = Dish;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 				0A42155A261496E8002BC7B2 /* InfoProfilView.swift in Sources */,
 				E333305425C40F02008278B2 /* ARQuickLook.swift in Sources */,
 				BAFA3E28260939030082C3EE /* ProfilView.swift in Sources */,
+				E33D6D052790BD78002D0DE1 /* ARQLView.swift in Sources */,
 				0AFD140B256E7CD3000EFEBA /* ScannerViewModel.swift in Sources */,
 				E3BC0DD22614BF5F00ED1900 /* Routing.swift in Sources */,
 				4715A4EB256E6B4A00C24659 /* RestaurantDTO.swift in Sources */,
