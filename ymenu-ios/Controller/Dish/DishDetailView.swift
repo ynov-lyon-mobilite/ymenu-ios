@@ -162,9 +162,8 @@ struct DishDetailView: View {
                             VStack(alignment: .center) {
                                 Image(systemName: "arkit")
                                     .font(.system(size: 50, weight: .light))
-                                    .foregroundColor(.white)
                                     .padding(.bottom, 10)
-                                ProgressView().padding(.horizontal, 3).progressViewStyle(CircularProgressViewStyle(tint: Color.white))
+                                ProgressView().padding(.horizontal, 3).progressViewStyle(CircularProgressViewStyle())
                              }
                         }
                     }.shadow(radius: 5, x: 2, y: 2)
