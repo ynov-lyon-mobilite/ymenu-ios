@@ -17,7 +17,7 @@ struct DishDetailView: View {
             self.isPresented = true
         }
     }
-    
+
     func checkUSDZExist(inputPath: String) -> String {
         let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
           let url = NSURL(fileURLWithPath: path)
@@ -156,23 +156,14 @@ struct DishDetailView: View {
                     .background(Color.themeTextField)
                     .cornerRadius(.greatestFiniteMagnitude)
                     .sheet(isPresented: $isPresented) {
-                        ZStack (alignment: .topLeading){
-                            ARQuickLookView(filePath: self.$modelURL, title: dish.name, isPresented: self.$isPresented).edgesIgnoringSafeArea(.bottom)
-                            HStack (alignment: .top){
-                                VStack (alignment: .leading) {
-                                    Button(action: {
-                                     self.isPresented = false
-                                    }, label: {
-                                    Image(systemName: "xmark")
-                                        .font(.system(size: 25, weight: .light, design: .rounded))
-                                        .padding(.horizontal, 19)
-                                        .padding(.vertical, 12)
-                                        .background(
-                                            Blur(
-                                                 style: .systemThinMaterial)
-                                            )
-                                    }).buttonStyle(PlainButtonStyle()).cornerRadius(14).padding(14).padding(.top, 11)
-                                 }
+                        ZStack(alignment: .center) {
+                            ARQLView(filePath: self.$modelURL, isPresented: self.$isPresented)
+                                .edgesIgnoringSafeArea(.bottom)
+                            VStack(alignment: .center) {
+                                Image(systemName: "arkit")
+                                    .font(.system(size: 50, weight: .light))
+                                    .padding(.bottom, 10)
+                                ProgressView().padding(.horizontal, 3).progressViewStyle(CircularProgressViewStyle())
                              }
                         }
                     }.shadow(radius: 5, x: 2, y: 2)
