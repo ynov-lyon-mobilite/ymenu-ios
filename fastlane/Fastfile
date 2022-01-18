@@ -1,28 +1,43 @@
-fastlane_version '2.53.1'
+projectName = "ymenu-ios"
+projectScheme = projectName
 
-platform :ios do
-	desc 'Build the prod iOS application.'
-	lane :prod do |options|
-		match(type: 'appstore')
-		increment_build_number_in_plist(
-			 xcodeproj: './ymenu-ios.xcodeproj',
-			 target:"ymenu-ios"
-		)
-		update_code_signing_settings(
-	        use_automatic_signing: false,
-	        path: "./ymenu-ios.xcodeproj"
-		)
-		build_app(
-			project: "./ymenu-ios.xcodeproj",
-			scheme: "ymenu-ios",
-			clean: true,
-			export_method: "app-store"
-        )
-		pilot(skip_waiting_for_build_processing:true)
-	end
+lane :deploy do |options|
+	setup_ci if ENV['CI']
+	match(type: 'appstore', readonly: true)
 
-	lane :devices do
-  		register_devices(devices_file: "./fastlane/devices.txt")
-  		match(type: "development", force_for_new_devices: true)
-	end
+	increment_build_number(
+		build_number: options[:build_number],
+		xcodeproj: "#{projectName}.xcodeproj"
+	)
+
+	update_code_signing_settings(
+	    use_automatic_signing: false,
+	    path: "#{projectName}.xcodeproj"
+	)
+
+    build_app(
+        project: "#{projectName}.xcodeproj",
+        scheme: projectScheme,
+        clean: true,
+		export_method: "app-store",
+        output_directory: "fastlane/artefacts",
+        output_name: "#{projectName}.ipa"
+    )
+
+	upload_to_testflight(
+		api_key: install_api_key,
+		ipa: "fastlane/artefacts/#{projectName}.ipa",
+		skip_waiting_for_build_processing: true,
+		skip_submission: true
+	)
+end
+
+private_lane :install_api_key do
+	app_store_connect_api_key(
+		key_id: ENV['FASTLANE_KEY_ID'],
+      	issuer_id: ENV['FASTLANE_ISSUER_ID'],
+		key_content: ENV['FASTLANE_API_KEY'],
+		duration: 1200,
+		in_house: false,
+	)
 end
