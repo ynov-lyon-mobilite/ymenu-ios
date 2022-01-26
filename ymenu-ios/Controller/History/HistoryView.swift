@@ -88,7 +88,7 @@ struct HistoryView: View {
             
         }.buttonStyle(PlainButtonStyle()).onAppear {
             UINavigationBar.appearance().largeTitleTextAttributes = [
-                .font : UIFont(name:"SF Pro Rounded Bold", size: 40)
+                .font : UIFont(name:"SF Pro Rounded Bold", size: 40) as Any
             ]
         }.alert(isPresented: $showAlert) {
             Alert(
