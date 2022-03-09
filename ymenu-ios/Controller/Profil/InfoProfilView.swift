@@ -27,7 +27,7 @@ struct InfoProfilView: View {
                         HStack{
                             Image (systemName: "person.crop.circle").opacity((0.5))
                             
-                            Text(UserDefaults.standard.string(forKey: "firstname")!)
+                            Text(UserDefaults.standard.string(forKey: "firstname") ?? "")
                                 .keyboardType(.emailAddress)
                                 .autocapitalization(.none)
                                 .opacity(0.5)
@@ -40,7 +40,7 @@ struct InfoProfilView: View {
                         HStack{
                             Image (systemName: "person.crop.circle").opacity((0.5))
                             
-                            Text(UserDefaults.standard.string(forKey: "lastname")!)
+                            Text(UserDefaults.standard.string(forKey: "lastname") ?? "")
                                 .keyboardType(.emailAddress)
                                 .autocapitalization(.none)
                                 .opacity(0.5)
@@ -53,7 +53,7 @@ struct InfoProfilView: View {
                         HStack{
                             Image (systemName: "envelope").opacity((0.5))
                             
-                            Text(UserDefaults.standard.string(forKey: "mail")!)
+                            Text(UserDefaults.standard.string(forKey: "mail") ?? "")
                                 .keyboardType(.emailAddress)
                                 .autocapitalization(.none)
                                 .opacity(0.5)

@@ -31,12 +31,12 @@ struct ProfilView: View {
                         .foregroundColor(colorScheme == .dark ? .white : .black)
                     VStack (alignment: .leading){
                         HStack {
-                            Text(UserDefaults.standard.string(forKey: "lastname")! + " " + UserDefaults.standard.string(forKey: "firstname")!)
+                            Text((UserDefaults.standard.string(forKey: "lastname") ?? "") + " " + (UserDefaults.standard.string(forKey: "firstname") ?? ""))
                                 .bold()
                                 .font(.custom("SF Pro Text Regular", fixedSize: 18))
                         }
                         
-                        Text(UserDefaults.standard.string(forKey: "mail")!)
+                        Text(UserDefaults.standard.string(forKey: "mail") ?? "")
                     }
                     Spacer()
                 }.padding(.bottom, 100)
