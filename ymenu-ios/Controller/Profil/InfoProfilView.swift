@@ -8,81 +8,94 @@
 import SwiftUI
 
 struct InfoProfilView: View {
+    // MARK: - Propertiers
     var body: some View {
-        ZStack{
-            Color(UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 0.1))
-                    .edgesIgnoringSafeArea(.all)
-            VStack{
-                Image("logoymenu")
+        NavigationView {
+            VStack {
+                Image(systemName:"person.crop.circle")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 120, height: 120, alignment: .center)
-                    .padding(25)
+                    .frame(width: 100, height: 100, alignment: .center)
                     .background(RoundedRectangle(cornerRadius: 35).foregroundColor(.white))
-                    .offset( y: -230)
+                Text("Mes Informations").font(.system(size: 25))
+                    .padding()
+
+                VStack(alignment: .leading, spacing: 15){
+                    VStack(alignment: .leading){
+                        Text("Civilité")
+                            .padding(10)
+                        HStack{
+                            Image (systemName: "person.crop.circle").opacity((0.5))
+                            
+                            Text("Monsieur")
+                                .keyboardType(.emailAddress)
+                                .autocapitalization(.none)
+                                .opacity(0.5)
+                        }
+                        Divider()
+                    }
+                    VStack(alignment: .leading){
+                        Text("Nom d'utilisateur").padding()
+                        HStack{
+                            Image (systemName: "person.crop.circle").opacity((0.5))
+                            
+                            Text("Zakarya_Tolba")
+                                .keyboardType(.emailAddress)
+                                .autocapitalization(.none)
+                                .opacity(0.5)
+                        }
+                        Divider()
+                    }
+                    VStack(alignment: .leading){
+                        Text("Prénom").padding(10)
+                        HStack{
+                            Image (systemName: "person.crop.circle").opacity((0.5))
+                            
+                            Text("Zakarya")
+                                .keyboardType(.emailAddress)
+                                .autocapitalization(.none)
+                                .opacity(0.5)
+                        }
+                        Divider()
+                    }
+                    VStack(alignment: .leading){
+                        Text("Nom").padding(10)
+                        HStack{
+                            Image (systemName: "person.crop.circle").opacity((0.5))
+                            
+                            Text("Tolba")
+                                .keyboardType(.emailAddress)
+                                .autocapitalization(.none)
+                                .opacity(0.5)
+                        }
+                        Divider()
+                    }
+                    VStack(alignment: .leading){
+                        Text("Adresse mail").padding(10)
+                        HStack{
+                            Image (systemName: "envelope").opacity((0.5))
+                            
+                            Text("Adresse mail")
+                                .keyboardType(.emailAddress)
+                                .autocapitalization(.none)
+                                .opacity(0.5)
+                        }
+                        Divider()
+                    }.navigationBarItems(leading:
+                        Button(action: {
+                        }) {
+                            Text("Retour").accentColor(Color.themeTextField)
+                        }
+                    )
+                }.padding([.leading, .trailing], 27.5)
             }
-            VStack{
-                Image(systemName: "person.crop.circle")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                    .frame(width: 40, height: 40, alignment: .center)
-                .padding(.top)
-                .padding(.bottom)
-                .offset(y: -320)
-                .offset(x: 160)
-            }
-            VStack{
-            Text("Mes informations")
-                .font(.custom("SF Pro Text Regular", size: 30))
-                .multilineTextAlignment(.center)
-                .lineSpacing(5)
-                .offset(y: -90)
-            }
-            VStack{
-                 {
-                    Text(UserDefaults.standard.string(forKey: "mail") ?? "")
-                        .frame(width: 270, height: 25)
-                        .font(.custom("SF Pro Text Regular", size: 22))
-                        .padding()
-                        .foregroundColor(.gray)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 100)
-                                .stroke(Color.themeTextField, lineWidth: 2)
-                        )
-                }().offset(y: 25)
-            }
-            VStack{
-                 {
-                    Text(UserDefaults.standard.string(forKey: "lastname") ?? "")
-                        .frame(width: 270, height: 25)
-                        .font(.custom("SF Pro Text Regular", size: 22))
-                        .padding()
-                        .foregroundColor(.gray)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 100)
-                                .stroke(Color.themeTextField, lineWidth: 2)
-                        )
-                }().offset(y: 125)
-            }
-            VStack{
-                 {
-                    Text(UserDefaults.standard.string(forKey: "firstname") ?? "")
-                        .frame(width: 270, height: 25)
-                        .font(.custom("SF Pro Text Regular", size: 22))
-                        .padding()
-                        .foregroundColor(.gray)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 100)
-                                .stroke(Color.themeTextField, lineWidth: 2)
-                        )
-                 }().offset(y: 225)
-            }
-        }.edgesIgnoringSafeArea(.all)
-    }
-    }
+        }
+   }
+}
 
 struct InfoProfilView_Previews: PreviewProvider {
     static var previews: some View {
         InfoProfilView()
     }
 }
+

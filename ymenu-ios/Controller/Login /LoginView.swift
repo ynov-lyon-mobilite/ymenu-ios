@@ -18,16 +18,16 @@ struct LoginView: View {
     var body: some View {
         NavigationView {
             VStack() {
-                Image("logoymenu")
+                Image("logo")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 120, height: 120, alignment: .center)
+                    .frame(width: 170, height: 170, alignment: .center)
                     .padding(25)
                     .background(RoundedRectangle(cornerRadius: 35).foregroundColor(.white))
                 
-                Text("Connectez-vous")
-                    .font(.custom("SF Pro Rounded Bold", fixedSize: 24))
-                    .padding([.top, .bottom], 20)
+//                Text("Connectez-vous")
+//                    .font(.custom("SF Pro Rounded Bold", fixedSize: 24))
+//                    .padding([.top, .bottom], 20)
                 
                 if emptyFields {
                     Text("Un ou plusieurs champs sont vides").foregroundColor(.red).bold().padding(.bottom, 10)
@@ -37,36 +37,32 @@ struct LoginView: View {
                 }
                 
                 VStack(alignment: .leading, spacing: 15) {
-                    TextField("Email", text: $viewModel.mail)
-                        .padding()
-                        .cornerRadius(20.0)
-//                        .shadow(radius: 6, x: 3, y: 3)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(Color.themeTextField, lineWidth: 2)
-                        )
-                        .keyboardType(.emailAddress)
-                        .autocapitalization(.none)
-                        .onChange(of: viewModel.mail, perform: { value in
-                            viewModel.wrongCredentials = false
-                            emptyFields = false
-                        })
-                    
-                    SecureField("Mot de passe", text: $viewModel.password)
-                        .padding()
-                        .onChange(of: viewModel.password, perform: { value in
-                            viewModel.wrongCredentials = false
-                            emptyFields = false
-                        })
-                        .cornerRadius(20.0)
-//                        .shadow(radius: 6, x: 3, y: 3)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(Color.themeTextField, lineWidth: 2)
-                        )
-                        
+                    VStack(alignment: .leading){
+                        Text("Nom d'utilisateur").fontWeight(.bold)
+                        HStack{
+                            Image (systemName: "person.crop.circle").opacity((0.5))
+                            TextField("Ton nom d'utilisateur", text: $viewModel.mail)
+                                .keyboardType(.emailAddress)
+                                .autocapitalization(.none)
+                        }
+                        Divider()
+                    }
+                    VStack(alignment: .leading){
+                        Text("Mot de passe").fontWeight(.bold)
+                        HStack{
+                            Image (systemName: "lock.fill").opacity((0.5))
+                            TextField("Ton mot de passe", text: $viewModel.password)
+                        }
+                        Divider()
+                    }
+                    VStack(alignment: .leading){
+                        Button(action: {
+                            
+                        }) {
+                            Text("Mot de passe oublié ?").foregroundColor(Color.gray.opacity((0.5)))
+                        }
+                    }
                 }.padding([.leading, .trailing], 27.5)
-                
                 Button(action: {
                     
                     viewModel.wrongCredentials = false
@@ -95,10 +91,10 @@ struct LoginView: View {
                 .padding()
                 .foregroundColor(.white)
                 .background(Color.themeTextField)
-                .cornerRadius(.greatestFiniteMagnitude)
+                .cornerRadius(10)
                 .shadow(radius: 6, x: 3, y: 3)
                 .padding(.top, 40)
-                .padding([.trailing, .leading], 100)
+                .padding([.trailing, .leading])
                 Spacer()
                 HStack(spacing: 0) {
                     Text("Pas de compte?")
@@ -142,4 +138,3 @@ struct LoginView_Previews: PreviewProvider {
         
     }
 }
-

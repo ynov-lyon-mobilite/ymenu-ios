@@ -19,22 +19,22 @@ struct RegisterView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Image("logoymenu")
+                Image("logo")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 120, height: 120, alignment: .center)
+                    .frame(width: 170, height: 170, alignment: .center)
                     .padding(25)
                     .background(RoundedRectangle(cornerRadius: 35).foregroundColor(.white))
                     .padding(.bottom, 20)
                     .padding(.top, -50)
                 
-                Text("Inscrivez-vous")
-                    .font(.custom("SF Pro Rounded Bold", fixedSize: 24))
-                
-                Text("Gardez un historique des restaurants visités")
-                    .font(.custom("SF Pro Text Regular", fixedSize: 16))
-                    .lineLimit(2)
-                    .padding([.top, .bottom], 20)
+//                Text("Inscrivez-vous")
+//                    .font(.custom("SF Pro Rounded Bold", fixedSize: 24))
+//
+//                Text("Gardez un historique des restaurants visités")
+//                    .font(.custom("SF Pro Text Regular", fixedSize: 16))
+//                    .lineLimit(2)
+//                    .padding([.top, .bottom], 20)
                 
                 if viewModel.error {
                     Text("Une erreur est servenue").foregroundColor(.red).bold().padding(.bottom, 10)
@@ -50,48 +50,51 @@ struct RegisterView: View {
                     Text("Veuillez entrer une adresse mail valide").foregroundColor(.red).bold().padding(.bottom, 10)
                 }
 
-                VStack(alignment: .leading, spacing: 15) {
-                    TextField("Nom", text: $viewModel.firstname)
-                        .padding()
-                        .cornerRadius(20.0)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(Color.themeTextField, lineWidth: 2)
-                        )
-                    
-                    TextField("Prenom", text: $viewModel.lastname)
-                        .padding()
-                        .cornerRadius(20.0)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(Color.themeTextField, lineWidth: 2)
-                        )
-                    
-                    TextField("Email", text: $viewModel.mail)
-                        .padding()
-                        .cornerRadius(20.0)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(Color.themeTextField, lineWidth: 2)
-                        )
-                        .keyboardType(.emailAddress)
-                        .autocapitalization(.none)
-                    
-                    SecureField("Mot de passe", text: $viewModel.password)
-                        .padding()
-                        .cornerRadius(20.0)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(Color.themeTextField, lineWidth: 2)
-                        )
-                    
-                    SecureField("Confirmer le mot de passe", text: $viewModel.confirmpassword)
-                        .padding()
-                        .cornerRadius(20.0)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(Color.themeTextField, lineWidth: 2)
-                        )
+                VStack(alignment: .leading, spacing: 15){
+                    VStack(alignment: .leading){
+                        Text("Nom d'utilisateur").fontWeight(.bold)
+                        HStack{
+                            Image (systemName: "person.crop.circle").opacity((0.5))
+                            
+                            TextField("Ton nom d'utilisateur", text: $viewModel.pseudo)
+                                .keyboardType(.emailAddress)
+                                .autocapitalization(.none)
+                        }
+                        Divider()
+                    }
+                    VStack(alignment: .leading){
+                        Text("Adresse mail").fontWeight(.bold)
+                        HStack{
+                            Image (systemName: "envelope").opacity((0.5))
+                            
+                            TextField("Mail", text: $viewModel.mail)
+                                .keyboardType(.emailAddress)
+                                .autocapitalization(.none)
+                        }
+                        Divider()
+                    }
+                    VStack(alignment: .leading){
+                        Text("Mot de passe").fontWeight(.bold)
+                        HStack{
+                            Image (systemName: "lock.fill").opacity((0.5))
+                            
+                            TextField("Ton mot de passe", text: $viewModel.password)
+                                .keyboardType(.emailAddress)
+                                .autocapitalization(.none)
+                        }
+                        Divider()
+                    }
+                    VStack(alignment: .leading){
+                        Text("Confirmer ton mot de passe").fontWeight(.bold)
+                        HStack{
+                            Image (systemName: "lock.fill").opacity((0.5))
+                            
+                            TextField("Confirmer ton mot de passe", text: $viewModel.confirmpassword)
+                                .keyboardType(.emailAddress)
+                                .autocapitalization(.none)
+                        }
+                        Divider()
+                    }
                 }.padding([.leading, .trailing], 27.5)
                 .onChange(of: [viewModel.firstname, viewModel.lastname, viewModel.mail, viewModel.password, viewModel.confirmpassword], perform: { value in
                     viewModel.error = false
@@ -140,27 +143,27 @@ struct RegisterView: View {
                             Text("Chargement...")
                                 .bold()
                         } else {
-                            Text("S'inscrire")
+                            Text("S'inscrire >>")
                                 .bold()
                         }
                     }.frame(maxWidth:.infinity)
                 }.padding()
                 .foregroundColor(.white)
                 .background(Color.themeTextField)
-                .cornerRadius(.greatestFiniteMagnitude)
+                .cornerRadius(10)
                 .shadow(radius: 6, x: 3, y: 3)
                 .padding(.top, 20)
-                .padding([.trailing, .leading], 100)
+                .padding([.trailing, .leading])
                 .disabled(viewModel.isLoading)
                 
                 Spacer()
                 HStack(spacing: 0) {
-                    Text("Déjà un compte?")
+                    Text("Vous avez déjà un compte ?")
                     Button(action: {
                         self.dismissRegister.toggle()
                     })
                     {
-                        Text("Se connecter")
+                        Text("Connectez-vous")
                             .bold()
                             .padding(.leading, 10)
                             .foregroundColor(Color.themeTextField)
