@@ -9,11 +9,12 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct ProfilView: View {
+    @Environment(\.colorScheme) var colorScheme
     @State var isPresented = false
     @ObservedObject var applicationState: ApplicationState = ApplicationState.shared
     @State var showAlert = false
 
-    init(){
+    init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [
                     .font : UIFont(name:"SF Pro Rounded Bold", size: 40)!
         ]
@@ -27,6 +28,7 @@ struct ProfilView: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 80, height: 80)
                         .padding(20)
+                        .foregroundColor(colorScheme == .dark ? .white : .black)
                     VStack (alignment: .leading){
                         HStack {
                             Text(UserDefaults.standard.string(forKey: "lastname")! + " " + UserDefaults.standard.string(forKey: "firstname")!)
@@ -48,7 +50,8 @@ struct ProfilView: View {
                             Spacer()
                             Image(systemName: "chevron.right")
                             
-                    }.foregroundColor(.white)
+                    }
+                    .foregroundColor(colorScheme == .dark ? .white : .black)
                     .padding(EdgeInsets(top: 17, leading: 21, bottom: 17, trailing: 21))
                     Divider()
                     NavigationLink(
@@ -60,7 +63,7 @@ struct ProfilView: View {
                             Image(systemName: "chevron.right")
                             
                     }
-                    .foregroundColor(.white)
+                    .foregroundColor(colorScheme == .dark ? .white : .black)
                     .padding(EdgeInsets(top: 17, leading: 21, bottom: 17, trailing: 21))
                     Divider()
                     Spacer()

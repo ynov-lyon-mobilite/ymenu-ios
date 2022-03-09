@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct InfoProfilView: View {
+    @Environment(\.colorScheme) var colorScheme
+    
     // MARK: - Propertiers
     var body: some View {
             ScrollView {
                 Image(systemName:"person.fill")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 100, height: 100, alignment: .center)
-                    .foregroundColor(.white)
+                    .frame(width: 80, height: 80, alignment: .center)
+                    .foregroundColor(colorScheme == .dark ? .white : .black)
                     .padding(.top, 50)
                 
                 VStack(alignment: .leading, spacing: 15){
