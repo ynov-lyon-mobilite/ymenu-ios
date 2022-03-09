@@ -104,7 +104,7 @@ struct TabButton : View{
                         .frame(width: 45, height: 6)
                     if viewRouter.currentPage == title{
                         CustomShape()
-                            .fill(Color.red).cornerRadius(3.0)
+                            .fill(Color.themeTextField).cornerRadius(3.0)
                             .frame(width: 35, height: 5)
                             .matchedGeometryEffect(id: "Tab_change", in: animation)
                     }
