@@ -21,13 +21,13 @@ struct LoginView: View {
                 Image("logo")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 170, height: 170, alignment: .center)
-                    .padding(25)
+                    .frame(width: 120, height: 120, alignment: .center)
+                    .padding(15)
                     .background(RoundedRectangle(cornerRadius: 35).foregroundColor(.white))
                 
-//                Text("Connectez-vous")
-//                    .font(.custom("SF Pro Rounded Bold", fixedSize: 24))
-//                    .padding([.top, .bottom], 20)
+                Text("Connectez-vous")
+                    .font(.custom("SF Pro Rounded Bold", fixedSize: 24))
+                    .padding([.top, .bottom], 20)
                 
                 if emptyFields {
                     Text("Un ou plusieurs champs sont vides").foregroundColor(.red).bold().padding(.bottom, 10)
@@ -91,10 +91,9 @@ struct LoginView: View {
                 .padding()
                 .foregroundColor(.white)
                 .background(Color.themeTextField)
-                .cornerRadius(10)
+                .cornerRadius(7)
                 .shadow(radius: 6, x: 3, y: 3)
-                .padding(.top, 40)
-                .padding([.trailing, .leading])
+                .padding(50)
                 Spacer()
                 HStack(spacing: 0) {
                     Text("Pas de compte?")
