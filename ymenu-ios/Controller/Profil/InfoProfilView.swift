@@ -10,86 +10,56 @@ import SwiftUI
 struct InfoProfilView: View {
     // MARK: - Propertiers
     var body: some View {
-        NavigationView {
-            VStack {
-                Image(systemName:"person.crop.circle")
+            ScrollView {
+                Image(systemName:"person.fill")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 100, height: 100, alignment: .center)
-                    .background(RoundedRectangle(cornerRadius: 35).foregroundColor(.white))
-                Text("Mes Informations").font(.system(size: 25))
-                    .padding()
-
+                    .foregroundColor(.white)
+                    .padding(.top, 50)
+                
                 VStack(alignment: .leading, spacing: 15){
                     VStack(alignment: .leading){
-                        Text("Civilité")
-                            .padding(10)
+                        Text("Prénom")
+                            .padding(.top, 10)
                         HStack{
                             Image (systemName: "person.crop.circle").opacity((0.5))
                             
-                            Text("Monsieur")
+                            Text(UserDefaults.standard.string(forKey: "firstname")!)
                                 .keyboardType(.emailAddress)
                                 .autocapitalization(.none)
                                 .opacity(0.5)
-                        }
+                        }.padding(.top, 10)
                         Divider()
                     }
                     VStack(alignment: .leading){
-                        Text("Nom d'utilisateur").padding()
+                        Text("Nom")
+                            .padding(.top, 10)
                         HStack{
                             Image (systemName: "person.crop.circle").opacity((0.5))
                             
-                            Text("Zakarya_Tolba")
+                            Text(UserDefaults.standard.string(forKey: "lastname")!)
                                 .keyboardType(.emailAddress)
                                 .autocapitalization(.none)
                                 .opacity(0.5)
-                        }
+                        }.padding(.top, 10)
                         Divider()
                     }
                     VStack(alignment: .leading){
-                        Text("Prénom").padding(10)
-                        HStack{
-                            Image (systemName: "person.crop.circle").opacity((0.5))
-                            
-                            Text("Zakarya")
-                                .keyboardType(.emailAddress)
-                                .autocapitalization(.none)
-                                .opacity(0.5)
-                        }
-                        Divider()
-                    }
-                    VStack(alignment: .leading){
-                        Text("Nom").padding(10)
-                        HStack{
-                            Image (systemName: "person.crop.circle").opacity((0.5))
-                            
-                            Text("Tolba")
-                                .keyboardType(.emailAddress)
-                                .autocapitalization(.none)
-                                .opacity(0.5)
-                        }
-                        Divider()
-                    }
-                    VStack(alignment: .leading){
-                        Text("Adresse mail").padding(10)
+                        Text("Adresse mail")
+                            .padding(.top, 10)
                         HStack{
                             Image (systemName: "envelope").opacity((0.5))
                             
-                            Text("Adresse mail")
+                            Text(UserDefaults.standard.string(forKey: "mail")!)
                                 .keyboardType(.emailAddress)
                                 .autocapitalization(.none)
                                 .opacity(0.5)
-                        }
+                        }.padding(.top, 10)
                         Divider()
-                    }.navigationBarItems(leading:
-                        Button(action: {
-                        }) {
-                            Text("Retour").accentColor(Color.themeTextField)
-                        }
-                    )
+                    }
                 }.padding([.leading, .trailing], 27.5)
-            }
-        }
+            }.navigationBarTitle(Text("Mes informations"), displayMode: .automatic)
    }
 }
 
