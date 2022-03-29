@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct Dish: Hashable, Decodable {
-    let _id: String?
+    let _id: String
     let name: String
     let price: Float
     let ingredients: [String]?

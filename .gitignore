@@ -57,3 +57,5 @@ fastlane/test_output
 Pods/
 *.mobileprovision
 fastlane/artefacts
+ymenu-ios.xcodeproj/xcshareddata
+ymenu-ios.xcodeproj/project.xcworkspace/xcshareddata
