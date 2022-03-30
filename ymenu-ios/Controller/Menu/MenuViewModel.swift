@@ -15,7 +15,7 @@ final class MenuViewModel : ObservableObject {
     
     var selectedCategory: DishCategory? {
         get {
-            guard let category = dishCategories.first(where: { $0._id == selectedCategoryId }) else { return nil }
+            guard let category = dishCategories.first(where: { $0.name == selectedCategoryId }) else { return nil }
             
             return category
         }
