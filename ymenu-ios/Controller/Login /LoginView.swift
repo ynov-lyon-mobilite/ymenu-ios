@@ -55,13 +55,14 @@ struct LoginView: View {
                         }
                         Divider()
                     }
-                    VStack(alignment: .leading){
-                        Button(action: {
-                            
-                        }) {
-                            Text("Mot de passe oublié ?").foregroundColor(Color.gray.opacity((0.5)))
-                        }
-                    }
+//                    TODO: Forgot password
+//                    VStack(alignment: .leading){
+//                        Button(action: {
+//
+//                        }) {
+//                            Text("Mot de passe oublié ?").foregroundColor(Color.gray.opacity((0.5)))
+//                        }
+//                    }
                 }.padding([.leading, .trailing], 27.5)
                 Button(action: {
                     
