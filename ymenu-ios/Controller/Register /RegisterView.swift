@@ -22,11 +22,11 @@ struct RegisterView: View {
                 Image("logo")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 170, height: 170, alignment: .center)
+                    .frame(width: 100, height: 100, alignment: .center)
                     .padding(25)
                     .background(RoundedRectangle(cornerRadius: 35).foregroundColor(.white))
                     .padding(.bottom, 20)
-                    .padding(.top, -50)
+                    .padding(.top, -10)
                 
 //                Text("Inscrivez-vous")
 //                    .font(.custom("SF Pro Rounded Bold", fixedSize: 24))
@@ -52,11 +52,22 @@ struct RegisterView: View {
 
                 VStack(alignment: .leading, spacing: 15){
                     VStack(alignment: .leading){
-                        Text("Nom d'utilisateur").fontWeight(.bold)
+                        Text("Nom").fontWeight(.bold)
                         HStack{
                             Image (systemName: "person.crop.circle").opacity((0.5))
                             
-                            TextField("Votre nom d'utilisateur", text: $viewModel.pseudo)
+                            TextField("Votre nom", text: $viewModel.lastname)
+                                .keyboardType(.emailAddress)
+                                .autocapitalization(.none)
+                        }
+                        Divider()
+                    }
+                    VStack(alignment: .leading){
+                        Text("Prénom").fontWeight(.bold)
+                        HStack{
+                            Image (systemName: "person.crop.circle").opacity((0.5))
+                            
+                            TextField("Votre prénom", text: $viewModel.firstname)
                                 .keyboardType(.emailAddress)
                                 .autocapitalization(.none)
                         }
@@ -67,7 +78,7 @@ struct RegisterView: View {
                         HStack{
                             Image (systemName: "envelope").opacity((0.5))
                             
-                            TextField("Mail", text: $viewModel.mail)
+                            TextField("Votre adresse mail", text: $viewModel.mail)
                                 .keyboardType(.emailAddress)
                                 .autocapitalization(.none)
                         }
@@ -78,7 +89,7 @@ struct RegisterView: View {
                         HStack{
                             Image (systemName: "lock.fill").opacity((0.5))
                             
-                            TextField("Votre mot de passe", text: $viewModel.password)
+                            SecureField("Votre mot de passe", text: $viewModel.password)
                                 .keyboardType(.emailAddress)
                                 .autocapitalization(.none)
                         }
@@ -89,7 +100,7 @@ struct RegisterView: View {
                         HStack{
                             Image (systemName: "lock.fill").opacity((0.5))
                             
-                            TextField("Confirmez votre mot de passe", text: $viewModel.confirmpassword)
+                            SecureField("Confirmez votre mot de passe", text: $viewModel.confirmpassword)
                                 .keyboardType(.emailAddress)
                                 .autocapitalization(.none)
                         }
@@ -143,7 +154,7 @@ struct RegisterView: View {
                             Text("Chargement...")
                                 .bold()
                         } else {
-                            Text("S'inscrire >>")
+                            Text("S'inscrire")
                                 .bold()
                         }
                     }.frame(maxWidth:.infinity)

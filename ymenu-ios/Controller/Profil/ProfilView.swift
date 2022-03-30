@@ -31,12 +31,12 @@ struct ProfilView: View {
                         .foregroundColor(colorScheme == .dark ? .white : .black)
                     VStack (alignment: .leading){
                         HStack {
-                            Text((UserDefaults.standard.string(forKey: "lastname") ?? "") + " " + (UserDefaults.standard.string(forKey: "firstname") ?? ""))
+                            Text((UserDefaults.standard.string(forKey: "firstname") ?? "") + " " + (UserDefaults.standard.string(forKey: "lastname") ?? ""))
                                 .bold()
-                                .font(.custom("SF Pro Text Regular", fixedSize: 18))
+                                .font(.custom("SF Pro Rounded Bold", fixedSize: 18))
                         }
                         
-                        Text(UserDefaults.standard.string(forKey: "mail") ?? "")
+                        Text(UserDefaults.standard.string(forKey: "mail") ?? "").font(.headline)
                     }
                     Spacer()
                 }.padding(.bottom, 100)
@@ -44,9 +44,14 @@ struct ProfilView: View {
                     
                     NavigationLink(
                         destination: InfoProfilView()) {
-                            Image(systemName: "person.crop.circle.fill").foregroundColor(Color.themeTextField)
+                            Image(systemName: "person.crop.circle.fill")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 25, height: 25)
+                                .foregroundColor(Color.themeTextField)
+                                .padding(.horizontal, 10)
                             Text("Mes informations")
-                                .font(.body)
+                                .font(.headline).bold()
                             Spacer()
                             Image(systemName: "chevron.right")
                             
@@ -56,9 +61,14 @@ struct ProfilView: View {
                     Divider()
                     NavigationLink(
                         destination: HistoryView(viewModel: HistoryViewModel())) {
-                            Image(systemName: "clock.fill").foregroundColor(Color.themeTextField)
+                            Image(systemName: "clock.fill")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 25, height: 25)
+                                .foregroundColor(Color.themeTextField)
+                                .padding(.horizontal, 10)
                             Text("Historique de visite")
-                                .font(.body)
+                                .font(.headline).bold()
                             Spacer()
                             Image(systemName: "chevron.right")
                             

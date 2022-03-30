@@ -23,12 +23,12 @@ struct InfoProfilView: View {
                 VStack(alignment: .leading, spacing: 15){
                     VStack(alignment: .leading){
                         Text("Prénom")
+                            .font(.headline).bold()
                             .padding(.top, 10)
                         HStack{
                             Image (systemName: "person.crop.circle").opacity((0.5))
                             
                             Text(UserDefaults.standard.string(forKey: "firstname") ?? "")
-                                .keyboardType(.emailAddress)
                                 .autocapitalization(.none)
                                 .opacity(0.5)
                         }.padding(.top, 10)
@@ -36,12 +36,12 @@ struct InfoProfilView: View {
                     }
                     VStack(alignment: .leading){
                         Text("Nom")
+                            .font(.headline).bold()
                             .padding(.top, 10)
                         HStack{
                             Image (systemName: "person.crop.circle").opacity((0.5))
                             
                             Text(UserDefaults.standard.string(forKey: "lastname") ?? "")
-                                .keyboardType(.emailAddress)
                                 .autocapitalization(.none)
                                 .opacity(0.5)
                         }.padding(.top, 10)
@@ -49,12 +49,12 @@ struct InfoProfilView: View {
                     }
                     VStack(alignment: .leading){
                         Text("Adresse mail")
+                            .font(.headline).bold()
                             .padding(.top, 10)
                         HStack{
                             Image (systemName: "envelope").opacity((0.5))
                             
                             Text(UserDefaults.standard.string(forKey: "mail") ?? "")
-                                .keyboardType(.emailAddress)
                                 .autocapitalization(.none)
                                 .opacity(0.5)
                         }.padding(.top, 10)

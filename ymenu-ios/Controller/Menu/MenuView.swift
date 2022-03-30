@@ -19,24 +19,24 @@ struct MenuView: View {
     var bag = Set<AnyCancellable>()
     @State var menuLoaded = false
     @State private var showAlert = false
-
+    
     init(restaurant: RestaurantDTO) {
         UINavigationBar.appearance().largeTitleTextAttributes = [
             .font : UIFont(name:"SF Pro Rounded Bold", size: 40)!
         ]
-
+        
         self.viewModel = MenuViewModel(restaurant: restaurant)
     }
- 
+    
     func tapticFail() {
         let generator = UINotificationFeedbackGenerator()
         generator.notificationOccurred(.error)
     }
-
+    
     var body: some View {
         if !self.menuLoaded {
-             ProgressView("Chargement du menu")
-                 .zIndex(1)
+            ProgressView("Chargement du menu")
+                .zIndex(1)
         }
         NavigationView {
             ScrollViewReader { proxy in
@@ -72,41 +72,41 @@ struct MenuView: View {
                         IndexedForEach(viewModel.dishCategories) { index, category in
                             Section(header: Text(category.name).padding(.leading, 20).padding(.bottom, -10)){
                                 ForEach(viewModel.dishes.filter { $0.category_id == category._id }, id: \._id) { dish in
-                                        ZStack{
-                                            Button("") {}
-                                            NavigationLink(destination: DishDetailView(dish: dish)){
-                                                ZStack {
-                                                    WebImage(url: URL(string: dish.url_logo))
-                                                      .onSuccess { image, data, cacheType in
-                                                      }
-                                                      .resizable()
-                                                      .placeholder {
-                                                        Rectangle().foregroundColor(.gray)
-                                                      }
-                                                      .indicator(.activity)
-                                                      .transition(.fade(duration: 0.5))
-                                                      .scaledToFit()
-                                                        .aspectRatio(contentMode: .fill)
-                                                        .frame(width: 126, height: 83, alignment: .center)
-                                                        .cornerRadius(13)
-                                                        .frame(maxWidth: .infinity, alignment: .center)
-                                                        .shadow(radius: 6, x: 3, y: 3)
-                                                    if (dish.url_model != "") {
-                                                        Image(systemName: "arkit")
-                                                            .font(.system(size: 16, weight: .light, design: .rounded))
-                                                            .padding(5)
-                                                            .background(
-                                                                Blur(style: .systemUltraThinMaterial)
-                                                            ).cornerRadius(13).offset(x: -42, y: -20)
+                                    ZStack{
+                                        Button("") {}
+                                        NavigationLink(destination: DishDetailView(dish: dish)){
+                                            ZStack {
+                                                WebImage(url: URL(string: dish.url_logo))
+                                                    .onSuccess { image, data, cacheType in
                                                     }
+                                                    .resizable()
+                                                    .placeholder {
+                                                        Rectangle().foregroundColor(.gray)
+                                                    }
+                                                    .indicator(.activity)
+                                                    .transition(.fade(duration: 0.5))
+                                                    .scaledToFit()
+                                                    .aspectRatio(contentMode: .fill)
+                                                    .frame(width: 126, height: 83, alignment: .center)
+                                                    .cornerRadius(13)
+                                                    .frame(maxWidth: .infinity, alignment: .center)
+                                                    .shadow(radius: 6, x: 3, y: 3)
+                                                if (dish.url_model != "") {
+                                                    Image(systemName: "arkit")
+                                                        .font(.system(size: 16, weight: .light, design: .rounded))
+                                                        .padding(5)
+                                                        .background(
+                                                            Blur(style: .systemUltraThinMaterial)
+                                                        ).cornerRadius(13).offset(x: -42, y: -20)
                                                 }
-                                                
-                                                Text(dish.name).multilineTextAlignment(.leading)
-                                                    .padding(.leading, 10)
-                                                Spacer()
-                                                Text("\(String(describing: dish.price))0 €").bold().multilineTextAlignment(.center)
-                                                Spacer().frame(width: 5)
                                             }
+                                            
+                                            Text(dish.name).multilineTextAlignment(.leading)
+                                                .padding(.leading, 10)
+                                            Spacer()
+                                            Text("\(String(describing: dish.price))0 €").bold().multilineTextAlignment(.center)
+                                            Spacer().frame(width: 5)
+                                        }
                                     }
                                 }
                             }.id(category._id)

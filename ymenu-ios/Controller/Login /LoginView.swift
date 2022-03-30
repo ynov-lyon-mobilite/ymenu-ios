@@ -38,10 +38,10 @@ struct LoginView: View {
                 
                 VStack(alignment: .leading, spacing: 15) {
                     VStack(alignment: .leading){
-                        Text("Nom d'utilisateur").fontWeight(.bold)
+                        Text("Adresse mail").fontWeight(.bold)
                         HStack{
                             Image (systemName: "person.crop.circle").opacity((0.5))
-                            TextField("Ton nom d'utilisateur", text: $viewModel.mail)
+                            TextField("Votre adresse mail", text: $viewModel.mail)
                                 .keyboardType(.emailAddress)
                                 .autocapitalization(.none)
                         }
@@ -51,10 +51,10 @@ struct LoginView: View {
                         Text("Mot de passe").fontWeight(.bold)
                         HStack{
                             Image (systemName: "lock.fill").opacity((0.5))
-                            TextField("Ton mot de passe", text: $viewModel.password)
+                            SecureField("Votre mot de passe", text: $viewModel.password)
                         }
                         Divider()
-                    }
+                    
 //                    TODO: Forgot password
 //                    VStack(alignment: .leading){
 //                        Button(action: {
@@ -62,7 +62,7 @@ struct LoginView: View {
 //                        }) {
 //                            Text("Mot de passe oublié ?").foregroundColor(Color.gray.opacity((0.5)))
 //                        }
-//                    }
+                    }
                 }.padding([.leading, .trailing], 27.5)
                 Button(action: {
                     
