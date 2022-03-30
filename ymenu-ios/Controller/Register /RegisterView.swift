@@ -56,7 +56,7 @@ struct RegisterView: View {
                         HStack{
                             Image (systemName: "person.crop.circle").opacity((0.5))
                             
-                            TextField("Ton nom d'utilisateur", text: $viewModel.pseudo)
+                            TextField("Votre nom d'utilisateur", text: $viewModel.pseudo)
                                 .keyboardType(.emailAddress)
                                 .autocapitalization(.none)
                         }
@@ -78,18 +78,18 @@ struct RegisterView: View {
                         HStack{
                             Image (systemName: "lock.fill").opacity((0.5))
                             
-                            TextField("Ton mot de passe", text: $viewModel.password)
+                            TextField("Votre mot de passe", text: $viewModel.password)
                                 .keyboardType(.emailAddress)
                                 .autocapitalization(.none)
                         }
                         Divider()
                     }
                     VStack(alignment: .leading){
-                        Text("Confirmer ton mot de passe").fontWeight(.bold)
+                        Text("Confirmez le mot de passe").fontWeight(.bold)
                         HStack{
                             Image (systemName: "lock.fill").opacity((0.5))
                             
-                            TextField("Confirmer ton mot de passe", text: $viewModel.confirmpassword)
+                            TextField("Confirmez votre mot de passe", text: $viewModel.confirmpassword)
                                 .keyboardType(.emailAddress)
                                 .autocapitalization(.none)
                         }
@@ -163,7 +163,7 @@ struct RegisterView: View {
                         self.dismissRegister.toggle()
                     })
                     {
-                        Text("Connectez-vous")
+                        Text("Se connecter")
                             .bold()
                             .padding(.leading, 10)
                             .foregroundColor(Color.themeTextField)
