@@ -71,12 +71,6 @@ struct HistoryView: View {
                     }
                 }
                 .navigationBarTitle(Text("Historique"), displayMode: .automatic)
-//                    .navigationBarItems(
-//                        leading:
-//                            Text("adresse mail".uppercased()).bold()
-//                            .padding(.top, 23)
-//                            .font(.footnote)
-//                            .foregroundColor(Color(.systemGray)))
             }
             .listStyle(InsetGroupedListStyle())
             .progressViewStyle(CircularProgressViewStyle())

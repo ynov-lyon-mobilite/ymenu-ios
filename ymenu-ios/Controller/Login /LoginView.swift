@@ -18,11 +18,11 @@ struct LoginView: View {
     var body: some View {
         NavigationView {
             VStack() {
-                Image("logoymenu")
+                Image("logo")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 120, height: 120, alignment: .center)
-                    .padding(25)
+                    .padding(15)
                     .background(RoundedRectangle(cornerRadius: 35).foregroundColor(.white))
                 
                 Text("Connectez-vous")
@@ -37,36 +37,33 @@ struct LoginView: View {
                 }
                 
                 VStack(alignment: .leading, spacing: 15) {
-                    TextField("Email", text: $viewModel.mail)
-                        .padding()
-                        .cornerRadius(20.0)
-//                        .shadow(radius: 6, x: 3, y: 3)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(Color.themeTextField, lineWidth: 2)
-                        )
-                        .keyboardType(.emailAddress)
-                        .autocapitalization(.none)
-                        .onChange(of: viewModel.mail, perform: { value in
-                            viewModel.wrongCredentials = false
-                            emptyFields = false
-                        })
+                    VStack(alignment: .leading){
+                        Text("Adresse mail").fontWeight(.bold)
+                        HStack{
+                            Image (systemName: "person.crop.circle").opacity((0.5))
+                            TextField("Votre adresse mail", text: $viewModel.mail)
+                                .keyboardType(.emailAddress)
+                                .autocapitalization(.none)
+                        }
+                        Divider()
+                    }
+                    VStack(alignment: .leading){
+                        Text("Mot de passe").fontWeight(.bold)
+                        HStack{
+                            Image (systemName: "lock.fill").opacity((0.5))
+                            SecureField("Votre mot de passe", text: $viewModel.password)
+                        }
+                        Divider()
                     
-                    SecureField("Mot de passe", text: $viewModel.password)
-                        .padding()
-                        .onChange(of: viewModel.password, perform: { value in
-                            viewModel.wrongCredentials = false
-                            emptyFields = false
-                        })
-                        .cornerRadius(20.0)
-//                        .shadow(radius: 6, x: 3, y: 3)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(Color.themeTextField, lineWidth: 2)
-                        )
-                        
+//                    TODO: Forgot password
+//                    VStack(alignment: .leading){
+//                        Button(action: {
+//
+//                        }) {
+//                            Text("Mot de passe oublié ?").foregroundColor(Color.gray.opacity((0.5)))
+//                        }
+                    }
                 }.padding([.leading, .trailing], 27.5)
-                
                 Button(action: {
                     
                     viewModel.wrongCredentials = false
@@ -95,10 +92,9 @@ struct LoginView: View {
                 .padding()
                 .foregroundColor(.white)
                 .background(Color.themeTextField)
-                .cornerRadius(.greatestFiniteMagnitude)
+                .cornerRadius(7)
                 .shadow(radius: 6, x: 3, y: 3)
-                .padding(.top, 40)
-                .padding([.trailing, .leading], 100)
+                .padding(50)
                 Spacer()
                 HStack(spacing: 0) {
                     Text("Pas de compte?")
@@ -142,4 +138,3 @@ struct LoginView_Previews: PreviewProvider {
         
     }
 }
-
