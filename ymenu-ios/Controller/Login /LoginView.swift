@@ -44,6 +44,7 @@ struct LoginView: View {
                             TextField("Votre adresse mail", text: $viewModel.mail)
                                 .keyboardType(.emailAddress)
                                 .autocapitalization(.none)
+                                .padding(10)
                         }
                         Divider()
                     }
@@ -52,6 +53,7 @@ struct LoginView: View {
                         HStack{
                             Image (systemName: "lock.fill").opacity((0.5))
                             SecureField("Votre mot de passe", text: $viewModel.password)
+                                .padding(10)
                         }
                         Divider()
                     
