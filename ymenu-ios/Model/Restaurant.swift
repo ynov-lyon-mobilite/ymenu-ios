@@ -14,4 +14,7 @@ struct Restaurant: Hashable, Decodable {
     let url_logo: String
     let address: String
     let updatedAt: String
+    let description: String
+    let speciality: String
+    let schedules: [String]
 }
