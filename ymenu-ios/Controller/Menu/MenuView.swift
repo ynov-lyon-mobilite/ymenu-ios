@@ -97,6 +97,7 @@ struct MenuView: View {
                     self.menuLoaded = true
                 }
                 .navigationBarTitle(self.viewModel.restaurant.name, displayMode: .automatic)
+                .navigationBarItems(trailing: Image(systemName: "shield").padding(.top, 90))
                 .padding(.top, 20)
                 .padding(.bottom, 20)
                 .padding([.top])
