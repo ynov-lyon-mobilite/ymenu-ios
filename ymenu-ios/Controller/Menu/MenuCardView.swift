@@ -60,10 +60,12 @@ struct MenuCardView: View{
                             .font(.title3.bold())
                             .foregroundColor(.themeTextField)
 
-                        Text(dish.ingredients?.joined(separator: ", ") ?? "")
-                            .font(.caption)
-                            .multilineTextAlignment(.leading)
-                            .foregroundColor(.gray)
+                        if (dish.ingredients?.count != 0) {
+                            Text(dish.ingredients?.joined(separator: ", ") ?? "")
+                                .font(.caption)
+                                .multilineTextAlignment(.leading)
+                                .foregroundColor(.gray)
+                        }
 
                         Text("\(String(describing: dish.price))0 €").font(.callout).bold()
                             .multilineTextAlignment(.center)
@@ -72,6 +74,7 @@ struct MenuCardView: View{
                             .background(
                                 RoundedRectangle(cornerRadius: 6).foregroundColor(.orange)
                             ).foregroundColor(.white)
+                            .padding(.top, 5)
                             
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
