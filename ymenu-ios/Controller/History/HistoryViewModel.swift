@@ -14,7 +14,7 @@ final class HistoryViewModel : ObservableObject {
     let restaurantApiService = RestaurantApiService()
     
     init() {
-        restaurantApiService.getRestaurant() { [weak self] in
+        restaurantApiService.getUserRestaurantHistory() { [weak self] in
             guard let strongSelf = self else { return }
             
             switch $0 {

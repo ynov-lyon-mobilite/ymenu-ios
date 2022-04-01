@@ -16,7 +16,7 @@ struct RegisterView: View {
     @State private var unmatchedPasswords: Bool = false
     @State private var unvalidMail: Bool = false
     @State var showAlert = false
-    @Binding var dismissRegister: Bool
+    @Binding var presentRegister: Bool
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
     var body: some View {
@@ -167,7 +167,7 @@ struct RegisterView: View {
                     Spacer()
                     Text("Vous avez déjà un compte ?")
                     Button(action: {
-                        self.dismissRegister.toggle()
+                        self.presentRegister.toggle()
                     })
                     {
                         Text("Se connecter")
@@ -181,7 +181,7 @@ struct RegisterView: View {
                 .navigationBarItems(
                     leading:
                         Button(action: {
-                            self.dismissRegister.toggle()
+                            self.presentRegister.toggle()
                         }) {
                             Text("Retour").accentColor(Color.themeTextField)
                         }
@@ -216,7 +216,7 @@ struct RegisterView: View {
 
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterView(viewModel: RegisterViewModel(), dismissRegister: .constant(true))
+        RegisterView(viewModel: RegisterViewModel(), presentRegister: .constant(true))
             .previewDevice("iPhone SE (3rd generation)")
         
     }

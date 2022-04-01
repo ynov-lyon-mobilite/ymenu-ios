@@ -24,9 +24,9 @@ class RegisterViewModel: RoutingProvider {
 
     var viewDismissalModePublisher = PassthroughSubject<Bool, Never>()
     
-    private var dismissRegister = false {
+    private var presentRegister = false {
         didSet {
-            viewDismissalModePublisher.send(dismissRegister)
+            viewDismissalModePublisher.send(presentRegister)
         }
     }
     
@@ -49,8 +49,7 @@ class RegisterViewModel: RoutingProvider {
                 print(error)
             case .success:
                 DispatchQueue.main.async {
-//                    withAnimation {ApplicationState.shared.authenticate(with: tokenPair)}
-                    self.dismissRegister = true
+                    self.presentRegister = true
                     self.isLoading = false
                 }
             }
