@@ -10,6 +10,7 @@ import SwiftUI
 struct LoginView: View {
     
     // MARK: - Properties
+
     @State private var presentRegister = false
     @ObservedObject var viewModel: LoginViewModel
     @State private var emptyFields: Bool = false
