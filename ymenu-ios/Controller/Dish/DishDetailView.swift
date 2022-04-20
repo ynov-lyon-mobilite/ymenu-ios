@@ -128,15 +128,15 @@ struct DishDetailView: View {
                   
                    }.listStyle(InsetGroupedListStyle())
                 }
-                if (dish.url_model != ""){
+                if (dish.url_model_ios != ""){
                     Button(action: {
-                        let fileName = URL(string: dish.url_model)?.lastPathComponent
+                        let fileName = URL(string: dish.url_model_ios)?.lastPathComponent
                         let pathToUSDZ = checkUSDZExist(inputPath: fileName!)
                         if (pathToUSDZ != "") {
                             self.modelURL = pathToUSDZ
                         } else {
                             self.isDownloading = true
-                            downloadUSDZ(inputURL: dish.url_model)
+                            downloadUSDZ(inputURL: dish.url_model_ios)
                         }
                     }) {
                     HStack {

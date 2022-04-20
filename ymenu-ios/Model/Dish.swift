@@ -15,7 +15,7 @@ struct Dish: Hashable, Decodable {
     let ingredients: [String]?
     let infos: String?
     let url_logo: String
-    let url_model: String
+    let url_model_ios: String
     let restaurant_id: String
     let category_id: String
 }
