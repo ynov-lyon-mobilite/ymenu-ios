@@ -33,6 +33,9 @@
 		47CE67AE258A3FDE004940D7 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE67AD258A3FDE004940D7 /* MenuViewModel.swift */; };
 		9595267B27D89D2400D17FF8 /* RestaurantInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9595267A27D89D2400D17FF8 /* RestaurantInfoView.swift */; };
 		9595267D27D9086000D17FF8 /* ImageCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9595267C27D9085F00D17FF8 /* ImageCarouselView.swift */; };
+		B3012F0928103ACF004DF457 /* EditInfoProfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3012F0828103ACF004DF457 /* EditInfoProfilView.swift */; };
+		B3012F0B281047D6004DF457 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3012F0A281047D6004DF457 /* ImagePicker.swift */; };
+		B3012F0D28104DAF004DF457 /* EditInfoProfilViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3012F0C28104DAF004DF457 /* EditInfoProfilViewModel.swift */; };
 		B3408E0F25B8275E006BD523 /* DishCategoryApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3408E0E25B8275E006BD523 /* DishCategoryApiService.swift */; };
 		B3408E1225B827C8006BD523 /* DishCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3408E1125B827C8006BD523 /* DishCategory.swift */; };
 		B3408E1925B82C5C006BD523 /* CategoriesTopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3408E1825B82C5C006BD523 /* CategoriesTopBarView.swift */; };
@@ -101,6 +104,9 @@
 		47CE67AD258A3FDE004940D7 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		9595267A27D89D2400D17FF8 /* RestaurantInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantInfoView.swift; sourceTree = "<group>"; };
 		9595267C27D9085F00D17FF8 /* ImageCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCarouselView.swift; sourceTree = "<group>"; };
+		B3012F0828103ACF004DF457 /* EditInfoProfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInfoProfilView.swift; sourceTree = "<group>"; };
+		B3012F0A281047D6004DF457 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		B3012F0C28104DAF004DF457 /* EditInfoProfilViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInfoProfilViewModel.swift; sourceTree = "<group>"; };
 		B3408E0E25B8275E006BD523 /* DishCategoryApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCategoryApiService.swift; sourceTree = "<group>"; };
 		B3408E1125B827C8006BD523 /* DishCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCategory.swift; sourceTree = "<group>"; };
 		B3408E1825B82C5C006BD523 /* CategoriesTopBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTopBarView.swift; sourceTree = "<group>"; };
@@ -312,6 +318,8 @@
 			children = (
 				BAFA3E27260939030082C3EE /* ProfilView.swift */,
 				0A421559261496E8002BC7B2 /* InfoProfilView.swift */,
+				B3012F0828103ACF004DF457 /* EditInfoProfilView.swift */,
+				B3012F0C28104DAF004DF457 /* EditInfoProfilViewModel.swift */,
 			);
 			path = Profil;
 			sourceTree = "<group>";
@@ -392,6 +400,7 @@
 			isa = PBXGroup;
 			children = (
 				E3EB411025C9EA010016862A /* Blur.swift */,
+				B3012F0A281047D6004DF457 /* ImagePicker.swift */,
 			);
 			path = Additions;
 			sourceTree = "<group>";
@@ -494,7 +503,9 @@
 				4715A4E5256E672E00C24659 /* DishApiService.swift in Sources */,
 				BACCEDAC2619FEA800752D60 /* Restaurant.swift in Sources */,
 				E3EB411125C9EA010016862A /* Blur.swift in Sources */,
+				B3012F0D28104DAF004DF457 /* EditInfoProfilViewModel.swift in Sources */,
 				0AFD1411256E7D31000EFEBA /* QrCodeCameraDelegate.swift in Sources */,
+				B3012F0B281047D6004DF457 /* ImagePicker.swift in Sources */,
 				4765860A25CB498C00871FDC /* QrCodeScannerViewModel.swift in Sources */,
 				B38E711725B861FD00A67830 /* DishDetailView.swift in Sources */,
 				E3BC0DC12614AE4900ED1900 /* User.swift in Sources */,
@@ -509,6 +520,7 @@
 				E3BC0DD62614BF7500ED1900 /* Weakable.swift in Sources */,
 				470D972C256BBA080083912C /* Request.swift in Sources */,
 				B38E711E25B877F900A67830 /* IndexedForEach.swift in Sources */,
+				B3012F0928103ACF004DF457 /* EditInfoProfilView.swift in Sources */,
 				BAF8267A262C6CC600427AE7 /* RegisterWebService.swift in Sources */,
 				E36D852725333B0E00722077 /* AppDelegate.swift in Sources */,
 				BA4469A526146E2800CFBF1D /* IndexedForEachHistory.swift in Sources */,
@@ -662,8 +674,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "ymenu-ios/ymenu-ios.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_ASSET_PATHS = "\"ymenu-ios/Preview Content\"";
 				DEVELOPMENT_TEAM = 94FLWD5X32;
@@ -675,7 +687,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ynovlyon.ymenu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "match Development com.ynovlyon.ymenu";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

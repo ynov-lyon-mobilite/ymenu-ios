@@ -16,7 +16,7 @@ struct ProfilView: View {
 
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [
-                    .font : UIFont(name:"SF Pro Rounded Bold", size: 40)!
+            .font : UIFont(name:"SF Pro Rounded Bold", size: 40)!
         ]
     }
     var body: some View {

@@ -70,7 +70,7 @@ struct HistoryView: View {
                         self.historyLoaded = true
                     }
                 }
-                .navigationBarTitle(Text("Historique"), displayMode: .automatic)
+                .navigationBarTitle(Text("Historique"), displayMode: .inline)
             }
             .listStyle(InsetGroupedListStyle())
             .progressViewStyle(CircularProgressViewStyle())

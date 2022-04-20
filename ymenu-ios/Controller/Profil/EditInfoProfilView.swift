@@ -1,24 +1,33 @@
 //
-//  InfoProfilView.swift
+//  EditInfoProfilView.swift
 //  ymenu-ios
 //
-//  Created by Enzo Sborea on 31/03/2021.
+//  Created by Léo on 20/04/2022.
 //
 
 import SwiftUI
 
-struct InfoProfilView: View {
+struct EditInfoProfilView: View {
+    @Environment(\.presentationMode) var presentationMode
     @Environment(\.colorScheme) var colorScheme
     
-    // MARK: - Propertiers
+    @ObservedObject var viewModel: EditInfoProfilViewModel
+    @State private var showSheet = false
+    
     var body: some View {
             ScrollView {
-                Image(systemName:"person.crop.circle")
+                Image(uiImage: viewModel.image)
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 80, height: 80, alignment: .center)
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 120, height: 120, alignment: .center)
                     .foregroundColor(colorScheme == .dark ? .white : .black)
                     .padding([.top, .bottom], 10)
+                    .clipShape(Circle())
+                    .cornerRadius(50)
+                
+                Button("Ajouter une photo") {
+                    showSheet = true
+                }
                 
                 VStack(alignment: .leading, spacing: 15){
                     VStack(alignment: .leading){
@@ -64,19 +73,20 @@ struct InfoProfilView: View {
                         Divider()
                     }
                 }.padding([.leading, .trailing], 27.5)
-            }.navigationBarTitle(Text("Mes informations"), displayMode: .inline)
-            .toolbar {
-                NavigationLink(
-                    destination: EditInfoProfilView(viewModel: EditInfoProfilViewModel())) {
-                        Text("Modifier")
-                    }
+                .sheet(isPresented: $showSheet) {
+                    ImagePicker(sourceType: .photoLibrary, selectedImage: $viewModel.image)
+                }
+            }.toolbar {
+                Button("Ok") {
+                    // TODO: SAVE IMAGE
+                    presentationMode.wrappedValue.dismiss()
+                }
             }
    }
 }
 
-struct InfoProfilView_Previews: PreviewProvider {
+struct EditInfoProfilView_Previews: PreviewProvider {
     static var previews: some View {
-        InfoProfilView()
+        EditInfoProfilView(viewModel: EditInfoProfilViewModel())
     }
 }
-
