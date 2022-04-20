@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Combine
+
 struct ImageCarouselView<Content: View>: View {
     private var numberOfImages: Int
     private var content: Content
@@ -23,6 +24,9 @@ struct ImageCarouselView<Content: View>: View {
                 HStack(spacing: 0) {
                     self.content
                 }
+                .mask(
+                    LinearGradient(gradient: Gradient(colors: [Color.black, Color.clear]), startPoint: .top, endPoint: .bottom)
+                )
                 .frame(width: geometry.size.width, height: geometry.size.height, alignment: .leading)
                 .offset(x: CGFloat(self.currentIndex) * -geometry.size.width, y: 0)
                 .animation(.spring())
@@ -47,16 +51,15 @@ struct ImageCarouselView<Content: View>: View {
                         self.slideGesture = .zero
                     })
                 // 2
-                HStack(spacing: 3) {
+                HStack(spacing: 6) {
                     // 3
                     ForEach(0..<self.numberOfImages, id: \.self) { index in
                         // 4
                         Circle()
                             .frame(width: index == self.currentIndex ? 10 : 8,
                                    height: index == self.currentIndex ? 10 : 8)
-                            .foregroundColor(index == self.currentIndex ? Color.blue : .white)
-                            .overlay(Circle().stroke(Color.gray, lineWidth: 1))
-                            .padding(.bottom, 8)
+                            .foregroundColor(index == self.currentIndex ? Color.themeTextField : .white)
+                            .padding(.bottom, 20)
                             .animation(.spring())
                     }
                 }

@@ -21,7 +21,7 @@ final class HistoryViewModel : ObservableObject {
             case .success(let restaurants):
                 DispatchQueue.main.async {
                     strongSelf.restaurants.append(contentsOf: restaurants)
-                    if restaurants == [] {
+                    if restaurants.count == 0 {
                         strongSelf.noRestaurants = true
                     }
                 }

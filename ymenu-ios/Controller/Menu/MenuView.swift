@@ -17,6 +17,7 @@ struct MenuView: View {
     @State var onTapCurrentTab: String = ""
     @State var menuLoaded = false
     @State private var showAlert = false
+    @State private var presentRestaurant = false
 
     init(restaurant: RestaurantDTO) {
         UINavigationBar.appearance().largeTitleTextAttributes = [
@@ -38,7 +39,9 @@ struct MenuView: View {
         }
         NavigationView {
             VStack(spacing: 0) {
-                VStack {
+                VStack(alignment: .leading){
+//                    Text("restaurant address")
+//                        .font(.subheadline).padding(.leading, 20).foregroundColor(.gray)
                     ScrollViewReader { proxy in
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack(spacing: 20){
@@ -97,11 +100,18 @@ struct MenuView: View {
                     self.menuLoaded = true
                 }
                 .navigationBarTitle(self.viewModel.restaurant.name, displayMode: .automatic)
-                .navigationBarItems(trailing: Image(systemName: "shield").padding(.top, 90))
-                .padding(.top, 20)
-                .padding(.bottom, 20)
-                .padding([.top])
-                .background(colorScheme == .dark ? Color.black : Color.white)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        if (self.viewModel.restaurant.name != "") {
+                            Button(action: {
+                                self.presentRestaurant.toggle()
+                            })
+                            {
+                                Image(systemName: "info.circle").foregroundColor(Color.themeTextField)
+                            }
+                        }
+                    }
+                }
                 .overlay(
                     Divider()
                         .padding(.horizontal,-15)
@@ -129,7 +139,7 @@ struct MenuView: View {
             .onAppear {
                 currentTab = viewModel.dishCategories.first?.name ?? ""
             }
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
         .accentColor( .red).alert(isPresented: $showAlert) {
             Alert(
                 title: Text("Aucun restaurant"),
@@ -141,6 +151,9 @@ struct MenuView: View {
                         }
                     }
                 }))
+        }
+        .sheet(isPresented: $presentRestaurant){
+            RestaurantInfoView(viewModel: RestaurantInfoViewModel(), presentRestaurant: $presentRestaurant, restaurantDTO: viewModel.restaurant)
         }
     }
 }

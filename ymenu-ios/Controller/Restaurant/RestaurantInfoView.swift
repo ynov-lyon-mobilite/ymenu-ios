@@ -6,31 +6,36 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct RestaurantInfoView: View {
-    private var numberOfImages = 3
+    var numberOfImages = 3
+    @ObservedObject var viewModel: RestaurantInfoViewModel
+    @Binding var presentRestaurant: Bool
+    var restaurantDTO: RestaurantDTO
+
     var body: some View {
-        ZStack{
-            //            Color("Color").edgesIgnoringSafeArea(.all)
-            
-            VStack(spacing: 0){
-                //                Image("1")
-                //                    .resizable()
-                //                    .frame(height: UIScreen.main.bounds.height / 3)
-                //                    .cornerRadius(30)
+        ZStack {
+            VStack(spacing: 0) {
                 GeometryReader { geometry in
                     ImageCarouselView(numberOfImages: 3) {
-                        Image("1")
+                        WebImage(url: URL(string: viewModel.restaurant.url_logo))
+                            .onSuccess { image, data, cacheType in
+                            }
                             .resizable()
                             .scaledToFill()
                             .frame(width: geometry.size.width, height: geometry.size.height)
                             .clipped()
-                        Image("2")
+                        WebImage(url: URL(string: viewModel.restaurant.url_logo))
+                            .onSuccess { image, data, cacheType in
+                            }
                             .resizable()
                             .scaledToFill()
                             .frame(width: geometry.size.width, height: geometry.size.height)
                             .clipped()
-                        Image("3")
+                        WebImage(url: URL(string: viewModel.restaurant.url_logo))
+                            .onSuccess { image, data, cacheType in
+                            }
                             .resizable()
                             .scaledToFill()
                             .frame(width: geometry.size.width, height: geometry.size.height)
@@ -38,37 +43,34 @@ struct RestaurantInfoView: View {
                     }
                 }.frame(width: UIScreen.main.bounds.width, height: 300, alignment: .center)
                 VStack(){
-                    
                     HStack(){
-                        
-                        Text("Minute Asia")
+                        Text(viewModel.restaurant.name)
                             .font(.title)
                             .fontWeight(.bold)
-                            .padding(10)
-                        
+                            .padding(15)
+                       
                         Spacer()
-                    }.padding(.top, 7)
+                    }.padding(10)
                     
                     HStack(){
                         
                         VStack(alignment: .leading, spacing: 1) {
-                            Text("€€ Restaurant asiatique")
-                                .foregroundColor(.gray)
+                            Text(viewModel.restaurant.speciality)
                                 .padding(10)
                             HStack(){
                                 Button(action: {
                                     
                                 }) {
                                     Text("11h00 - 23h00")
-                                        .font(.system(size: 15))
+                                        .font(.system(size: 18))
                                         .bold()
                                         .padding(5)
                                         .foregroundColor(.white)
                                         .background(Color.themeTextField)
-                                        .cornerRadius(20)
+                                        .cornerRadius(8)
                                         .shadow(radius: 6, x: 3, y: 3)
-                                        .padding(10)
-                                }
+                                        .padding(20)
+                                }.disabled(true)
                             }
                         }
                         Spacer()
@@ -78,14 +80,13 @@ struct RestaurantInfoView: View {
                         Text("A propos ")
                             .font(.title2)
                             .fontWeight(.bold)
-                            .padding(10)
                         
                         Spacer()
-                    }.padding(.top, 7)
+                    }.padding(20)
                     
-                    HStack(){
+                    VStack() {
                         
-                        Text("A travers cette application vous pourrez découvrir les différents menus ainsi que leurs plats en réalité augmentée. Visualiez votre plat sur votre table avant même de l'avoir commandé")
+                        Text(viewModel.restaurant.description)
                             .padding(10)
                         Spacer()
                     }.padding(.top, 7)
@@ -93,29 +94,30 @@ struct RestaurantInfoView: View {
                     Spacer()
                     HStack(){
                         Button(action: {
-                            
+                            self.presentRestaurant.toggle()
                         }) {
-                            Text("Découvrir la carte")
-                                .font(.title)
-                                .bold()
-                                .padding(10)
+                                    HStack {
+                                        Text("Découvrir la carte")
+                                            .bold()
+                                    }.frame(maxWidth:.infinity)
+                                }.padding()
                                 .foregroundColor(.white)
                                 .background(Color.themeTextField)
-                                .cornerRadius(20)
+                                .cornerRadius(7)
                                 .shadow(radius: 6, x: 3, y: 3)
-                        }
+                                .padding(50)
                     }.padding()
                 }
                 
                 Spacer()
             }
             .edgesIgnoringSafeArea(.top)
-        }
+        }.onAppear { viewModel.fetchRestaurantInfo(restaurant: restaurantDTO) }
     }
 }
 
-struct RestaurantInfoView_Previews: PreviewProvider {
-    static var previews: some View {
-        RestaurantInfoView()
-    }
-}
+//struct RestaurantInfoView_Previews: PreviewProvider {
+//    static var previews: some View {
+//
+//    }
+//}
