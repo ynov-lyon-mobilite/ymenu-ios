@@ -123,7 +123,10 @@ struct LoginView: View {
 
 extension Color {
     static var themeTextField: Color {
-        return Color(red: 255.0/255.0, green: 188.0/255.0, blue: 102.0/255.0, opacity: 1.0)
+        return Color(red: 242.0/255.0, green: 130.0/255.0, blue: 58.0/255.0, opacity: 1.0)
+    }
+    static var ColorTextField: Color {
+        return Color(red: 244.0/255.0, green: 207.0/255.0, blue: 162.0/255.0, opacity: 1.0)
     }
 }
 

@@ -11,5 +11,7 @@ struct OnboardingCard: Identifiable {
     var id = UUID()
     var image:String
     var title:String
-    var description:String
+    var subtitle:String!
+    var description1:String!
+    var description2:String!
 }

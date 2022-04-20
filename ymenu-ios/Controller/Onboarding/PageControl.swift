@@ -19,7 +19,7 @@ struct PageControl: UIViewRepresentable {
     func makeUIView(context: Context) -> UIPageControl {
         let control = UIPageControl()
         control.numberOfPages = numberOfPages
-        control.pageIndicatorTintColor = UIColor.systemGray
+        control.pageIndicatorTintColor = UIColor(Color.ColorTextField)
         control.currentPageIndicatorTintColor = UIColor(Color.themeTextField)
         control.frame(forAlignmentRect: CGRect(origin: .zero, size: CGSize(width: 40, height: 40)))
         

@@ -8,10 +8,10 @@
 import SwiftUI
 
 var cards:[OnboardingCard] = [
-    OnboardingCard(image: "logoymenu", title: "Bienvenue dans Y'Menu", description: "À travers cette application vous pourrez découvrir les différents plats du menu proposés en réalité augmentée. Visualisez votre plat sur la table."),
-    OnboardingCard(image: "logoymenu", title: "Comment ça marche ?", description: "Ouvrez le scanneur intégré à l'application disponible depuis l'écran d'accueil, scannez un QR Code compatible et c'est prêt !"),
-    OnboardingCard(image: "logoymenu", title: "Bon appétit !", description: "Si vous avez bien compris le fonctionnement, il ne vous reste plus qu'à essayer !")
-]
+    OnboardingCard(image: "logoymenu", title: "Vos plats en réalité augmenté"),
+    OnboardingCard(image: "dish1", title: "Bienvenue dans Y'Menu", subtitle: "Une expérience unique en réalité augmenté", description1: "À travers cette application vous pourrez découvrir les différents plats du menu proposés en réalité augmentée.", description2: "Visualisez votre plat sur votre table avant même de l'avoir commandé."),
+    OnboardingCard(image: "dish1", title: "Comment ça marche ?", description1: "Ouvrez votre caméra grâce à la fonctionnalité QR Code disponible sur l'écran d'accueil, scannez le QR Code et c'est prêt !", description2: "Si vous avez bien compris le fonctionnement, il ne vous reste plus qu'à essayer !"),
+    ]
 
 struct ContentView : View {
 

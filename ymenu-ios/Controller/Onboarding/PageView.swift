@@ -19,39 +19,71 @@ struct PageView<Page:View>: View {
         self._isOnboardingDone = isOnboardingDone
     }
     
+
+    
     var body: some View {
-        ZStack(alignment: .leading) {
+        ZStack(alignment: .center) {
             Color(UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 0.1))
-                    
+
             PageViewController(controllers: viewControllers, currentPage: $currentPage)
+            if (self.currentPage != 0) {
+                onBoardingImageView(image: self.currentPage < self.viewControllers.count - 1 ? "dish1" : "picture3")
+            } else {
+                Image("logoymenu")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 120, height: 120, alignment: .center)
+                    .padding(25)
+                    .background(RoundedRectangle(cornerRadius: 35).foregroundColor(.white))
+            }
+            ZStack {
             Spacer()
-        VStack{
-            Spacer()
-            PageControl(numberOfPages: viewControllers.count, currentPage: $currentPage)
-            Button(action: {
-                if self.currentPage < self.viewControllers.count - 1 {
-                    self.currentPage += 1
-                } else {
-                    isOnboardingDone.toggle()
+            VStack{
+
+               
+                Spacer()
+                Button(action: {
+                    if self.currentPage < self.viewControllers.count - 1 {
+                        self.currentPage += 1
+                    } else {
+                        isOnboardingDone.toggle()
+                    }
+                }) {
+                    RoundedRectangle(cornerRadius: 10)
+                        .frame(width: 360, height: 70)
+    //                    .foregroundColor(Color(red: 235/255, green: 165/255, blue: 60/255))
+                        .foregroundColor(Color.themeTextField)
+                        .padding()
+    //                        .shadow(radius: 5, x: 2, y: 2)
+    //                        .border(Color.black, width: 0)
+                        .overlay(
+                            Text(self.currentPage < self.viewControllers.count - 2 ? "Découvrir" : "Suivant" )
+                            .foregroundColor(.white)
+                                .font(.custom("SF Pro Rounded Regular", size: 20))
+                        )
                 }
-            }) {
-                RoundedRectangle(cornerRadius: 100)
-                    .frame(width: 180, height: 70)
-//                    .foregroundColor(Color(red: 235/255, green: 165/255, blue: 60/255))
-                    .foregroundColor(Color.themeTextField)
-                    .padding()
-                        .shadow(radius: 5, x: 2, y: 2)
-                        .border(Color.black, width: 0)
-                    .overlay(
-                        Text(self.currentPage < self.viewControllers.count - 1 ? "Suivant" : "C'est parti!" )
-                        .foregroundColor(.white)
-                            .font(.custom("SF Pro Rounded Bold", size: 25))
-                    )
-            }.padding(.bottom, 60)
-        }.edgesIgnoringSafeArea(.all)
+            }.edgesIgnoringSafeArea(.all)
+            }
         .offset(y: 0)
         }.edgesIgnoringSafeArea(.all)
-           
+        PageControl(numberOfPages: viewControllers.count, currentPage: $currentPage).padding(.bottom, 90)
+    }
+}
+
+struct onBoardingImageView: View {
+    var image: String
+    
+    var body: some View {
+        Image(self.image)
+            .resizable()
+            .scaledToFill()
+            .frame(height: 500)
+                .offset(x: 20, y: 100)
+            .clipShape(Circle())
+            .frame(width: 500)
+            .overlay(Circle().stroke(Color.themeTextField, lineWidth: 3))
+            .shadow(radius: 10)
+                .offset(x: 20, y: -400)
     }
 }
 
