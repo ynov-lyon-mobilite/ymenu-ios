@@ -31,6 +31,8 @@
 		4765860A25CB498C00871FDC /* QrCodeScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4765860925CB498C00871FDC /* QrCodeScannerViewModel.swift */; };
 		47CE67AA258A0431004940D7 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE67A9258A0431004940D7 /* MenuView.swift */; };
 		47CE67AE258A3FDE004940D7 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE67AD258A3FDE004940D7 /* MenuViewModel.swift */; };
+		9595267B27D89D2400D17FF8 /* RestaurantInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9595267A27D89D2400D17FF8 /* RestaurantInfoView.swift */; };
+		9595267D27D9086000D17FF8 /* ImageCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9595267C27D9085F00D17FF8 /* ImageCarouselView.swift */; };
 		B3408E0F25B8275E006BD523 /* DishCategoryApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3408E0E25B8275E006BD523 /* DishCategoryApiService.swift */; };
 		B3408E1225B827C8006BD523 /* DishCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3408E1125B827C8006BD523 /* DishCategory.swift */; };
 		B3408E1925B82C5C006BD523 /* CategoriesTopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3408E1825B82C5C006BD523 /* CategoriesTopBarView.swift */; };
@@ -51,6 +53,7 @@
 		E33883A22620ED04009FEA0F /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33883A12620ED04009FEA0F /* ViewRouter.swift */; };
 		E33D6D052790BD78002D0DE1 /* ARQLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D6D042790BD78002D0DE1 /* ARQLView.swift */; };
 		E343150527F5DE000081E1A9 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E343150427F5DE000081E1A9 /* AuthenticationServices.framework */; };
+		E343150727F65F4B0081E1A9 /* RestaurantInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E343150627F65F4B0081E1A9 /* RestaurantInfoViewModel.swift */; };
 		E36599CF256EA10800D58F6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E36599CE256EA10800D58F6F /* Assets.xcassets */; };
 		E36D852725333B0E00722077 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36D852625333B0E00722077 /* AppDelegate.swift */; };
 		E36D852925333B0E00722077 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36D852825333B0E00722077 /* ContentView.swift */; };
@@ -96,6 +99,8 @@
 		4765860925CB498C00871FDC /* QrCodeScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeScannerViewModel.swift; sourceTree = "<group>"; };
 		47CE67A9258A0431004940D7 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		47CE67AD258A3FDE004940D7 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
+		9595267A27D89D2400D17FF8 /* RestaurantInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantInfoView.swift; sourceTree = "<group>"; };
+		9595267C27D9085F00D17FF8 /* ImageCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCarouselView.swift; sourceTree = "<group>"; };
 		B3408E0E25B8275E006BD523 /* DishCategoryApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCategoryApiService.swift; sourceTree = "<group>"; };
 		B3408E1125B827C8006BD523 /* DishCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCategory.swift; sourceTree = "<group>"; };
 		B3408E1825B82C5C006BD523 /* CategoriesTopBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTopBarView.swift; sourceTree = "<group>"; };
@@ -116,6 +121,7 @@
 		E33D6D042790BD78002D0DE1 /* ARQLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARQLView.swift; sourceTree = "<group>"; };
 		E343150327F5DE000081E1A9 /* ymenu-ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ymenu-ios.entitlements"; sourceTree = "<group>"; };
 		E343150427F5DE000081E1A9 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
+		E343150627F65F4B0081E1A9 /* RestaurantInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantInfoViewModel.swift; sourceTree = "<group>"; };
 		E36599CE256EA10800D58F6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E36D852325333B0E00722077 /* ymenu-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ymenu-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E36D852625333B0E00722077 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -223,9 +229,20 @@
 			path = QRCode;
 			sourceTree = "<group>";
 		};
+		9595267927D89CFD00D17FF8 /* Restaurant */ = {
+			isa = PBXGroup;
+			children = (
+				9595267A27D89D2400D17FF8 /* RestaurantInfoView.swift */,
+				9595267C27D9085F00D17FF8 /* ImageCarouselView.swift */,
+				E343150627F65F4B0081E1A9 /* RestaurantInfoViewModel.swift */,
+			);
+			path = Restaurant;
+			sourceTree = "<group>";
+		};
 		B3408E1425B82B28006BD523 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9595267927D89CFD00D17FF8 /* Restaurant */,
 				BA4469942614679300CFBF1D /* History */,
 				E3BC0DC22614B22000ED1900 /* Account */,
 				BA51E14B2610C290006AC7DB /* Register  */,
@@ -470,6 +487,7 @@
 				E33D6D052790BD78002D0DE1 /* ARQLView.swift in Sources */,
 				0AFD140B256E7CD3000EFEBA /* ScannerViewModel.swift in Sources */,
 				E3BC0DD22614BF5F00ED1900 /* Routing.swift in Sources */,
+				9595267D27D9086000D17FF8 /* ImageCarouselView.swift in Sources */,
 				4715A4EB256E6B4A00C24659 /* RestaurantDTO.swift in Sources */,
 				47CE67AE258A3FDE004940D7 /* MenuViewModel.swift in Sources */,
 				E3BC0DB726149B6E00ED1900 /* ApplicationState.swift in Sources */,
@@ -497,7 +515,9 @@
 				0A9DFA312589FFEE001C3ECC /* CameraPreview.swift in Sources */,
 				E3868A5527F3B30E00730C80 /* MenuCardView.swift in Sources */,
 				0AFD1417256E7DD1000EFEBA /* QrCodeScannerView.swift in Sources */,
+				E343150727F65F4B0081E1A9 /* RestaurantInfoViewModel.swift in Sources */,
 				E3BC0DC42614B22C00ED1900 /* AccountView.swift in Sources */,
+				9595267B27D89D2400D17FF8 /* RestaurantInfoView.swift in Sources */,
 				470D9736256BBB4D0083912C /* AnyEncodable.swift in Sources */,
 				BA51E1492610C288006AC7DB /* LoginView.swift in Sources */,
 				47CE67AA258A0431004940D7 /* MenuView.swift in Sources */,

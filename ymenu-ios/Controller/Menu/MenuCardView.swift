@@ -43,7 +43,7 @@ struct MenuCardView: View{
                                 .cornerRadius(13)
                                 .frame(maxWidth: 149, alignment: .leading)
                                 .shadow(radius: 6, x: 3, y: 3)
-                            if (dish.url_model != "") {
+                            if (dish.url_model_ios != "") {
                                 Image(systemName: "arkit")
                                     .font(.system(size: 16, weight: .light, design: .rounded))
                                     .padding(5)
@@ -60,10 +60,12 @@ struct MenuCardView: View{
                             .font(.title3.bold())
                             .foregroundColor(.themeTextField)
 
-                        Text(dish.ingredients?.joined(separator: ", ") ?? "")
-                            .font(.caption)
-                            .multilineTextAlignment(.leading)
-                            .foregroundColor(.gray)
+                        if (dish.ingredients?.count != 0) {
+                            Text(dish.ingredients?.joined(separator: ", ") ?? "")
+                                .font(.caption)
+                                .multilineTextAlignment(.leading)
+                                .foregroundColor(.gray)
+                        }
 
                         Text("\(String(describing: dish.price))0 €").font(.callout).bold()
                             .multilineTextAlignment(.center)
@@ -72,6 +74,7 @@ struct MenuCardView: View{
                             .background(
                                 RoundedRectangle(cornerRadius: 6).foregroundColor(.orange)
                             ).foregroundColor(.white)
+                            .padding(.top, 5)
                             
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
