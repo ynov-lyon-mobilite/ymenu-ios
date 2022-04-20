@@ -22,4 +22,8 @@ final class EditInfoProfilViewModel : ObservableObject {
             image = UIImage(systemName: "person.crop.circle")!
         }
     }
+    
+    func saveInfo() {
+        // TODO: SAVE USER INFO
+    }
 }

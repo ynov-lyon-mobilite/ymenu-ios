@@ -13,6 +13,9 @@ struct EditInfoProfilView: View {
     
     @ObservedObject var viewModel: EditInfoProfilViewModel
     @State private var showSheet = false
+    @State private var newEmail = UserDefaults.standard.string(forKey: "mail") ?? ""
+    @State private var newFirstName = UserDefaults.standard.string(forKey: "firstname") ?? ""
+    @State private var newLastName = UserDefaults.standard.string(forKey: "lastname") ?? ""
     
     var body: some View {
             ScrollView {
@@ -37,7 +40,7 @@ struct EditInfoProfilView: View {
                         HStack{
                             Image (systemName: "person.crop.circle").opacity((0.5))
                             
-                            Text(UserDefaults.standard.string(forKey: "firstname") ?? "")
+                            TextField("Prénom", text: $newFirstName)
                                 .autocapitalization(.none)
                                 .opacity(0.5)
                                 .padding(8)
@@ -51,7 +54,7 @@ struct EditInfoProfilView: View {
                         HStack{
                             Image (systemName: "person.crop.circle").opacity((0.5))
                             
-                            Text(UserDefaults.standard.string(forKey: "lastname") ?? "")
+                            TextField("Nom", text: $newLastName)
                                 .autocapitalization(.none)
                                 .opacity(0.5)
                                 .padding(8)
@@ -65,7 +68,7 @@ struct EditInfoProfilView: View {
                         HStack{
                             Image (systemName: "envelope").opacity((0.5))
                             
-                            Text(UserDefaults.standard.string(forKey: "mail") ?? "")
+                            TextField("Adresse mail", text: $newEmail)
                                 .autocapitalization(.none)
                                 .opacity(0.5)
                                 .padding(8)
