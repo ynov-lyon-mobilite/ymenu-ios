@@ -25,7 +25,7 @@ struct ImageCarouselView<Content: View>: View {
                     self.content
                 }
                 .mask(
-                    LinearGradient(gradient: Gradient(colors: [Color.black, Color.clear]), startPoint: .top, endPoint: .bottom)
+                    LinearGradient(gradient: Gradient(colors: [Color.black, Color.clear]), startPoint: .center, endPoint: .bottom)
                 )
                 .frame(width: geometry.size.width, height: geometry.size.height, alignment: .leading)
                 .offset(x: CGFloat(self.currentIndex) * -geometry.size.width, y: 0)

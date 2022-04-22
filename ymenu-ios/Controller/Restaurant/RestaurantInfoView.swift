@@ -47,7 +47,7 @@ struct RestaurantInfoView: View {
                         Text(viewModel.restaurant.name)
                             .font(.title)
                             .fontWeight(.bold)
-                            .padding(15)
+                            .padding(10)
                        
                         Spacer()
                     }.padding(10)
@@ -56,7 +56,7 @@ struct RestaurantInfoView: View {
                         
                         VStack(alignment: .leading, spacing: 1) {
                             Text(viewModel.restaurant.speciality)
-                                .padding(10)
+                                .padding(.leading, 20)
                             HStack(){
                                 Button(action: {
                                     
@@ -82,12 +82,14 @@ struct RestaurantInfoView: View {
                             .fontWeight(.bold)
                         
                         Spacer()
-                    }.padding(20)
+                    }
+                    .padding(.leading, 20)
                     
                     VStack() {
-                        
                         Text(viewModel.restaurant.description)
                             .padding(10)
+                            .padding(.leading, 10)
+                            .lineLimit(nil)
                         Spacer()
                     }.padding(.top, 7)
                     
