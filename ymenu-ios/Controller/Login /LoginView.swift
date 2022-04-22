@@ -24,8 +24,6 @@ struct LoginView: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 100, height: 100, alignment: .center)
                     .padding(10)
-                    .background(RoundedRectangle(cornerRadius: 25).foregroundColor(.white))
-                    .padding(.top, -20)
                 
                 Text("Connectez-vous")
                     .font(.custom("SF Pro Rounded Bold", fixedSize: 24))
@@ -124,7 +122,7 @@ struct LoginView: View {
 
 extension Color {
     static var themeTextField: Color {
-        return Color(red: 255.0/255.0, green: 188.0/255.0, blue: 102.0/255.0, opacity: 1.0)
+        return Color(red: 245.0/255.0, green: 160.0/255.0, blue: 105.0/255.0, opacity: 1.0)
     }
 }
 
