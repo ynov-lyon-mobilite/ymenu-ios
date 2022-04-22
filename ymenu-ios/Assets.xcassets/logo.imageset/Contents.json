@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "logo.png",
+      "filename" : "icone_apple.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "icone_apple-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "icone_apple-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
