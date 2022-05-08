@@ -58,7 +58,7 @@ struct ImageCarouselView<Content: View>: View {
                         Circle()
                             .frame(width: index == self.currentIndex ? 10 : 8,
                                    height: index == self.currentIndex ? 10 : 8)
-                            .foregroundColor(index == self.currentIndex ? Color.themeTextField : .white)
+                            .foregroundColor(index == self.currentIndex ? Color.themeTextField : .gray)
                             .padding(.bottom, 20)
                             .animation(.spring())
                     }

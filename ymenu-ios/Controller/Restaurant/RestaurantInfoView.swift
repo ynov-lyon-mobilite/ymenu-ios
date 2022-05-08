@@ -77,7 +77,7 @@ struct RestaurantInfoView: View {
                     }
                     HStack(){
                         
-                        Text("A propos ")
+                        Text("À propos ")
                             .font(.title2)
                             .fontWeight(.bold)
                         
@@ -86,10 +86,12 @@ struct RestaurantInfoView: View {
                     .padding(.leading, 20)
                     
                     VStack() {
-                        Text(viewModel.restaurant.description)
+                        Text("\(viewModel.restaurant.description)")
+                            .font(.body)
                             .padding(10)
                             .padding(.leading, 10)
                             .lineLimit(nil)
+                            .fixedSize(horizontal: false, vertical: true)
                         Spacer()
                     }.padding(.top, 7)
                     
