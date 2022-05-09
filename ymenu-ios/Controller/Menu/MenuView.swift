@@ -140,7 +140,7 @@ struct MenuView: View {
                 currentTab = viewModel.dishCategories.first?.name ?? ""
             }
         }.navigationViewStyle(StackNavigationViewStyle())
-        .accentColor( .red).alert(isPresented: $showAlert) {
+        .accentColor(Color.themeTextField).alert(isPresented: $showAlert) {
             Alert(
                 title: Text("Aucun restaurant"),
                 message: Text("Veuillez scanner un QR Code afin de récupérer le menu du restaurant"),
