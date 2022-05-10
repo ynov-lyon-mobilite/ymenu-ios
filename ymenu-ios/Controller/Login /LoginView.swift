@@ -8,22 +8,22 @@
 import SwiftUI
 
 struct LoginView: View {
-    // MARK: - Propertiers
-    @State private var dismissRegister = false
+    
+    // MARK: - Properties
+
+    @State private var presentRegister = false
     @ObservedObject var viewModel: LoginViewModel
     @State private var emptyFields: Bool = false
-    
-    
+
     // MARK: - View
     var body: some View {
         NavigationView {
-            VStack() {
-                Image("logoymenu")
+            ScrollView(showsIndicators: false) {
+                Image("logo")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 120, height: 120, alignment: .center)
-                    .padding(25)
-                    .background(RoundedRectangle(cornerRadius: 35).foregroundColor(.white))
+                    .frame(width: 100, height: 100, alignment: .center)
+                    .padding(10)
                 
                 Text("Connectez-vous")
                     .font(.custom("SF Pro Rounded Bold", fixedSize: 24))
@@ -37,36 +37,36 @@ struct LoginView: View {
                 }
                 
                 VStack(alignment: .leading, spacing: 15) {
-                    TextField("Email", text: $viewModel.mail)
-                        .padding()
-                        .cornerRadius(20.0)
-//                        .shadow(radius: 6, x: 3, y: 3)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(Color.themeTextField, lineWidth: 2)
-                        )
-                        .keyboardType(.emailAddress)
-                        .autocapitalization(.none)
-                        .onChange(of: viewModel.mail, perform: { value in
-                            viewModel.wrongCredentials = false
-                            emptyFields = false
-                        })
+                    VStack(alignment: .leading){
+                        Text("Adresse mail").fontWeight(.bold)
+                        HStack{
+                            Image (systemName: "person.crop.circle").opacity((0.5))
+                            TextField("Votre adresse mail", text: $viewModel.mail)
+                                .keyboardType(.emailAddress)
+                                .autocapitalization(.none)
+                                .disableAutocorrection(true)
+                                .padding(10)
+                        }
+                        Divider()
+                    }
+                    VStack(alignment: .leading){
+                        Text("Mot de passe").fontWeight(.bold)
+                        HStack{
+                            Image (systemName: "lock.fill").opacity((0.5))
+                            SecureField("Votre mot de passe", text: $viewModel.password)
+                                .padding(10)
+                        }
+                        Divider()
                     
-                    SecureField("Mot de passe", text: $viewModel.password)
-                        .padding()
-                        .onChange(of: viewModel.password, perform: { value in
-                            viewModel.wrongCredentials = false
-                            emptyFields = false
-                        })
-                        .cornerRadius(20.0)
-//                        .shadow(radius: 6, x: 3, y: 3)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(Color.themeTextField, lineWidth: 2)
-                        )
-                        
+//                    TODO: Forgot password
+//                    VStack(alignment: .leading){
+//                        Button(action: {
+//
+//                        }) {
+//                            Text("Mot de passe oublié ?").foregroundColor(Color.gray.opacity((0.5)))
+//                        }
+                    }
                 }.padding([.leading, .trailing], 27.5)
-                
                 Button(action: {
                     
                     viewModel.wrongCredentials = false
@@ -95,35 +95,37 @@ struct LoginView: View {
                 .padding()
                 .foregroundColor(.white)
                 .background(Color.themeTextField)
-                .cornerRadius(.greatestFiniteMagnitude)
+                .cornerRadius(7)
                 .shadow(radius: 6, x: 3, y: 3)
-                .padding(.top, 40)
-                .padding([.trailing, .leading], 100)
+                .padding(.horizontal, 50)
+                .padding(.top, 20)
                 Spacer()
                 HStack(spacing: 0) {
-                    Text("Pas de compte?")
+                    Text("Pas encore de compte?")
                     Button(action: {
-                        dismissRegister.toggle()
+                        presentRegister.toggle()
                     })
                     {
                         Text("S'inscrire")
                             .bold()
                             .padding(.leading, 10)
                             .foregroundColor(Color.themeTextField)
-                    }.sheet(isPresented: $dismissRegister){
-                        RegisterView(viewModel: RegisterViewModel(), dismissRegister: $dismissRegister)
+                    }.sheet(isPresented: $presentRegister){
+                        RegisterView(viewModel: RegisterViewModel(), presentRegister: $presentRegister)
                     }
-                }.padding(.bottom, 30)
+                }.padding(.vertical, 20)
                 
             }
-            
         }
     }
 }
 
 extension Color {
     static var themeTextField: Color {
-        return Color(red: 255.0/255.0, green: 188.0/255.0, blue: 102.0/255.0, opacity: 1.0)
+        return Color(red: 245.0/255.0, green: 160.0/255.0, blue: 105.0/255.0, opacity: 1.0)
+    }
+    static var themeTextFieldAlt: Color {
+      return Color(red: 242.0/255.0, green: 130.0/255.0, blue: 58.0/255.0, opacity: 1.0)
     }
 }
 
@@ -138,8 +140,6 @@ extension View {
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView(viewModel: LoginViewModel())
-            .preferredColorScheme(.light)
-        
+            .preferredColorScheme(.dark)
     }
 }
-

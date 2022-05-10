@@ -71,12 +71,6 @@ struct HistoryView: View {
                     }
                 }
                 .navigationBarTitle(Text("Historique"), displayMode: .automatic)
-//                    .navigationBarItems(
-//                        leading:
-//                            Text("adresse mail".uppercased()).bold()
-//                            .padding(.top, 23)
-//                            .font(.footnote)
-//                            .foregroundColor(Color(.systemGray)))
             }
             .listStyle(InsetGroupedListStyle())
             .progressViewStyle(CircularProgressViewStyle())
@@ -88,7 +82,7 @@ struct HistoryView: View {
             
         }.buttonStyle(PlainButtonStyle()).onAppear {
             UINavigationBar.appearance().largeTitleTextAttributes = [
-                .font : UIFont(name:"SF Pro Rounded Bold", size: 40)
+                .font : UIFont(name:"SF Pro Rounded Bold", size: 40) as Any
             ]
         }.alert(isPresented: $showAlert) {
             Alert(

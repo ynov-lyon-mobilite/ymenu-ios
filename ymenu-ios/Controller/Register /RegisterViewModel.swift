@@ -17,15 +17,16 @@ class RegisterViewModel: RoutingProvider {
     @Published var confirmpassword: String = ""
     @Published var firstname: String = ""
     @Published var lastname: String = ""
+    @Published var pseudo: String = ""
     @Published var isLoading: Bool = false
     @Published var accountExist: Bool = false
     @Published var error: Bool = false
 
     var viewDismissalModePublisher = PassthroughSubject<Bool, Never>()
     
-    private var dismissRegister = false {
+    private var presentRegister = false {
         didSet {
-            viewDismissalModePublisher.send(dismissRegister)
+            viewDismissalModePublisher.send(presentRegister)
         }
     }
     
@@ -48,8 +49,7 @@ class RegisterViewModel: RoutingProvider {
                 print(error)
             case .success:
                 DispatchQueue.main.async {
-//                    withAnimation {ApplicationState.shared.authenticate(with: tokenPair)}
-                    self.dismissRegister = true
+                    self.presentRegister = true
                     self.isLoading = false
                 }
             }

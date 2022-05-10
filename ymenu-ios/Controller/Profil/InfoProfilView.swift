@@ -8,81 +8,66 @@
 import SwiftUI
 
 struct InfoProfilView: View {
+    @Environment(\.colorScheme) var colorScheme
+    
+    // MARK: - Propertiers
     var body: some View {
-        ZStack{
-            Color(UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 0.1))
-                    .edgesIgnoringSafeArea(.all)
-            VStack{
-                Image("logoymenu")
+            ScrollView {
+                Image(systemName:"person.fill")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 120, height: 120, alignment: .center)
-                    .padding(25)
-                    .background(RoundedRectangle(cornerRadius: 35).foregroundColor(.white))
-                    .offset( y: -230)
-            }
-            VStack{
-                Image(systemName: "person.crop.circle")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                    .frame(width: 40, height: 40, alignment: .center)
-                .padding(.top)
-                .padding(.bottom)
-                .offset(y: -320)
-                .offset(x: 160)
-            }
-            VStack{
-            Text("Mes informations")
-                .font(.custom("SF Pro Text Regular", size: 30))
-                .multilineTextAlignment(.center)
-                .lineSpacing(5)
-                .offset(y: -90)
-            }
-            VStack{
-                 {
-                    Text(UserDefaults.standard.string(forKey: "mail") ?? "")
-                        .frame(width: 270, height: 25)
-                        .font(.custom("SF Pro Text Regular", size: 22))
-                        .padding()
-                        .foregroundColor(.gray)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 100)
-                                .stroke(Color.themeTextField, lineWidth: 2)
-                        )
-                }().offset(y: 25)
-            }
-            VStack{
-                 {
-                    Text(UserDefaults.standard.string(forKey: "lastname") ?? "")
-                        .frame(width: 270, height: 25)
-                        .font(.custom("SF Pro Text Regular", size: 22))
-                        .padding()
-                        .foregroundColor(.gray)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 100)
-                                .stroke(Color.themeTextField, lineWidth: 2)
-                        )
-                }().offset(y: 125)
-            }
-            VStack{
-                 {
-                    Text(UserDefaults.standard.string(forKey: "firstname") ?? "")
-                        .frame(width: 270, height: 25)
-                        .font(.custom("SF Pro Text Regular", size: 22))
-                        .padding()
-                        .foregroundColor(.gray)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 100)
-                                .stroke(Color.themeTextField, lineWidth: 2)
-                        )
-                 }().offset(y: 225)
-            }
-        }.edgesIgnoringSafeArea(.all)
-    }
-    }
+                    .frame(width: 80, height: 80, alignment: .center)
+                    .foregroundColor(colorScheme == .dark ? .white : .black)
+                    .padding(.top, 50)
+                
+                VStack(alignment: .leading, spacing: 15){
+                    VStack(alignment: .leading){
+                        Text("Prénom")
+                            .font(.headline).bold()
+                            .padding(.top, 10)
+                        HStack{
+                            Image (systemName: "person.crop.circle").opacity((0.5))
+                            
+                            Text(UserDefaults.standard.string(forKey: "firstname") ?? "")
+                                .autocapitalization(.none)
+                                .opacity(0.5)
+                        }.padding(.top, 10)
+                        Divider()
+                    }
+                    VStack(alignment: .leading){
+                        Text("Nom")
+                            .font(.headline).bold()
+                            .padding(.top, 10)
+                        HStack{
+                            Image (systemName: "person.crop.circle").opacity((0.5))
+                            
+                            Text(UserDefaults.standard.string(forKey: "lastname") ?? "")
+                                .autocapitalization(.none)
+                                .opacity(0.5)
+                        }.padding(.top, 10)
+                        Divider()
+                    }
+                    VStack(alignment: .leading){
+                        Text("Adresse mail")
+                            .font(.headline).bold()
+                            .padding(.top, 10)
+                        HStack{
+                            Image (systemName: "envelope").opacity((0.5))
+                            
+                            Text(UserDefaults.standard.string(forKey: "mail") ?? "")
+                                .autocapitalization(.none)
+                                .opacity(0.5)
+                        }.padding(.top, 10)
+                        Divider()
+                    }
+                }.padding([.leading, .trailing], 27.5)
+            }.navigationBarTitle(Text("Mes informations"), displayMode: .automatic)
+   }
+}
 
 struct InfoProfilView_Previews: PreviewProvider {
     static var previews: some View {
         InfoProfilView()
     }
 }
+

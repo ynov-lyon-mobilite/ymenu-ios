@@ -31,6 +31,8 @@
 		4765860A25CB498C00871FDC /* QrCodeScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4765860925CB498C00871FDC /* QrCodeScannerViewModel.swift */; };
 		47CE67AA258A0431004940D7 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE67A9258A0431004940D7 /* MenuView.swift */; };
 		47CE67AE258A3FDE004940D7 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE67AD258A3FDE004940D7 /* MenuViewModel.swift */; };
+		9595267B27D89D2400D17FF8 /* RestaurantInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9595267A27D89D2400D17FF8 /* RestaurantInfoView.swift */; };
+		9595267D27D9086000D17FF8 /* ImageCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9595267C27D9085F00D17FF8 /* ImageCarouselView.swift */; };
 		B3408E0F25B8275E006BD523 /* DishCategoryApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3408E0E25B8275E006BD523 /* DishCategoryApiService.swift */; };
 		B3408E1225B827C8006BD523 /* DishCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3408E1125B827C8006BD523 /* DishCategory.swift */; };
 		B3408E1925B82C5C006BD523 /* CategoriesTopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3408E1825B82C5C006BD523 /* CategoriesTopBarView.swift */; };
@@ -50,10 +52,14 @@
 		E333305425C40F02008278B2 /* ARQuickLook.swift in Sources */ = {isa = PBXBuildFile; fileRef = E333305325C40F02008278B2 /* ARQuickLook.swift */; };
 		E33883A22620ED04009FEA0F /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33883A12620ED04009FEA0F /* ViewRouter.swift */; };
 		E33D6D052790BD78002D0DE1 /* ARQLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D6D042790BD78002D0DE1 /* ARQLView.swift */; };
+		E343150527F5DE000081E1A9 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E343150427F5DE000081E1A9 /* AuthenticationServices.framework */; };
+		E343150727F65F4B0081E1A9 /* RestaurantInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E343150627F65F4B0081E1A9 /* RestaurantInfoViewModel.swift */; };
 		E36599CF256EA10800D58F6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E36599CE256EA10800D58F6F /* Assets.xcassets */; };
 		E36D852725333B0E00722077 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36D852625333B0E00722077 /* AppDelegate.swift */; };
 		E36D852925333B0E00722077 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36D852825333B0E00722077 /* ContentView.swift */; };
 		E36D853025333B0F00722077 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E36D852F25333B0F00722077 /* Preview Assets.xcassets */; };
+		E3868A5327F3B2C000730C80 /* OffsetModifier+OffsetKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3868A5227F3B2C000730C80 /* OffsetModifier+OffsetKey.swift */; };
+		E3868A5527F3B30E00730C80 /* MenuCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3868A5427F3B30E00730C80 /* MenuCardView.swift */; };
 		E3BC0DB726149B6E00ED1900 /* ApplicationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BC0DB626149B6E00ED1900 /* ApplicationState.swift */; };
 		E3BC0DBA26149B9C00ED1900 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E3BC0DB926149B9C00ED1900 /* KeychainSwift */; };
 		E3BC0DBD26149C0400ED1900 /* JWTDecode in Frameworks */ = {isa = PBXBuildFile; productRef = E3BC0DBC26149C0400ED1900 /* JWTDecode */; };
@@ -93,6 +99,8 @@
 		4765860925CB498C00871FDC /* QrCodeScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeScannerViewModel.swift; sourceTree = "<group>"; };
 		47CE67A9258A0431004940D7 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		47CE67AD258A3FDE004940D7 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
+		9595267A27D89D2400D17FF8 /* RestaurantInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantInfoView.swift; sourceTree = "<group>"; };
+		9595267C27D9085F00D17FF8 /* ImageCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCarouselView.swift; sourceTree = "<group>"; };
 		B3408E0E25B8275E006BD523 /* DishCategoryApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCategoryApiService.swift; sourceTree = "<group>"; };
 		B3408E1125B827C8006BD523 /* DishCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCategory.swift; sourceTree = "<group>"; };
 		B3408E1825B82C5C006BD523 /* CategoriesTopBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTopBarView.swift; sourceTree = "<group>"; };
@@ -111,12 +119,17 @@
 		E333305325C40F02008278B2 /* ARQuickLook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARQuickLook.swift; sourceTree = "<group>"; };
 		E33883A12620ED04009FEA0F /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		E33D6D042790BD78002D0DE1 /* ARQLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARQLView.swift; sourceTree = "<group>"; };
+		E343150327F5DE000081E1A9 /* ymenu-ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ymenu-ios.entitlements"; sourceTree = "<group>"; };
+		E343150427F5DE000081E1A9 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
+		E343150627F65F4B0081E1A9 /* RestaurantInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantInfoViewModel.swift; sourceTree = "<group>"; };
 		E36599CE256EA10800D58F6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E36D852325333B0E00722077 /* ymenu-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ymenu-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E36D852625333B0E00722077 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E36D852825333B0E00722077 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E36D852F25333B0F00722077 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E36D853125333B0F00722077 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3868A5227F3B2C000730C80 /* OffsetModifier+OffsetKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OffsetModifier+OffsetKey.swift"; sourceTree = "<group>"; };
+		E3868A5427F3B30E00730C80 /* MenuCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCardView.swift; sourceTree = "<group>"; };
 		E3BC0DB626149B6E00ED1900 /* ApplicationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationState.swift; sourceTree = "<group>"; };
 		E3BC0DC02614AE4900ED1900 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E3BC0DC32614B22C00ED1900 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
@@ -134,6 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E343150527F5DE000081E1A9 /* AuthenticationServices.framework in Frameworks */,
 				E3BC0DBA26149B9C00ED1900 /* KeychainSwift in Frameworks */,
 				E322F68225CB1F65004AF310 /* SDWebImageSwiftUI in Frameworks */,
 				E3BC0DBD26149C0400ED1900 /* JWTDecode in Frameworks */,
@@ -215,9 +229,20 @@
 			path = QRCode;
 			sourceTree = "<group>";
 		};
+		9595267927D89CFD00D17FF8 /* Restaurant */ = {
+			isa = PBXGroup;
+			children = (
+				9595267A27D89D2400D17FF8 /* RestaurantInfoView.swift */,
+				9595267C27D9085F00D17FF8 /* ImageCarouselView.swift */,
+				E343150627F65F4B0081E1A9 /* RestaurantInfoViewModel.swift */,
+			);
+			path = Restaurant;
+			sourceTree = "<group>";
+		};
 		B3408E1425B82B28006BD523 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9595267927D89CFD00D17FF8 /* Restaurant */,
 				BA4469942614679300CFBF1D /* History */,
 				E3BC0DC22614B22000ED1900 /* Account */,
 				BA51E14B2610C290006AC7DB /* Register  */,
@@ -236,8 +261,10 @@
 			children = (
 				47CE67AD258A3FDE004940D7 /* MenuViewModel.swift */,
 				47CE67A9258A0431004940D7 /* MenuView.swift */,
+				E3868A5427F3B30E00730C80 /* MenuCardView.swift */,
 				B3408E1825B82C5C006BD523 /* CategoriesTopBarView.swift */,
 				B38E711D25B877F900A67830 /* IndexedForEach.swift */,
+				E3868A5227F3B2C000730C80 /* OffsetModifier+OffsetKey.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -292,6 +319,7 @@
 		E322F68025CB1F65004AF310 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E343150427F5DE000081E1A9 /* AuthenticationServices.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -316,6 +344,7 @@
 		E36D852525333B0E00722077 /* ymenu-ios */ = {
 			isa = PBXGroup;
 			children = (
+				E343150327F5DE000081E1A9 /* ymenu-ios.entitlements */,
 				B3408E1425B82B28006BD523 /* Controller */,
 				0A6095E525B7548300952BDD /* Fonts */,
 				E3EB411325C9FF870016862A /* Additions */,
@@ -458,6 +487,7 @@
 				E33D6D052790BD78002D0DE1 /* ARQLView.swift in Sources */,
 				0AFD140B256E7CD3000EFEBA /* ScannerViewModel.swift in Sources */,
 				E3BC0DD22614BF5F00ED1900 /* Routing.swift in Sources */,
+				9595267D27D9086000D17FF8 /* ImageCarouselView.swift in Sources */,
 				4715A4EB256E6B4A00C24659 /* RestaurantDTO.swift in Sources */,
 				47CE67AE258A3FDE004940D7 /* MenuViewModel.swift in Sources */,
 				E3BC0DB726149B6E00ED1900 /* ApplicationState.swift in Sources */,
@@ -470,6 +500,7 @@
 				E3BC0DC12614AE4900ED1900 /* User.swift in Sources */,
 				B3408E1225B827C8006BD523 /* DishCategory.swift in Sources */,
 				BA51E14D2610C290006AC7DB /* RegisterView.swift in Sources */,
+				E3868A5327F3B2C000730C80 /* OffsetModifier+OffsetKey.swift in Sources */,
 				B3408E1925B82C5C006BD523 /* CategoriesTopBarView.swift in Sources */,
 				0ABE4C5825A9D6AF00463B1A /* OnboardingCardView.swift in Sources */,
 				BA44699A26146A0000CFBF1D /* HistoryViewModel.swift in Sources */,
@@ -482,8 +513,11 @@
 				E36D852725333B0E00722077 /* AppDelegate.swift in Sources */,
 				BA4469A526146E2800CFBF1D /* IndexedForEachHistory.swift in Sources */,
 				0A9DFA312589FFEE001C3ECC /* CameraPreview.swift in Sources */,
+				E3868A5527F3B30E00730C80 /* MenuCardView.swift in Sources */,
 				0AFD1417256E7DD1000EFEBA /* QrCodeScannerView.swift in Sources */,
+				E343150727F65F4B0081E1A9 /* RestaurantInfoViewModel.swift in Sources */,
 				E3BC0DC42614B22C00ED1900 /* AccountView.swift in Sources */,
+				9595267B27D89D2400D17FF8 /* RestaurantInfoView.swift in Sources */,
 				470D9736256BBB4D0083912C /* AnyEncodable.swift in Sources */,
 				BA51E1492610C288006AC7DB /* LoginView.swift in Sources */,
 				47CE67AA258A0431004940D7 /* MenuView.swift in Sources */,
@@ -627,9 +661,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "ymenu-ios/ymenu-ios.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_ASSET_PATHS = "\"ymenu-ios/Preview Content\"";
 				DEVELOPMENT_TEAM = 94FLWD5X32;
 				ENABLE_PREVIEWS = YES;
@@ -638,11 +673,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ynovlyon.ymenu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.ynovlyon.ymenu";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -651,9 +687,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "ymenu-ios/ymenu-ios.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_ASSET_PATHS = "\"ymenu-ios/Preview Content\"";
 				DEVELOPMENT_TEAM = 94FLWD5X32;
 				ENABLE_PREVIEWS = YES;
@@ -662,11 +699,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ynovlyon.ymenu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.ynovlyon.ymenu";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -3,39 +3,25 @@
 //
 //  Created by Antoine Mousset on 18/04/2021
 //
+
+import Foundation
 import SwiftUI
 
 struct RegisterView: View {
-    // MARK: - Propertiers
+    
+    // MARK: - Properties
     @ObservedObject var viewModel: RegisterViewModel
     @State private var unvalidPassword: Bool = false
     @State private var emptyFields: Bool = false
     @State private var unmatchedPasswords: Bool = false
     @State private var unvalidMail: Bool = false
     @State var showAlert = false
-    @Binding var dismissRegister: Bool
+    @Binding var presentRegister: Bool
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    
+
     var body: some View {
         NavigationView {
-            VStack {
-                Image("logoymenu")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 120, height: 120, alignment: .center)
-                    .padding(25)
-                    .background(RoundedRectangle(cornerRadius: 35).foregroundColor(.white))
-                    .padding(.bottom, 20)
-                    .padding(.top, -50)
-                
-                Text("Inscrivez-vous")
-                    .font(.custom("SF Pro Rounded Bold", fixedSize: 24))
-                
-                Text("Gardez un historique des restaurants visités")
-                    .font(.custom("SF Pro Text Regular", fixedSize: 16))
-                    .lineLimit(2)
-                    .padding([.top, .bottom], 20)
-                
+            ScrollView(showsIndicators: false) {
                 if viewModel.error {
                     Text("Une erreur est servenue").foregroundColor(.red).bold().padding(.bottom, 10)
                 } else if emptyFields {
@@ -50,48 +36,71 @@ struct RegisterView: View {
                     Text("Veuillez entrer une adresse mail valide").foregroundColor(.red).bold().padding(.bottom, 10)
                 }
 
-                VStack(alignment: .leading, spacing: 15) {
-                    TextField("Nom", text: $viewModel.firstname)
-                        .padding()
-                        .cornerRadius(20.0)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(Color.themeTextField, lineWidth: 2)
-                        )
-                    
-                    TextField("Prenom", text: $viewModel.lastname)
-                        .padding()
-                        .cornerRadius(20.0)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(Color.themeTextField, lineWidth: 2)
-                        )
-                    
-                    TextField("Email", text: $viewModel.mail)
-                        .padding()
-                        .cornerRadius(20.0)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(Color.themeTextField, lineWidth: 2)
-                        )
-                        .keyboardType(.emailAddress)
-                        .autocapitalization(.none)
-                    
-                    SecureField("Mot de passe", text: $viewModel.password)
-                        .padding()
-                        .cornerRadius(20.0)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(Color.themeTextField, lineWidth: 2)
-                        )
-                    
-                    SecureField("Confirmer le mot de passe", text: $viewModel.confirmpassword)
-                        .padding()
-                        .cornerRadius(20.0)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(Color.themeTextField, lineWidth: 2)
-                        )
+                VStack(alignment: .leading, spacing: 20){
+                    VStack(alignment: .leading){
+                        Text("Gardez un historique de vos meilleurs moments!").font(.subheadline).padding(.leading, -10)
+                        Text("Nom").fontWeight(.bold).padding(.top, 20)
+                        HStack{
+                            Image (systemName: "person.crop.circle").opacity((0.5))
+                            
+                            TextField("Votre nom", text: $viewModel.lastname)
+                                .keyboardType(.emailAddress)
+                                .autocapitalization(.none)
+                                .disableAutocorrection(true)
+                                .padding(8)
+                        }
+                        Divider()
+                    }
+                    VStack(alignment: .leading){
+                        Text("Prénom").fontWeight(.bold)
+                        HStack{
+                            Image (systemName: "person.crop.circle").opacity((0.5))
+                            
+                            TextField("Votre prénom", text: $viewModel.firstname)
+                                .keyboardType(.emailAddress)
+                                .autocapitalization(.none)
+                                .disableAutocorrection(true)
+                                .padding(8)
+                        }
+                        Divider()
+                    }
+                    VStack(alignment: .leading){
+                        Text("Adresse mail").fontWeight(.bold)
+                        HStack{
+                            Image (systemName: "envelope").opacity((0.5))
+                            
+                            TextField("Votre adresse mail", text: $viewModel.mail)
+                                .keyboardType(.emailAddress)
+                                .autocapitalization(.none)
+                                .disableAutocorrection(true)
+                                .padding(8)
+                        }
+                        Divider()
+                    }
+                    VStack(alignment: .leading){
+                        Text("Mot de passe").fontWeight(.bold)
+                        HStack{
+                            Image (systemName: "lock.fill").opacity((0.5))
+                            
+                            SecureField("Votre mot de passe", text: $viewModel.password)
+                                .keyboardType(.emailAddress)
+                                .autocapitalization(.none)
+                                .padding(8)
+                        }
+                        Divider()
+                    }
+                    VStack(alignment: .leading){
+                        Text("Confirmez le mot de passe").fontWeight(.bold)
+                        HStack{
+                            Image (systemName: "lock.fill").opacity((0.5))
+                            
+                            SecureField("Confirmez votre mot de passe", text: $viewModel.confirmpassword)
+                                .keyboardType(.emailAddress)
+                                .autocapitalization(.none)
+                                .padding(8)
+                        }
+                        Divider()
+                    }
                 }.padding([.leading, .trailing], 27.5)
                 .onChange(of: [viewModel.firstname, viewModel.lastname, viewModel.mail, viewModel.password, viewModel.confirmpassword], perform: { value in
                     viewModel.error = false
@@ -147,17 +156,18 @@ struct RegisterView: View {
                 }.padding()
                 .foregroundColor(.white)
                 .background(Color.themeTextField)
-                .cornerRadius(.greatestFiniteMagnitude)
+                .cornerRadius(10)
                 .shadow(radius: 6, x: 3, y: 3)
                 .padding(.top, 20)
-                .padding([.trailing, .leading], 100)
+                .padding([.trailing, .leading])
                 .disabled(viewModel.isLoading)
                 
                 Spacer()
                 HStack(spacing: 0) {
-                    Text("Déjà un compte?")
+                    Spacer()
+                    Text("Vous avez déjà un compte ?")
                     Button(action: {
-                        self.dismissRegister.toggle()
+                        self.presentRegister.toggle()
                     })
                     {
                         Text("Se connecter")
@@ -165,13 +175,16 @@ struct RegisterView: View {
                             .padding(.leading, 10)
                             .foregroundColor(Color.themeTextField)
                     }
-                }.padding(.bottom, 30)
-                .navigationBarItems(leading:
-                    Button(action: {
-                        self.dismissRegister.toggle()
-                    }) {
-                        Text("Retour").accentColor(Color.themeTextField)
-                    }
+                    Spacer()
+                }.padding(.bottom, 30).padding(.top, 10)
+                .navigationBarTitle("Inscription")
+                .navigationBarItems(
+                    leading:
+                        Button(action: {
+                            self.presentRegister.toggle()
+                        }) {
+                            Text("Retour").accentColor(Color.themeTextField)
+                        }
                 )
             }.onReceive(viewModel.viewDismissalModePublisher) { shouldDismiss in
                 DispatchQueue.main.async{
@@ -181,7 +194,12 @@ struct RegisterView: View {
 
                 }
             }
-        }.alert(isPresented: $showAlert) {
+        }.onAppear {
+            UINavigationBar.appearance().largeTitleTextAttributes = [
+                .font : UIFont(name:"SF Pro Rounded Bold", size: 40) as Any
+            ]
+        }
+        .alert(isPresented: $showAlert) {
             Alert(
                 title: Text("Compte créé"),
                 message: Text("Votre compte a été créé avec succès, connectez-vous dès maintenant pour y accéder"),
@@ -198,7 +216,8 @@ struct RegisterView: View {
 
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterView(viewModel: RegisterViewModel(), dismissRegister: .constant(true))
+        RegisterView(viewModel: RegisterViewModel(), presentRegister: .constant(true))
+            .previewDevice("iPhone SE (3rd generation)")
         
     }
 }

@@ -10,8 +10,13 @@ import SwiftUI
 
 struct Restaurant: Hashable, Decodable {
     let _id: String
-    let name: String
-    let url_logo: String
     let address: String
-    let updatedAt: String
+    let zipcode: String
+    let city: String
+    let phone: Int
+    let name: String
+    let mail: String
+    let url_logo: String
+    let description: String
+    let speciality: String
 }

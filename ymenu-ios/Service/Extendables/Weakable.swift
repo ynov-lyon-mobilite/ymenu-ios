@@ -7,7 +7,7 @@
 
 import Foundation
 
-internal protocol Weakable: class { }
+internal protocol Weakable: AnyObject { }
 
 extension Weakable {
     public func weakify(_ code: @escaping (Self) -> Void) -> () -> Void {

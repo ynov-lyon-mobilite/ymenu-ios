@@ -6,93 +6,94 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct ProfilView: View {
+    @Environment(\.colorScheme) var colorScheme
     @State var isPresented = false
     @ObservedObject var applicationState: ApplicationState = ApplicationState.shared
     @State var showAlert = false
-    
+
+    init() {
+        UINavigationBar.appearance().largeTitleTextAttributes = [
+                    .font : UIFont(name:"SF Pro Rounded Bold", size: 40)!
+        ]
+    }
     var body: some View {
         NavigationView{
-            ZStack{
-                Color(UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 0.1))
-                    .edgesIgnoringSafeArea(.all)
-                VStack{
-                    Image("logoymenu")
+            VStack(spacing : 0){
+                HStack{
+                    Image(systemName:"person.crop.circle")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 120, height: 120, alignment: .center)
-                        .padding(25)
-                        .background(RoundedRectangle(cornerRadius: 35).foregroundColor(.white))
-                        .offset( y: -230)
-                }
-                VStack{
-                    Image(systemName: "person.crop.circle")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 40, height: 40, alignment: .center)
-                        .padding(.top)
-                        .padding(.bottom)
-                        .offset(y: -320)
-                        .offset(x: 160)
-                }
-                VStack{
-                    Text("Profil")
-                        .font(.custom("SF Pro Text Regular", size: 30))
-                        .multilineTextAlignment(.center)
-                        .lineSpacing(5)
-                        .offset(y: -90)
-                }
-                VStack{
-                    NavigationLink(
-                        destination: InfoProfilView()) {
-                        Text("Mes informations")
-                            .frame(width: 270, height: 25)
-                            .font(.custom("SF Pro Text Regular", size: 22))
-                            .padding()
-                            .foregroundColor(.gray)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 100)
-                                    .stroke(Color.themeTextField , lineWidth: 2)
-                            )
-                    }.offset(y: 25)
-                }
-                VStack{
+                        .frame(width: 80, height: 80)
+                        .padding(20)
+                        .foregroundColor(colorScheme == .dark ? .white : .black)
+                    VStack (alignment: .leading){
+                        HStack {
+                            Text((UserDefaults.standard.string(forKey: "firstname") ?? "") + " " + (UserDefaults.standard.string(forKey: "lastname") ?? ""))
+                                .bold()
+                                .font(.custom("SF Pro Rounded Bold", fixedSize: 18))
+                        }
+                        
+                        Text(UserDefaults.standard.string(forKey: "mail") ?? "").font(.headline)
+                    }
+                    Spacer()
+                }.padding(.bottom, 100)
+                VStack {
                     
                     NavigationLink(
+                        destination: InfoProfilView()) {
+                            Image(systemName: "person.crop.circle.fill")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 25, height: 25)
+                                .foregroundColor(Color.themeTextField)
+                                .padding(.horizontal, 10)
+                            Text("Mes informations")
+                                .font(.headline).bold()
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                            
+                    }
+                    .foregroundColor(colorScheme == .dark ? .white : .black)
+                    .padding(EdgeInsets(top: 17, leading: 21, bottom: 17, trailing: 21))
+                    Divider()
+                    NavigationLink(
                         destination: HistoryView(viewModel: HistoryViewModel())) {
-                        Text("Historique de visite")
-                            .frame(width: 270, height: 25)
-                            .font(.custom("SF Pro Text Regular", size: 22))
-                            .padding()
-                            .foregroundColor(.gray)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 100)
-                                    .stroke(Color.themeTextField , lineWidth: 2)
-                            )
-                    }.offset(y: 125)
-                }
-                VStack{
+                            Image(systemName: "clock.fill")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 25, height: 25)
+                                .foregroundColor(Color.themeTextField)
+                                .padding(.horizontal, 10)
+                            Text("Historique de visite")
+                                .font(.headline).bold()
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                            
+                    }
+                    .foregroundColor(colorScheme == .dark ? .white : .black)
+                    .padding(EdgeInsets(top: 17, leading: 21, bottom: 17, trailing: 21))
+                    Divider()
+                    Spacer()
                     Button(action: {
-                        self.showAlert = true
+                                self.showAlert = true
                     }) {
-                        HStack {
-                            Text("Déconnexion")
-                                .bold()
-                        }.frame(maxWidth:.infinity)
-                    }.padding()
-                    .foregroundColor(.white)
-                    .background(Color.themeTextField)
-                    .cornerRadius(.greatestFiniteMagnitude)
-                    .shadow(radius: 6, x: 3, y: 3)
-                    .padding(.top, 40)
-                    .padding([.trailing, .leading], 100)
-                    .offset( y: 205)
+                                HStack {
+                                    Text("Déconnexion")
+                                        .bold()
+                                }.frame(maxWidth:.infinity)
+                            }.padding()
+                            .foregroundColor(.white)
+                            .background(Color.themeTextField)
+                            .cornerRadius(7)
+                            .shadow(radius: 6, x: 3, y: 3)
+                            .padding(50)
                 }
-                .navigationBarTitle("Profil")// retour (back -> profil)
-                .navigationBarHidden(true)
-            }.edgesIgnoringSafeArea(.all)
-        }.accentColor(Color.themeTextField)// color (profil)
+            }
+            .navigationBarTitle(Text("Mon profil"), displayMode: .automatic)
+        }.accentColor(Color.themeTextField)
         .alert(isPresented: $showAlert) {
             Alert(title: Text("Déconnexion"),
              message: Text("Êtes-vous sûr(e) de vouloir vous déconnecter?"),
@@ -110,3 +111,4 @@ struct ProfilView_Previews: PreviewProvider {
         ProfilView()
     }
 }
+
