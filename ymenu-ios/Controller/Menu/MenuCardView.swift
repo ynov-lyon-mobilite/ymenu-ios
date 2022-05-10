@@ -72,7 +72,7 @@ struct MenuCardView: View{
                             .padding(.vertical, 3)
                             .padding(.horizontal, 5)
                             .background(
-                                RoundedRectangle(cornerRadius: 6).foregroundColor(.orange)
+                              RoundedRectangle(cornerRadius: 6).foregroundColor(Color.themeTextFieldAlt)
                             ).foregroundColor(.white)
                             .padding(.top, 5)
                             

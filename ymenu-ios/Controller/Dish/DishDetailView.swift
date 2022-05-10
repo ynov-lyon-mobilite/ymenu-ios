@@ -86,13 +86,13 @@ struct DishDetailView: View {
                       .padding(.top, 10)
                       .padding(.bottom, 12)
                       .padding(.leading, 10)
-                      .font(.custom("SF Pro Text Bold", fixedSize: 22))
+                      .font(.custom("SF Pro Rounded Bold", fixedSize: 22))
                     Spacer()
                     Text("\(String(describing: dish.price))0 €")
                       .padding(.top, 10)
                       .padding(.bottom, 12)
                       .padding(.trailing, 10)
-                      .font(.custom("SF Pro Text Regular", fixedSize: 20))
+                      .font(.custom("SF Pro Rounded Bold", fixedSize: 20))
                   }
                 }
                 Spacer()
@@ -144,8 +144,8 @@ struct DishDetailView: View {
               .background(Color.themeTextField)
               .cornerRadius(7)
               .listRowBackground(Color(UIColor.systemGray6)).listRowInsets(EdgeInsets())
-              .padding([.horizontal, .top], 25)
-              .padding(.bottom, 10)
+              .padding([.horizontal, .top], 20)
+              .padding(.bottom, 15)
               .sheet(isPresented: $isPresented) {
                 ZStack(alignment: .center) {
                   ARQLView(filePath: self.$modelURL, isPresented: self.$isPresented)

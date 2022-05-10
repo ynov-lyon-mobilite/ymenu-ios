@@ -124,6 +124,9 @@ extension Color {
     static var themeTextField: Color {
         return Color(red: 245.0/255.0, green: 160.0/255.0, blue: 105.0/255.0, opacity: 1.0)
     }
+    static var themeTextFieldAlt: Color {
+      return Color(red: 242.0/255.0, green: 130.0/255.0, blue: 58.0/255.0, opacity: 1.0)
+    }
 }
 
 #if canImport(UIKit)
